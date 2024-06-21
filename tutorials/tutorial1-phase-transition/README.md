@@ -5,6 +5,10 @@ This tutorial will show you:
 * how to run an analysis on the converted trajectory,
 * how to plot the results of the analysis.
 
+**Questions** will be asked in different sections
+of this tutorial. The **answers** will be provided
+at the end of the tutorial.
+
 ## Background
 
 Most of the commonly taught thermodynamics and mechanical
@@ -42,7 +46,7 @@ These are the _trimmed_ output files:
 * trajectory.txt - a LAMMPS custom format trajectory
 * simulation_log.txt - part of LAMMPS log output (thermostat)
 
-# Steps to follow
+# The actual tutorial, step by step.
 
 ## Convert the trajectory
 
@@ -103,6 +107,9 @@ the 'bonds' option of the visualiser. Press the 'play' button
 to start the animation. (If you don't have the patience to watch
 every single frame, you can press 'fast forward' instead.)
 
+**Question**: What is the difference between the structres
+in the beginning and at the end of the simulation?
+
 ## Calculate the temperature of the system
 
 Normally, the temperature of the system can be derived
@@ -115,8 +122,9 @@ simulation frames.
 
 We assume that you have already loaded the trajectory into
 the GUI. (If not, go back to the previous step.)
-Now, find the analysis called "Temperature". It belongs to the
-group called "Thermodynamics". You can pick the interpolation
+In the Actions tab, find the analysis called "Temperature".
+It is located in 'Analysis -> Thermodynamics -> Temperature'.
+You can pick the interpolation
 order used for the determination of velocities. In the script
 'mdanse_inputs/script2_temperature.py' we are using the
 3rd order interpolation. Run the analysis, saving the output
@@ -139,3 +147,63 @@ when there are no values to interpolate between on one side
 of the data point.
 
 Now, open the simulation log 'md_outputs/simulation_log.txt'
+in any text editor, and check the temperature values logged there.
+The temperature values in the log file were calculated by
+the MD engine based on the velocity values at those specific
+simulation steps.
+
+**Question**: The MDANSE temperature values don't match
+the values in the log. Why?
+
+## Calculate the Root Mean Square Displacement of atoms
+
+Same as in the previous part of the tutorial,
+make sure that the trajectory has been loaded into the GUI.
+
+In the Actions tab, go to
+'Analysis -> Structure -> RootMeanSquareDeviation'.
+The default values of the input fields should work well
+in this example; the only thing that needs to be set
+is the output filename. In the script we used
+the destination 'mdanse_outputs/root_mean_square_displacement.mda'.
+
+Again, you can observe the progress of the analysis in the
+'Running Jobs' tab. Once the calculation has finished,
+go to the 'Plot Creator' tab. On the right side, 'Clear'
+the table of data and create a 'New Plot'. Then, load the
+output file you just created, and select the dataset
+'rmsd_all'. On the right, click 'Plot Data' and go
+to the Plot Holder tab. You will see the calculated
+root mean square displacement of atoms from the
+reference position (which in our analysis was
+the initial position).
+
+**Question**: Based on this plot, the system has
+melted in the second half of the simulation.
+At what temperature did the melting occur?
+
+## Calculate the Pair Distribution Function
+
+The result in the previous step showed us that the
+first and second halves of the simulation are
+qualitatively different. Now we will use this
+information to specify limits for the next analysis.
+
+In the Actions tab, choose
+'Analysis -> Structure -> Pair Distribution Function'.
+Instead of using the default values of simulation frames,
+we will now limit the time range used for the calculation.
+Set 'frames' to be 0, 500, 1, and then pick a name for
+the output file ('../mdanse_outputs/pair_distribution_function_solid.mda'),
+then run the analysis. Before moving to another tab, you can
+set frames to 600, 1000, 1, change the output file name to
+'../mdanse_outputs/pair_distribution_function_liquid.mda',
+and click 'RUN!' again. (The script that will do the same thing
+for you outside of the GUI 'script4_pdf.py')
+
+In the Plot Creator tab click 'Clear', 'New Plot', and load
+both the output files you just created. Add 'pdf_total'
+data set from each of the two files to the plot and click
+'Plot Data'. In the Plot Holder tab you should now
+see a plot like this one:
+![PDF_plot](pictures/pdf_results.png)
