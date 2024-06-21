@@ -1,11 +1,11 @@
-## MDANSE Tutorial: finding a phase transition
+# MDANSE Tutorial: finding a phase transition
 
 This tutorial will show you:
 * how to convert a LAMMPS trajectory to the MDANSE format,
 * how to run an analysis on the converted trajectory,
 * how to plot the results of the analysis.
 
-# Background
+## Background
 
 Most of the commonly taught thermodynamics and mechanical
 statistics deals with equilibrium processes. That is,
@@ -20,32 +20,122 @@ will undergo a transition to a qualitatively different state.
 For this reason, it is important to verify the stability
 of a trajectory.
 
-# Scenario of this tutorial
+## Scenario of this tutorial
 
 We will analyse a trajectory of metallic molydenum. This
 trajectory is blatantly not equilibrated, as the thermostat
 used here was intrioducing a temperature ramp.
 
-## Files
+# Files
 
 This tutorial contains the following files:
 
-# md_inputs
+## md_inputs
 These are the input files needed to re-run the MD simulation:
 * structure.txt - a LAMMPS structure file
 * molybdenum_script.lmp - a LAMMPS script 
 * Mo5.2.mgpt.potin - a LAMMPS potential file
 * Mo5.2.mgpt.parmin - a LAMMPS potential file
 
-# md_outputs
+## md_outputs
 These are the _trimmed_ output files:
 * trajectory.txt - a LAMMPS custom format trajectory
 * simulation_log.txt - part of LAMMPS log output (thermostat)
 
-## Steps to follow
+# Steps to follow
 
-# Convert the trajectory
+## Convert the trajectory
 
+MDANSE likes to reduce the overhead of parsing the input files
+by converting each trajectory to a binary HDF5 format once,
+and then using this trajectory as input for all the analysis types.
 
+The trajectory in this example has been created using LAMMPS.
+The LAMMPS script which produced this trajectory is available
+in md_inputs/molybdenum_script.lmp and you will need to open it
+to find some information needed to convert the trajectory
+correctly.
 
-# 
+Most importantly, LAMMPS offers different unit systems,
+and the converter needs to be informed about the unit system
+used in the simulation, since the trajectory file does not
+contain this information. Here we used the 
+[MGPT](https://docs.lammps.org/pair_mgpt.html) potential,
+which required us to use the *electron* unit system. Another
+crucial detail is the size of the simulation time step.
+You can also find it in the LAMMPS script (and it set to 0.2).
+
+Go to the 'Converters' tab in the GUI, and pick the LAMMPS
+converter. Now you have to pass the correct inputs to the
+converter. The LAMMPS configuration file is
+'md_inputs/structure.txt', and the LAMMPS trajectory file
+is 'md_outputs/trajectory.txt'. Change the LAMMPS unit system
+to 'electron' and time step to '0.2', since these are the
+values you found in the LAMMPS script of this simulation.
+Once you have picked the correct units and time step,
+choose the location of the output file. We are using a generic
+name 'mdanse_outputs/converted_trajectory.mdt'. Run the conversion
+by pressing the 'RUN!' button in the bottom-right corner.
+You can now see a new entry in the 'Running Jobs' tab,
+showing the progress of the conversion.
+
+For the moment we are going through all the steps
+using the MDANSE_GUI. However, you can also get the same
+result using a Python script.
+A script which will run the conversion and save the output
+as 'mdanse_outputs/converted_trajectory.mdt' is located in
+'mdanse_inputs/script1_conversion.py'. Since it uses
+relative paths to files, you will have to run it
+from mdanse_inputs as the working directory.
+
+## Load the trajectory
+
+Go to the 'Trajectories' tab and load the trajectory created
+by the converter in the previous step. You should see the first
+frame of the trajectory in the 3D viewer. Also, basic information
+about the trajectory will be displayed in the bottom-left
+text box.
+
+You can watch the animation of the trajectory, just to see if
+anything unexpected happened in your system during the run.
+Since this is a metallic system, it makes sense to disable
+the 'bonds' option of the visualiser. Press the 'play' button
+to start the animation. (If you don't have the patience to watch
+every single frame, you can press 'fast forward' instead.)
+
+## Calculate the temperature of the system
+
+Normally, the temperature of the system can be derived
+from the kinetic energy of the atoms. It is sufficient
+to know the masses of atoms and their velocities at each
+step. If the information about the velocities is not
+stored in the trajectory file, MDANSE can reconstruct this
+information by interpolating the atomic positions of subsequent
+simulation frames.
+
+We assume that you have already loaded the trajectory into
+the GUI. (If not, go back to the previous step.)
+Now, find the analysis called "Temperature". It belongs to the
+group called "Thermodynamics". You can pick the interpolation
+order used for the determination of velocities. In the script
+'mdanse_inputs/script2_temperature.py' we are using the
+3rd order interpolation. Run the analysis, saving the output
+in 'mdanse_outputs/temperature.mda'
+
+You can plot the calculated temperature by going to the
+'Plot Creator' tab. Load the analysis result using the
+'Load .MDA results' button. Now, unfold the contents
+tree in the data view below, and click on the 'temperature'
+dataset. It will appear in the box on the right.
+Since we only have one curve to plot, you can just click
+the 'Plot Data' button. The curve will be plotted in
+the current plot in the 'Plot Holder' tab.
+
+Go to the 'Plot Holder' tab and have a look at the results.
+Most likely the first and last values of the temperature
+will be significantly different to the other points. This
+is to be expected, since interpolation will not be accurate
+when there are no values to interpolate between on one side
+of the data point.
+
+Now, open the simulation log 'md_outputs/simulation_log.txt'
