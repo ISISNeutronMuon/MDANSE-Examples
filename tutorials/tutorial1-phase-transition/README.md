@@ -46,6 +46,23 @@ These are the _trimmed_ output files:
 * trajectory.txt - a LAMMPS custom format trajectory
 * simulation_log.txt - part of LAMMPS log output (thermostat)
 
+## mdanse_inputs
+These are the scripts that, when run from the mdanse_inputs
+directory, will produce the outputs of the mdanse runs
+described in this tutorial.
+* script1_conversion.py - produces the MDANSE-format trajectory.
+* script2_temperature.py - calculates the temperature of the simulated system.
+* script3_rmsd.py - calculates the root mean square displacement of atoms.
+* script4_pdf - calculates the pair distribution function of atoms.
+
+## mdanse_outputs
+All the files created by MDANSE will be written here.
+Also, for people who don't use the GUI, there is a brief comment on
+how 'TextFormat' can replace 'MDAFormat' in the scripts to
+create plain text output of analysis. Please read:
+* about_outputs.txt
+for more detail
+
 # The actual tutorial, step by step.
 
 ## Convert the trajectory
@@ -193,10 +210,10 @@ In the Actions tab, choose
 'Analysis -> Structure -> Pair Distribution Function'.
 Instead of using the default values of simulation frames,
 we will now limit the time range used for the calculation.
-Set 'frames' to be 0, 500, 1, and then pick a name for
+Set 'frames' to be 0, 200, 1, and then pick a name for
 the output file ('../mdanse_outputs/pair_distribution_function_solid.mda'),
 then run the analysis. Before moving to another tab, you can
-set frames to 600, 1000, 1, change the output file name to
+set frames to 700, 900, 1, change the output file name to
 '../mdanse_outputs/pair_distribution_function_liquid.mda',
 and click 'RUN!' again. (The script that will do the same thing
 for you outside of the GUI 'script4_pdf.py')
@@ -207,3 +224,53 @@ data set from each of the two files to the plot and click
 'Plot Data'. In the Plot Holder tab you should now
 see a plot like this one:
 ![PDF_plot](pictures/pdf_results.png)
+
+The plot shows that the interatomic distances in the
+liquid molybdenum are more evenly spread compared to
+the solid. However, the coordination spheres can still
+be seen which correspond to the preferred interatomic
+distance.
+
+# Discussion of the results
+
+## Question 1:
+
+By now it is quite clear that the system in the simulation
+started off as a solid, and ended up being a liquid.
+
+## Question 2:
+
+The answer to this problem is in the trajectory sampling
+chosen in the LAMMPS script. In this run, LAMMPS was writing
+out the positions only every 100 steps, which means that
+20 fs of the simulation time would pass between each two
+consecutive writeouts. This makes it unlikely that the
+reconstruction of the velocities based on the atom positions
+could ever succeed.
+
+While it is common practice not to write out every single
+simulation step, please be keep in mind that not all the
+properties can be accurately reproduced based on the
+incomplete trajectory sampling. In the case of the
+temperature here, we can simply rely on the simulation
+logs.
+
+## Question 3:
+
+Based on the simulation logs, the melting temperature
+of molybdenum in this simulation was close to 4200-4300 K.
+This is not particularly close to the real-life value of the
+molybdenum melting point (which is ca. 2900 K.)
+
+While ultimately it is the force field used in the simulation
+that defines what properties can be accurately reproduced,
+it is important to remember that a typical MD simulation
+is rather short compared to the time scale of real-life
+phenomena. Looking at the LAMMPS script for this simulation,
+you will notice that the temperature ramp was going
+from 2000 to 8000 K within 80 ps. This is an extremely fast
+heating rate, and is likely to result in a superheated
+system. This is, of course, not a problem that MDANSE
+should be dealing with. We just like to remind the users
+to be aware of the limitations of the methods they are using.
+

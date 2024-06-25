@@ -1,0 +1,18 @@
+The simulation scripts included in this tutorial will
+all write their output here.
+
+Most of the time we assume that the users will have
+access to a graphical session and will be using
+the MDANSE GUI. However, if this is not the case
+for you, it may be easier to write the analysis
+results to a text file.
+
+As an example, script2_temperature contains a line:
+'output_files': ('../mdanse_outputs/temperature', ['MDAFormat']),  # output_files
+which results in a HDF5 file with an .mda extension being created.
+
+You can replace the 'MDAFormat' with, or add to the list, an entry
+'TextFormat' , as in:
+'output_files': ('../mdanse_outputs/temperature', ['MDAFormat', 'TextFormat']),  # output_files
+which will make MDANSE output a TAR archive containing text files with
+the same results as the .mda file.

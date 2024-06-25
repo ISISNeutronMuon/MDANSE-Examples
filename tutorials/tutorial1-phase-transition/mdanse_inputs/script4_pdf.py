@@ -26,8 +26,8 @@ parameters = {
 # Setup and run the analysis                           #
 ########################################################
 
-inputs = [([0,500,1], '../mdanse_outputs/pair_distribution_function_solid'),
-          ([600,999,1], '../mdanse_outputs/pair_distribution_function_liquid'),]
+inputs = [([0,200,1], '../mdanse_outputs/pair_distribution_function_solid'),
+          ([700,900,1], '../mdanse_outputs/pair_distribution_function_liquid'),]
 
 if __name__ == "__main__":
     for inp in inputs:
