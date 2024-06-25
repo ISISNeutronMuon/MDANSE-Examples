@@ -27,7 +27,7 @@ of a trajectory.
 ## Scenario of this tutorial
 
 We will analyse a trajectory of metallic molybdenum. This
-trajectory is blatantly not equilibrated, as the thermostat
+trajectory is very clearly not equilibrated, as the thermostat
 used here was set to introduce a temperature ramp.
 
 # Files
@@ -40,6 +40,13 @@ These are the input files needed to re-run the MD simulation:
 * molybdenum_script.lmp - a LAMMPS script 
 * Mo5.2.mgpt.potin - a LAMMPS potential file
 * Mo5.2.mgpt.parmin - a LAMMPS potential file
+
+You do not need to run this simulation. The results are already
+included in md_outputs. However, it is always good practice
+to include input files together with the trajectory, since
+they contain information which is both necessary for the
+correct processing of the results and not included in the 
+trajectory itself.
 
 ## md_outputs
 These are the _cropped_ output files:
@@ -57,33 +64,38 @@ described in this tutorial.
 * script1_conversion.py - produces the MDANSE-format trajectory.
 * script2_temperature.py - calculates the temperature of the simulated system.
 * script3_rmsd.py - calculates the root mean square displacement of atoms.
-* script4_pdf - calculates the pair distribution function of atoms.
+* script4_pdf.py - calculates the pair distribution function of atoms.
+
+The scripts use relative paths, so make sure that your working directory
+is `mdanse_inputs` when you run them. The best way to make sure that
+the scripts are executed correctly is to have installed MDANSE in a virtual
+environment, activate the environment, and run the scripts using the
+`python script_name`
+syntax.
 
 ## mdanse_outputs
 All the files created by MDANSE will be written here.
 Also, for people who don't use the GUI, there is a brief comment on
 how 'TextFormat' can replace 'MDAFormat' in the scripts to
 create plain text output of analysis. Please read:
-* about_outputs.txt
-
-for more detail
+`about_outputs.txt` for more detail
 
 # The actual tutorial, step by step.
 
 In the text of the tutorial, we will be concentrate on the
 MDANSE GUI. However, the conversion and analysis jobs can
 be run also without the GUI. The scripts for running all
-the parts of the tutorial are provided in md_inputs/script*
+the parts of the tutorial are provided in `md_inputs/script*`.
 
 ## Convert the trajectory
 
-MDANSE likes to reduce the overhead of parsing the input files
-by converting each trajectory to a binary HDF5 format once,
+MDANSE strategy is to reduce the overhead of parsing the input files
+by converting each trajectory to a binary HDF5 format once, in the beginning,
 and then using this trajectory as input for all the analysis types.
 
 The trajectory in this example has been created using LAMMPS.
 The LAMMPS script which produced this trajectory is available
-in md_inputs/molybdenum_script.lmp and you will need to open it
+in `md_inputs/molybdenum_script.lmp` and you will need to open it
 to find some information needed to convert the trajectory
 correctly.
 
@@ -101,14 +113,15 @@ converter. Now you have to pass the correct inputs to the
 converter.
 
 ![converter](pictures/gui_converter.png)
+
 The LAMMPS configuration file is
-'md_inputs/structure.txt', and the LAMMPS trajectory file
-is 'md_outputs/trajectory.txt'. Change the LAMMPS unit system
+`md_inputs/structure.txt`, and the LAMMPS trajectory file
+is `md_outputs/trajectory.txt`. Change the LAMMPS unit system
 to 'electron' and time step to '0.2', since these are the
 values you found in the LAMMPS script of this simulation.
 Once you have picked the correct units and time step,
 choose the location of the output file. We are using a generic
-name 'mdanse_outputs/converted_trajectory.mdt'.
+name `mdanse_outputs/converted_trajectory.mdt`.
 If some of the fields are not filled out correctly, the
 GUI will try to make it clear
 by disabling the 'RUN!' button and highlighting the
@@ -127,8 +140,8 @@ For the moment we are going through all the steps
 using the MDANSE_GUI. However, you can also get the same
 result using a Python script.
 A script which will run the conversion and save the output
-as 'mdanse_outputs/converted_trajectory.mdt' is located in
-'mdanse_inputs/script1_conversion.py'. Since it uses
+as `mdanse_outputs/converted_trajectory.mdt` is located in
+`mdanse_inputs/script1_conversion.py`. Since it uses
 relative paths to files, you will have to run it
 from mdanse_inputs as the working directory.
 
@@ -145,9 +158,9 @@ text box.
 You can watch the animation of the trajectory, just to see if
 anything unexpected happened in your system during the run.
 Since this is a metallic system, it makes sense to disable
-the 'bonds' option of the visualiser. Press the 'play' button
+the 'bonds' option of the visualiser. Press the play button
 to start the animation. (If you don't have the patience to watch
-every single frame, you can press 'fast forward' instead.)
+every single frame, you can press fast forward instead.)
 
 **Question**: What is the difference between the structures
 in the beginning and at the end of the simulation?
@@ -164,20 +177,22 @@ simulation frames.
 
 We assume that you have already loaded the trajectory into
 the GUI. (If not, go back to the previous step.)
-In the Actions tab, find the analysis called "Temperature".
+In the Actions tab, find the analysis called 'Temperature'.
 It is located in 'Analysis -> Thermodynamics -> Temperature'.
 
 ![temperature_analysis](pictures/gui_actions.png)
+
 You can pick the interpolation
 order used for the determination of velocities. In the script
-'mdanse_inputs/script2_temperature.py' we are using the
+`mdanse_inputs/script2_temperature.py` we are using the
 3rd order interpolation. Run the analysis, saving the output
-in 'mdanse_outputs/temperature.mda'
+in `mdanse_outputs/temperature.mda`.
 
 You can plot the calculated temperature by going to the
 'Plot Creator' tab.
 
 ![plot_creator](pictures/gui_plot_creator.png)
+
 Load the analysis result using the
 'Load .MDA results' button. Now, unfold the contents
 tree in the data view below, and click on the 'temperature'
@@ -195,7 +210,7 @@ of the data point.
 
 ![plot_temperature](pictures/gui_plot.png)
 
-Now, open the simulation log 'md_outputs/simulation_log.txt'
+Now, open the simulation log `md_outputs/simulation_log.txt`
 in any text editor, and check the temperature values logged there.
 The temperature values in the log file were calculated by
 the MD engine based on the velocity values at those specific
@@ -214,7 +229,7 @@ In the Actions tab, go to
 The default values of the input fields should work well
 in this example; the only thing that needs to be set
 is the output filename. In the script we used
-the destination 'mdanse_outputs/root_mean_square_displacement.mda'.
+the destination `mdanse_outputs/root_mean_square_displacement.mda`.
 
 Again, you can observe the progress of the analysis in the
 'Running Jobs' tab. Once the calculation has finished,
@@ -255,6 +270,7 @@ both the output files you just created. Add 'pdf_total'
 data set from each of the two files to the plot and click
 'Plot Data'. In the Plot Holder tab you should now
 see a plot like this one:
+
 ![PDF_plot](pictures/pdf_results.png)
 
 The plot shows that the interatomic distances in the
