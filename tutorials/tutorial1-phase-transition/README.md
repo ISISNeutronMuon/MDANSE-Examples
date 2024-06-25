@@ -99,6 +99,7 @@ You can also find it in the LAMMPS script (and it set to 0.2).
 Go to the 'Converters' tab in the GUI, and pick the LAMMPS
 converter. Now you have to pass the correct inputs to the
 converter.
+
 ![converter](pictures/gui_converter.png)
 The LAMMPS configuration file is
 'md_inputs/structure.txt', and the LAMMPS trajectory file
@@ -112,12 +113,14 @@ If some of the fields are not filled out correctly, the
 GUI will try to make it clear
 by disabling the 'RUN!' button and highlighting the
 wrong entries.
-![entries](pictures/gui_converter_erros.png)
+
+![entries](pictures/gui_converter_errors.png)
 
 Run the conversion
 by pressing the 'RUN!' button in the bottom-right corner.
 You can now see a new entry in the 'Running Jobs' tab,
 showing the progress of the conversion.
+
 ![running](pictures/gui_jobs.png)
 
 For the moment we are going through all the steps
@@ -136,6 +139,7 @@ by the converter in the previous step. You should see the first
 frame of the trajectory in the 3D viewer. Also, basic information
 about the trajectory will be displayed in the bottom-left
 text box.
+
 ![trajectory](pictures/gui_trajectory.png)
 
 You can watch the animation of the trajectory, just to see if
@@ -162,6 +166,7 @@ We assume that you have already loaded the trajectory into
 the GUI. (If not, go back to the previous step.)
 In the Actions tab, find the analysis called "Temperature".
 It is located in 'Analysis -> Thermodynamics -> Temperature'.
+
 ![temperature_analysis](pictures/gui_actions.png)
 You can pick the interpolation
 order used for the determination of velocities. In the script
@@ -171,6 +176,7 @@ in 'mdanse_outputs/temperature.mda'
 
 You can plot the calculated temperature by going to the
 'Plot Creator' tab.
+
 ![plot_creator](pictures/gui_plot_creator.png)
 Load the analysis result using the
 'Load .MDA results' button. Now, unfold the contents
@@ -186,6 +192,7 @@ will be significantly different to the other points. This
 is to be expected, since interpolation will not be accurate
 when there are no values to interpolate between on one side
 of the data point.
+
 ![plot_temperature](pictures/gui_plot.png)
 
 Now, open the simulation log 'md_outputs/simulation_log.txt'
