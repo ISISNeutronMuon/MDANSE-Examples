@@ -1,4 +1,4 @@
-# MDANSE Tutorial: finding a phase transition
+# MDANSE Tutorial: a phase transition
 
 This tutorial will show you:
 * how to convert a LAMMPS trajectory to the MDANSE format,
@@ -26,9 +26,9 @@ of a trajectory.
 
 ## Scenario of this tutorial
 
-We will analyse a trajectory of metallic molydenum. This
+We will analyse a trajectory of metallic molybdenum. This
 trajectory is blatantly not equilibrated, as the thermostat
-used here was intrioducing a temperature ramp.
+used here was set to introduce a temperature ramp.
 
 # Files
 
@@ -42,9 +42,13 @@ These are the input files needed to re-run the MD simulation:
 * Mo5.2.mgpt.parmin - a LAMMPS potential file
 
 ## md_outputs
-These are the _trimmed_ output files:
+These are the _cropped_ output files:
 * trajectory.txt - a LAMMPS custom format trajectory
 * simulation_log.txt - part of LAMMPS log output (thermostat)
+
+The actual simulation was longer than this, but only one
+section of the output is used in this tutorial, allowing
+us to save both time and storage space.
 
 ## mdanse_inputs
 These are the scripts that, when run from the mdanse_inputs
@@ -61,9 +65,15 @@ Also, for people who don't use the GUI, there is a brief comment on
 how 'TextFormat' can replace 'MDAFormat' in the scripts to
 create plain text output of analysis. Please read:
 * about_outputs.txt
+
 for more detail
 
 # The actual tutorial, step by step.
+
+In the text of the tutorial, we will be concentrate on the
+MDANSE GUI. However, the conversion and analysis jobs can
+be run also without the GUI. The scripts for running all
+the parts of the tutorial are provided in md_inputs/script*
 
 ## Convert the trajectory
 
@@ -88,17 +98,27 @@ You can also find it in the LAMMPS script (and it set to 0.2).
 
 Go to the 'Converters' tab in the GUI, and pick the LAMMPS
 converter. Now you have to pass the correct inputs to the
-converter. The LAMMPS configuration file is
+converter.
+![converter](pictures/gui_converter.png)
+The LAMMPS configuration file is
 'md_inputs/structure.txt', and the LAMMPS trajectory file
 is 'md_outputs/trajectory.txt'. Change the LAMMPS unit system
 to 'electron' and time step to '0.2', since these are the
 values you found in the LAMMPS script of this simulation.
 Once you have picked the correct units and time step,
 choose the location of the output file. We are using a generic
-name 'mdanse_outputs/converted_trajectory.mdt'. Run the conversion
+name 'mdanse_outputs/converted_trajectory.mdt'.
+If some of the fields are not filled out correctly, the
+GUI will try to make it clear
+by disabling the 'RUN!' button and highlighting the
+wrong entries.
+![entries](pictures/gui_converter_erros.png)
+
+Run the conversion
 by pressing the 'RUN!' button in the bottom-right corner.
 You can now see a new entry in the 'Running Jobs' tab,
 showing the progress of the conversion.
+![running](pictures/gui_jobs.png)
 
 For the moment we are going through all the steps
 using the MDANSE_GUI. However, you can also get the same
@@ -116,6 +136,7 @@ by the converter in the previous step. You should see the first
 frame of the trajectory in the 3D viewer. Also, basic information
 about the trajectory will be displayed in the bottom-left
 text box.
+![trajectory](pictures/gui_trajectory.png)
 
 You can watch the animation of the trajectory, just to see if
 anything unexpected happened in your system during the run.
@@ -124,7 +145,7 @@ the 'bonds' option of the visualiser. Press the 'play' button
 to start the animation. (If you don't have the patience to watch
 every single frame, you can press 'fast forward' instead.)
 
-**Question**: What is the difference between the structres
+**Question**: What is the difference between the structures
 in the beginning and at the end of the simulation?
 
 ## Calculate the temperature of the system
@@ -141,6 +162,7 @@ We assume that you have already loaded the trajectory into
 the GUI. (If not, go back to the previous step.)
 In the Actions tab, find the analysis called "Temperature".
 It is located in 'Analysis -> Thermodynamics -> Temperature'.
+![temperature_analysis](pictures/gui_actions.png)
 You can pick the interpolation
 order used for the determination of velocities. In the script
 'mdanse_inputs/script2_temperature.py' we are using the
@@ -148,7 +170,9 @@ order used for the determination of velocities. In the script
 in 'mdanse_outputs/temperature.mda'
 
 You can plot the calculated temperature by going to the
-'Plot Creator' tab. Load the analysis result using the
+'Plot Creator' tab.
+![plot_creator](pictures/gui_plot_creator.png)
+Load the analysis result using the
 'Load .MDA results' button. Now, unfold the contents
 tree in the data view below, and click on the 'temperature'
 dataset. It will appear in the box on the right.
@@ -162,6 +186,7 @@ will be significantly different to the other points. This
 is to be expected, since interpolation will not be accurate
 when there are no values to interpolate between on one side
 of the data point.
+![plot_temperature](pictures/gui_plot.png)
 
 Now, open the simulation log 'md_outputs/simulation_log.txt'
 in any text editor, and check the temperature values logged there.
