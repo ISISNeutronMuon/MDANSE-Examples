@@ -1,0 +1,50 @@
+
+# LAMMPS simulation of molybdenum
+
+# Intialization
+units          electron
+dimension      3
+boundary       p p p
+atom_style     full
+
+package omp 0
+suffix omp
+
+atom_modify map array sort 100 2.0
+
+# Atom Definition
+read_data      structure.txt
+replicate      8 8 8
+
+pair_style mgpt
+pair_coeff * * Mo5.2.mgpt.parmin Mo5.2.mgpt.potin 108.0
+
+neighbor        0.5 bin
+neigh_modify    every 10 delay 0 check no
+
+# for electron units, time is given in fs
+timestep       0.2
+compute 1 all pressure thermo_temp
+
+thermo_style   custom step temp etotal c_1[*]
+thermo         100
+
+minimize 1.0e-4 1.0e-6 3 5
+
+velocity       all create 2000.00 4928459 rot yes mom yes dist gaussian
+fix            1 all npt temp 2000.0 2000.0 35.0 iso 0.0 0.0 320.0
+
+# Settings
+run            40000
+
+unfix 1
+fix            1 all npt temp 2000.0 8000.0 35.0 iso 0.0 0.0 320.0
+
+# Output
+# dump             dumpXYZ all xyz 100 trajectory_moly.txt
+dump           dumpForces all custom 100 molybdenum_ramp2000Kto8000K.txt id type x y z
+# dump           dumpCharge all custom 1 dump.charges id type x y z q
+
+# Run the simulation
+run            400000
+
