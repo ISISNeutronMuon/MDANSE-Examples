@@ -11,8 +11,8 @@ at the end of the tutorial.
 
 ## Background
 
-Most of the commonly taught thermodynamics and mechanical
-statistics deals with equilibrium processes. That is,
+Most of the commonly taught thermodynamics and statistical
+mechanics deals with equilibrium processes. That is,
 the underlying assumption of most analysis types in MDANSE
 is that the average quantities calculated for the simulated
 system are constant.
@@ -204,9 +204,8 @@ the current plot in the 'Plot Holder' tab.
 Go to the 'Plot Holder' tab and have a look at the results.
 Most likely the first and last values of the temperature
 will be significantly different to the other points. This
-is to be expected, since interpolation will not be accurate
-when there are no values to interpolate between on one side
-of the data point.
+is to be expected since interpolation will not be accurate
+when values are only available on one side of its data point.
 
 ![plot_temperature](pictures/gui_plot.png)
 
