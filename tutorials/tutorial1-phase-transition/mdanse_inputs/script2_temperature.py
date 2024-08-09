@@ -13,7 +13,7 @@ from MDANSE.Framework.Jobs.IJob import IJob
 parameters = {
     'frames': [0, 1000, 1],                             # frames
     'interpolation_order': 3,                           # velocities
-    'output_files': ('../mdanse_outputs/temperature', ['MDAFormat']),  # output_files
+    'output_files': ('../mdanse_outputs/temperature', ['MDAFormat'], "INFO"),  # output_files
     'trajectory': '../mdanse_outputs/converted_trajectory.mdt',  # trajectory
 }
 
