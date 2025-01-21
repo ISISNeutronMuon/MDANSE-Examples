@@ -1,0 +1,67 @@
+
+# LAMMPS simulation of 36Ar isotope
+
+# Intialization
+units          real
+dimension      3
+boundary       p p p
+atom_style     full
+
+package omp 0
+suffix omp
+
+atom_modify map array sort 100 2.0
+
+# Atom Definition
+read_data      start_structure.txt
+replicate      4 4 4
+
+pair_style lj/cut 12.0
+pair_coeff 1 1 0.237907 3.405
+
+neighbor        0.5 bin
+neigh_modify    every 10 delay 0 check no
+
+timestep       2
+compute 1 all pressure thermo_temp
+
+thermo_style   custom step temp etotal c_1[*]
+thermo         100
+
+minimize 1.0e-4 1.0e-6 3 5
+
+velocity       all create 130.0 4928459 rot yes mom yes dist gaussian
+fix            1 all nvt temp 130.0 130.0 100.0 tchain 1 
+
+# Settings
+
+# Run the simulation
+run 100
+
+minimize 1.0e-4 1.0e-6 3 5
+
+run 100
+
+minimize 1.0e-4 1.0e-6 3 5
+
+run 1500
+
+unfix 1
+fix            1 all nvt temp 130.0 85.0 100.0 tchain 1
+
+
+run 6000
+unfix 1
+fix            1 all nvt temp 85.0 85.0 100.0 tchain 1
+
+run 120000
+
+unfix 1
+fix 1 all nve
+
+reset_timestep 0
+
+dump           dumpTraj all custom 60 argon_traj_120fs_85k.txt id type x y z
+
+run 60000
+
