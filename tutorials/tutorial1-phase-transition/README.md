@@ -1,4 +1,4 @@
-# MDANSE Tutorial: a phase transition
+# MDANSE Tutorial 1: a phase transition
 
 This tutorial will show you:
 * how to convert a LAMMPS trajectory to the MDANSE format,
@@ -82,7 +82,7 @@ create plain text output of analysis. Please read:
 
 # The actual tutorial, step by step.
 
-In the text of the tutorial, we will be concentrate on the
+In the text of the tutorial, we will concentrate on the
 MDANSE GUI. However, the conversion and analysis jobs can
 be run also without the GUI. The scripts for running all
 the parts of the tutorial are provided in `md_inputs/script*`.
@@ -162,7 +162,7 @@ the 'bonds' option of the visualiser. Press the play button
 to start the animation. (If you don't have the patience to watch
 every single frame, you can press fast forward instead.)
 
-**Question**: What is the difference between the structures
+**Question 1**: What is the difference between the structures
 in the beginning and at the end of the simulation?
 
 ## Calculate the temperature of the system
@@ -215,7 +215,7 @@ The temperature values in the log file were calculated by
 the MD engine based on the velocity values at those specific
 simulation steps.
 
-**Question**: The MDANSE temperature values don't match
+**Question 2**: The MDANSE temperature values don't match
 the values in the log. Why?
 
 ## Calculate the Root Mean Square Displacement of atoms
@@ -241,7 +241,7 @@ root mean square displacement of atoms from the
 reference position (which in our analysis was
 the initial position).
 
-**Question**: Based on this plot, the system has
+**Question 3**: Based on this plot, the system has
 melted in the second half of the simulation.
 At what temperature did the melting occur?
 
