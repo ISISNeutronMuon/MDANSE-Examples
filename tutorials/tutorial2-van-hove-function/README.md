@@ -240,5 +240,5 @@ around those sites so the self-part of the van Hove function for long
 times will be a function which described the probability of the atom 
 around the center of its site. For liquid and gaseous system all atoms 
 are free diffuse move across the entire system. For 
-$\lim_{t \rightarrow \infty} G_{\mathrm{s}}(\mathbf{r}, t) = V^-1$ or $N^-1$ i
+$\lim_{t \rightarrow \infty} G_{\mathrm{s}}(\mathbf{r}, t) = V^-1$ or $N^-1$ 
 in MDANSE since it has been normalized.
