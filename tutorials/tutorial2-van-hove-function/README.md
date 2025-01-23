@@ -261,7 +261,7 @@ around those sites so the self-part of the van Hove function for long
 times will be a function which describes the probability of the atom 
 around the center of its site. For liquid and gaseous system all atoms 
 are free to diffuse across the entire system. On average as 
-$t \rightarrow \infty$ all possible distances will be explored. For 
+$t \rightarrow \infty$ all possible distances will be explored. 
 $G_{\mathrm{s}}(\vec{r}, t \rightarrow \infty) \sim V^{-1}$ or $N^{-1}$ 
 in MDANSE since it has been normalized, in the thermodynamic 
 limit $V \rightarrow \infty$ and $N \rightarrow \infty$.
