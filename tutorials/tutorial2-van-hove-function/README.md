@@ -13,16 +13,16 @@ at the end of the tutorial.
 ### Pair distribution function
 The pair distribution function (PDF) provides us with some information about 
 how atoms are distributed in the system. It tells us what the average 
-number of particles will be at a distance $\mathbf{r}$ in volume 
-$\mathrm{d}\mathbf{r}$ from an atom.
+number of particles will be at a distance $\vec{r}$ in volume 
+$\mathrm{d}\vec{r}$ from an atom.
 
 ```math
-n_0 g(\mathbf{r}) \mathrm{d}\mathbf{r} = \mathrm{d}N(\mathbf{r})
+n_0 g(\vec{r}) \mathrm{d}\vec{r} = \mathrm{d}N(\vec{r})
 ```
 
-Here $n_0$ is the bulk density, $g(\mathbf{r})$ is the PDF and 
-$\mathrm{d}N(\mathbf{r})$ is the average number of particles in the 
-volume $\mathrm{d}\mathbf{r}$. The PDF is can be written so that it is a 
+Here $n_0$ is the bulk density, $g(\vec{r})$ is the PDF and 
+$\mathrm{d}N(\vec{r})$ is the average number of particles in the 
+volume $\mathrm{d}\vec{r}$. The PDF is can be written so that it is a 
 function of the distance atoms. In this case the pair distribution 
 function tells us the average number of particles in the shell volume 
 $4 \pi r^2 \mathrm{d}r$ from a distance $r$ of an atom.
@@ -33,11 +33,11 @@ n_0 g(r) 4 \pi r^2 \mathrm{d}r = \mathrm{d}N(r)
 
 Now the PDF $g(r)$ is a function of distance and 
 $\mathrm{d}N(r)$ is the average number of particles in the shell volume 
-$\mathrm{d}\mathbf{r}$. The PDF can be written as a sum of delta 
+$\mathrm{d}\vec{r}$. The PDF can be written as a sum of delta 
 functions. 
 
 ```math
-n_0 g(r) = \frac{1}{4 \pi r^2} \frac{1}{N} \sum_{k \neq j} \langle \delta (r - \vert \mathbf{r}_k - \mathbf{r}_j \vert) \rangle
+n_0 g(r) = \frac{1}{4 \pi r^2} \frac{1}{N} \sum_{k \neq j} \langle \delta (r - \vert \vec{r}_k - \vec{r}_j \vert) \rangle
 ```
 
 **Question 1**: Try to derive this equation. Think about what $N(r)$ is 
@@ -49,14 +49,14 @@ see **MDANSE Tutorial 1: a phase transition**.
 ### The van Hove function
 
 ```math
-n_0 g(\mathbf{r}) = \frac{1}{N} \sum_{k \neq j} \langle \delta (\mathbf{r} - \mathbf{r}_k - \mathbf{r}_j) \rangle
+n_0 g(\vec{r}) = \frac{1}{N} \sum_{k \neq j} \langle \delta (\vec{r} - \vec{r}_k - \vec{r}_j) \rangle
 ```
 
-Is the PDF as a function of $\mathbf{r}$, the van Hove function is closely 
+Is the PDF as a function of $\vec{r}$, the van Hove function is closely 
 related and is also a sum of delta functions.
 
 ```math
-G(\mathbf{r}, t) = \frac{1}{N} \sum_{k j} \langle \delta (\mathbf{r} - \mathbf{r}_k(t) - \mathbf{r}_j(0)) \rangle
+G(\vec{r}, t) = \frac{1}{N} \sum_{k j} \langle \delta (\vec{r} - \vec{r}_k(t) - \vec{r}_j(0)) \rangle
 ```
 
 The PDF gives use some insights into the structure of our system while 
@@ -65,12 +65,14 @@ of the system. The van Hove function can be split into self and distinct
 parts.
 
 ```math
-G_{\mathrm{s}}(\mathbf{r}, t) = \frac{1}{N} \sum_{j} \langle \delta (\mathbf{r} - \mathbf{r}_j(t) - \mathbf{r}_j(0)) \rangle \\
-G_{\mathrm{d}}(\mathbf{r}, t) = \frac{1}{N} \sum_{k \neq j} \langle \delta (\mathbf{r} - \mathbf{r}_k(t) - \mathbf{r}_j(0)) \rangle
+G_{\mathrm{s}}(\vec{r}, t) = \frac{1}{N} \sum_{j} \langle \delta (\vec{r} - \vec{r}_j(t) - \vec{r}_j(0)) \rangle
+```
+```math
+G_{\mathrm{d}}(\vec{r}, t) = \frac{1}{N} \sum_{k \neq j} \langle \delta (\vec{r} - \vec{r}_k(t) - \vec{r}_j(0)) \rangle
 ```
 
 At $t=0$ the distinct-part of the van Hove function is the PDF 
-$G_{\mathrm{d}}(\mathbf{r}, 0) = n_0 g(\mathbf{r})$. At other times
+$G_{\mathrm{d}}(\vec{r}, 0) = n_0 g(\vec{r})$. At other times
 the distinct-part of the van Hove function describes distance between 
 atom at different times.
 
@@ -89,7 +91,7 @@ diffusion of a particle. The above figure shows the distances (red arrows)
 that the self-part of the van Hove function depends on. At $t=0$ there 
 are no arrows since the distance of at atom with itself is zero so that 
 the van Hove function is a delta function 
-$G_{\mathrm{s}}(\mathbf{r}, 0) = \delta(\mathbf{r})$. At $t \neq 0$ the 
+$G_{\mathrm{s}}(\vec{r}, 0) = \delta(\vec{r})$. At $t \neq 0$ the 
 self-part of the van Hove function depends on distances between atoms 
 with itself at different times.
 
@@ -203,7 +205,7 @@ $t \rightarrow \infty$ for solid, liquid and gaseous systems?
 ## Question 1:
 
 ```math
-n_0 g(\mathbf{r}) 4 \pi r^2 \mathrm{d}r = \mathrm{d}N(r)
+n_0 g(r) 4 \pi r^2 \mathrm{d}r = \mathrm{d}N(r)
 ```
 
 The function $N(r)$ is a sum of step functions so that $N(r)$
@@ -214,12 +216,12 @@ the derivative of the step functions which are delta functions each
 centered on the distances away to another atom.
 
 ```math
-\frac{\mathrm{d}N(r)}{\mathrm{d}r} = \frac{1}{N} \sum_{k \neq j} \langle \delta (r - \vert \mathbf{r}_k - \mathbf{r}_j \vert) \rangle
+\frac{\mathrm{d}N(r)}{\mathrm{d}r} = \frac{1}{N} \sum_{k \neq j} \langle \delta (r - \vert \vec{r}_k - \vec{r}_j \vert) \rangle
 ```
 
-Where we have written the sum of delta functions inside $\langle \cdot \rangle$ 
-so that the positions are thermally averaged and average the thermal average
-over all possible atom origins.
+Where we have written the sum of delta functions inside the angle brackets
+so that the positions are thermally averaged and also average the thermal 
+average over all possible atom origins.
 
 ## Question 2:
 
@@ -228,7 +230,7 @@ distinct part of the van Hove function does not change much. So as
 $t \rightarrow \infty$ the van Hove function is more or less the same 
 as it is for any other time. For liquid and gaseous system the situation 
 is quite different since atoms are free to move across the system, so that
-$\lim_{t \rightarrow \infty} G_{\mathrm{d}}(\mathbf{r}, t) = n_0$ or $1$ in MDANSE 
+$G_{\mathrm{d}}(\vec{r}, t \rightarrow \infty) = n_0$ or $1$ in MDANSE 
 since it has been normalized. In other words this results tell us that 
 there is no correlation between the configurations at $t=0$ and $t = \infty$.
 
@@ -240,5 +242,5 @@ around those sites so the self-part of the van Hove function for long
 times will be a function which described the probability of the atom 
 around the center of its site. For liquid and gaseous system all atoms 
 are free diffuse move across the entire system. For 
-$\lim_{t \rightarrow \infty} G_{\mathrm{s}}(\mathbf{r}, t) = V^-1$ or $N^-1$ 
+$\lim_{t \rightarrow \infty} G_{\mathrm{s}}(\vec{r}, t) = V^{-1}$ or $N^{-1}$ 
 in MDANSE since it has been normalized.
