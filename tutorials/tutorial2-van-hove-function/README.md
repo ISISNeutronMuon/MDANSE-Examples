@@ -76,7 +76,9 @@ $G_{\mathrm{d}}(\vec{r}, 0) = n_0 g(\vec{r})$. At other times
 the distinct-part of the van Hove function describes distance between 
 atom at different times.
 
-![vhd_diagram](pictures/vhd_diagram.png)
+<p align="center">
+    <img width="800" src="pictures/vhd_diagram.png"/>
+</p>
 
 The above figure shows the vectors (red arrows) that the distinct-part 
 of the van Hove function depends on. At $t=0$ the van Hove function is simply 
@@ -84,7 +86,9 @@ the PDF. After a some time the blue and green atoms move and the
 distinct-part of the van Hove function now depends on the vectors 
 between atoms at $t=0$ and $t=1$.
 
-![vhs_diagram](pictures/vhs_diagram.png)
+<p align="center">
+    <img width="800" src="pictures/vhs_diagram.png"/>
+</p>
 
 The self-part of the van Hove function is closely related to the 
 diffusion of a particle. The above figure shows the vectors (red arrows) 
@@ -146,7 +150,9 @@ is `md_outputs/argon_traj_120fs_85k.txt`. Change the LAMMPS time step to '2',
 since this is the value found in the LAMMPS script for this simulation. Use 
 the generic output filename `mdanse_outputs/converted_trajectory.mdt`.
 
-![conversion_gui](pictures/conversion_gui.png)
+<p align="center">
+    <img width="800" src="pictures/conversion_gui.png"/>
+</p>
 
 ## Calculate the distinct-part of the van Hove function
 Select the VanHoveFunctionDistinct job leaving the setting to the 
@@ -157,14 +163,18 @@ greater than 1. Set the outputs file to setting to
 for the job to complete, you can look at the 'Running Jobs' tab to check the 
 progress of the job.
 
-![vhd_gui](pictures/vhd_gui.png)
+<p align="center">
+    <img width="800" src="pictures/vhd_gui.png"/>
+</p>
 
 Once complete the results would load up automatically. Go to the 
 plot creator and plot the `g(r,t)_total` result. Go to the plot holder 
 and in the dataset table set the `g(r,t)_total` to have a 'Main axis' for 
 `r` and the 'Use it?' setting to `0,10,20`.
 
-![vhd_plotting_gui](pictures/vhd_plotting_gui.png)
+<p align="center">
+    <img width="800" src="pictures/vhd_plotting_gui.png"/>
+</p>
 
 Note that in MDANSE the van Hove function is spherically averaged and normalized 
 by dividing by $n_0$. This means that for liquid and gas system, 
@@ -197,7 +207,9 @@ $t=0$ the self-part of the van Hove function is a delta function. Set the
 main axis to `r` and Use it? setting to `10,20,30`. You may need to 
 zoom in for the plots towards the smaller distances.
 
-![vhd_plotting_gui](pictures/vhs_plotting_gui.png)
+<p align="center">
+    <img width="800" src="pictures/vhs_plotting_gui.png"/>
+</p>
 
 Similarly to the distinct-part, the self-part of the van Hove function 
 is spherically averaged and is divided by $n_0$. We can see from the above 
