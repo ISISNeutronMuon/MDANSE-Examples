@@ -188,7 +188,7 @@ $t=0$ the self-part of the van Hove function is a delta function. Set
 the main axis to `r` and Use it? setting to `10,20,30`. You may need to 
 zoom in for the plots towards the smaller distances.
 
-![vhd_plotting_gui](pictures/vhd_plotting_gui.png)
+![vhd_plotting_gui](pictures/vhs_plotting_gui.png)
 
 Similarly to the distinct-part, the self-part of the van Hove function 
 is spherically averaged and is divided by $n_0$.
