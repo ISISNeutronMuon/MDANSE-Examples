@@ -23,16 +23,15 @@ n_0 g(\vec{r}) \mathrm{d}\vec{r} = \mathrm{d}N(\vec{r})
 Here $n_0$ is the bulk density, $g(\vec{r})$ is the PDF and 
 $\mathrm{d}N(\vec{r})$ is the average number of particles in the 
 volume $\mathrm{d}\vec{r}$. The PDF is can be written so that it is a 
-function of the vectors between atoms. In this case the pair distribution 
-function tells us the average number of particles in the shell volume 
+function of the distance between atoms. In this case the PDF tells us 
+the average number of particles in the shell volume 
 $4 \pi r^2 \mathrm{d}r$ from a distance $r = \vert \vec{r} \vert$ of an atom.
 
 ```math
 n_0 g(r) 4 \pi r^2 \mathrm{d}r = \mathrm{d}N(r)
 ```
 
-Now the PDF is a function of distance and 
-$\mathrm{d}N(r)$ is the average number of particles in the shell volume 
+Where $\mathrm{d}N(r)$ is the average number of particles in the shell volume 
 $4 \pi r^2 \mathrm{d}r$. The PDF can be written as a sum of delta 
 functions. 
 
@@ -71,9 +70,9 @@ G_{\mathrm{s}}(\vec{r}, t) = \frac{1}{N} \sum_{j} \langle \delta (\vec{r} - \vec
 G_{\mathrm{d}}(\vec{r}, t) = \frac{1}{N} \sum_{k \neq j} \langle \delta (\vec{r} - \vec{r}_k(t) - \vec{r}_j(0)) \rangle
 ```
 
-At $t=0$ the distinct-part of the van Hove function is the PDF 
+At $t=0$ the distinct-part of the van Hove function is the PDF: 
 $G_{\mathrm{d}}(\vec{r}, 0) = n_0 g(\vec{r})$. At other times
-the distinct-part of the van Hove function describes distance between 
+the distinct-part of the van Hove function describes distribution of 
 atom at different times.
 
 <p align="center">
@@ -82,7 +81,7 @@ atom at different times.
 
 The above figure shows the vectors (red arrows) that the distinct-part 
 of the van Hove function depends on. At $t=0$ the van Hove function is simply 
-the PDF. After a some time the blue and green atoms move and the 
+the PDF. After some time the blue and green atoms move and the 
 distinct-part of the van Hove function now depends on the vectors 
 between atoms at $t=0$ and $t=1$.
 
@@ -93,8 +92,8 @@ between atoms at $t=0$ and $t=1$.
 The self-part of the van Hove function is closely related to the 
 diffusion of a particle. The above figure shows the vectors (red arrows) 
 that the self-part of the van Hove function depends on. At $t=0$ there 
-are no arrows since the distance of at atom with itself is zero so that 
-the van Hove function is a delta function 
+are no arrows since the vector of an atom with itself is zero so that 
+the van Hove function will be a delta function 
 $G_{\mathrm{s}}(\vec{r}, 0) = \delta(\vec{r})$. At $t \neq 0$ the 
 self-part of the van Hove function depends on distances between atoms 
 with itself at different times.
@@ -148,29 +147,33 @@ converter. The LAMMPS configuration file is
 `md_inputs/argon_start_structure.txt`, and the LAMMPS trajectory file
 is `md_outputs/argon_traj_120fs_85k.txt`. Change the LAMMPS time step to '2',
 since this is the value found in the LAMMPS script for this simulation. Use 
-the generic output filename `mdanse_outputs/converted_trajectory.mdt`.
+the generic output filename `mdanse_outputs/converted_trajectory.mdt`. Hit 'RUN!' and wait 
+for the job to complete, you can look at the 'Running Jobs' tab to check the 
+progress of the job.
 
 <p align="center">
     <img width="800" src="pictures/conversion_gui.png"/>
 </p>
 
+The trajectory should load up automatically once the conversion has been 
+completed. You can view and examine the trajectory in the 'Trajectories' tab.
+
 ## Calculate the distinct-part of the van Hove function
 Select the VanHoveFunctionDistinct job leaving the setting to the 
 defaults. To speed the calculation up you may want to switch the 
-running mode to multicore and the number of processes to a number 
-greater than 1. Set the outputs file to setting to 
-`mdanse_outputs/vanhovefunctiondistinct.mda`, hit run and wait 
-for the job to complete, you can look at the 'Running Jobs' tab to check the 
-progress of the job.
+`running_mode` to `multicore` and the number of processes to a number 
+greater than `1`. Set the outputs file to setting to 
+`mdanse_outputs/vanhovefunctiondistinct.mda`, hit 'RUN!' and wait 
+for the job to complete.
 
 <p align="center">
     <img width="800" src="pictures/vhd_gui.png"/>
 </p>
 
 Once complete the results would load up automatically. Go to the 
-plot creator and plot the `g(r,t)_total` result. Go to the plot holder 
-and in the dataset table set the `g(r,t)_total` to have a 'Main axis' for 
-`r` and the 'Use it?' setting to `0,10,20`.
+'Plot Creator' and plot the `g(r,t)_total` result. Go to the 'Plot Holder' 
+and in the dataset table set the `g(r,t)_total` to have a 'Main axis' of 
+`r` and the 'Use it?' with a setting of `0,10,20`.
 
 <p align="center">
     <img width="800" src="pictures/vhd_plotting_gui.png"/>
@@ -182,7 +185,7 @@ the van Hove function tends towards 1 for large values of $r$. We can see that
 as time advances, the van Hove function begins to flatten and the 
 correlation hole around each atom begins to fill up. The correlation hole 
 is absence of atoms that exists around each atom due to the short-range 
-repulsive effects between atoms. On the PDF the correlation hole is 
+repulsion between atoms. On the PDF the correlation hole is 
 the part at short distances with values of zero. As time progresses, 
 the atoms move and this allows other atoms to move into the correlation hole.
 
@@ -191,21 +194,21 @@ Hove function is the PDF. What does the van Hove function become as
 $t \rightarrow \infty$ for solid, liquid and gaseous systems?
 
 ## Calculate the self-part of the van Hove function
-Select the VanHoveFunctionSelf job leaving the setting to the default 
-except for the correlation frames which we will set to 31. This will 
+Select the VanHoveFunctionSelf job and leave the settings to the defaults 
+except for the correlation frames which we will set to `31`. This will 
 mean that there will have 31 time steps of the correlation function, the 
 number configurations each time step of the correlation function will be 
 averaged over will be 971 = 1001 - 30 + 1. The greater number of configurations 
-that the correlation function is averaged over will reduce the overall 
-noise seen in our plots. Set the outputs file to saving 
-the output to `mdanse_outputs/vanhovefunctionself.mda` and hit run. 
+that the correlation function is averaged over will lead to an overall 
+reduction in the noise of the plots. Set the outputs file setting to 
+`mdanse_outputs/vanhovefunctionself.mda` and hit 'RUN!'. 
 
-Go to the 'Plot Creator' and plot the `g(r,t)_total` result. Go to the 'Plot 
-Holder' tab and in the dataset table set the main axis of `g(r,t)_total` to `r`. 
+Go to the 'Plot Creator' tab and plot the `g(r,t)_total` result. Go to the 'Plot 
+Holder' tab and in the dataset table set the 'Main axis' of `g(r,t)_total` to `r`. 
 Notice that for $t=0$ you get one large value near zero, remember that at 
 $t=0$ the self-part of the van Hove function is a delta function. Set the 
-main axis to `r` and Use it? setting to `10,20,30`. You may need to 
-zoom in for the plots towards the smaller distances.
+'Main axis' to `r` and 'Use it?' setting to `10,20,30`. You may need to 
+zoom in for the plots towards smaller distances.
 
 <p align="center">
     <img width="800" src="pictures/vhs_plotting_gui.png"/>
@@ -214,7 +217,9 @@ zoom in for the plots towards the smaller distances.
 Similarly to the distinct-part, the self-part of the van Hove function 
 is spherically averaged and is divided by $n_0$. We can see from the above 
 plots the distributions of the atoms from its initial position at 10, 20 and 
-30 time steps from $t=0$.
+30 time steps from $t=0$. At greater times we see the van Hove function become 
+wider corresponding to the atoms bring found at greater distances from 
+it original position as it diffuses across the system.
 
 **Question 3**: What does the self-part of the van Hove function become as 
 $t \rightarrow \infty$ for solid, liquid and gaseous systems?
@@ -245,8 +250,8 @@ average over all possible atom origins.
 
 ## Question 2:
 
-For a solid systems, atoms are fixed in specific sites so the 
-distinct part of the van Hove function does not change much. As 
+For solid systems, atoms are fixed in specific sites so the 
+distinct-part of the van Hove function does not change much. As 
 $t \rightarrow \infty$, the van Hove function is more or less the same 
 as it is for any other time. For liquid and gaseous systems the situation 
 is quite different since atoms are free to move across the system, 
