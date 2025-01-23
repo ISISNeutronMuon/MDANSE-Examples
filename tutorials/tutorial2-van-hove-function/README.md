@@ -233,7 +233,7 @@ Therefore, $\mathrm{d}N(r) = N(r + \mathrm{d}r) - N(r)$ and $\mathrm{d}N(r)$
 will be the average number of particles in the shell volume between $r$ 
 and $r + \mathrm{d}r$. The derivative of $N(r)$ will be the derivative 
 of the step functions which are delta functions each centered on the 
-distances away to other atoms.
+distances from the other atoms.
 
 ```math
 \frac{\mathrm{d}N(r)}{\mathrm{d}r} = \frac{1}{N} \sum_{k \neq j} \langle \delta (r - \vert \vec{r}_k - \vec{r}_j \vert) \rangle
@@ -249,16 +249,16 @@ For a solid systems, atoms are fixed in specific sites so the
 distinct part of the van Hove function does not change much. As 
 $t \rightarrow \infty$, the van Hove function is more or less the same 
 as it is for any other time. For liquid and gaseous systems the situation 
-is quite different since atoms are free to move across the system, so that
+is quite different since atoms are free to move across the system, 
 $G_{\mathrm{d}}(\vec{r}, t \rightarrow \infty) \sim n_0$ or $1$ in MDANSE 
 since it has been normalized. In other words, this results tell us that 
 there is no correlation between the configurations at $t=0$ and $t = \infty$.
 
 ## Question 3:
 
-For a solid, each atom will be fixed at specific sites. They oscillate 
-around those sites so the self-part of the van Hove function for long 
-times will be a function which describes the probability of the atom 
+For a solid, each atom will be fixed at specific sites. They will oscillate 
+around those sites so that the self-part of the van Hove function at large 
+times will be a function which describes the probability of the atoms 
 around the center of its site. For liquid and gaseous system all atoms 
 are free to diffuse across the entire system. On average as 
 $t \rightarrow \infty$ all possible distances will be explored. 
