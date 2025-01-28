@@ -13,8 +13,8 @@ at the end of the tutorial.
 ### Pair distribution function
 The pair distribution function (PDF) provides us with some information about 
 how atoms are distributed in the system. It tells us what the average 
-number of particles will be at a position $\vec{r}$ in volume 
-$\mathrm{d}\vec{r}$ from an atom.
+number of particles will be in volume $\mathrm{d}\vec{r}$ at a position $\vec{r}$
+from an atom.
 
 ```math
 n_0 g(\vec{r}) \mathrm{d}\vec{r} = \mathrm{d}N(\vec{r})
@@ -22,16 +22,16 @@ n_0 g(\vec{r}) \mathrm{d}\vec{r} = \mathrm{d}N(\vec{r})
 
 Here $n_0$ is the bulk density, $g(\vec{r})$ is the PDF and 
 $\mathrm{d}N(\vec{r})$ is the average number of particles in the 
-volume $\mathrm{d}\vec{r}$. The PDF is can be written so that it is a 
-function of the distance between atoms. In this case the PDF tells us 
+volume $\mathrm{d}\vec{r}$. The PDF can be written so that it is a 
+function of the distance between atoms. In this case, the PDF tells us 
 the average number of particles in the shell volume 
-$4 \pi r^2 \mathrm{d}r$ from a distance $r = \vert \vec{r} \vert$ of an atom.
+$4 \pi r^2 \mathrm{d}r$ at a distance $r = \vert \vec{r} \vert$ from an atom.
 
 ```math
 n_0 g(r) 4 \pi r^2 \mathrm{d}r = \mathrm{d}N(r)
 ```
 
-Where $\mathrm{d}N(r)$ is the average number of particles in the shell volume 
+where $\mathrm{d}N(r)$ is the average number of particles in the shell volume 
 $4 \pi r^2 \mathrm{d}r$. The PDF can be written as a sum of delta 
 functions. 
 
@@ -51,14 +51,14 @@ see **MDANSE Tutorial 1: a phase transition**.
 n_0 g(\vec{r}) = \frac{1}{N} \sum_{k \neq j} \langle \delta (\vec{r} - \vec{r}_k - \vec{r}_j) \rangle
 ```
 
-Is the PDF as a function of $\vec{r}$, the van Hove function is closely 
+is the PDF as a function of $\vec{r}$. The van Hove function is closely 
 related and can also be written as a sum of delta functions.
 
 ```math
 G(\vec{r}, t) = \frac{1}{N} \sum_{k j} \langle \delta (\vec{r} - \vec{r}_k(t) - \vec{r}_j(0)) \rangle
 ```
 
-The PDF gives use some insights into the structure of our system while 
+The PDF gives us some insights into the structure of our system while 
 the van Hove function gives us insights into the structure and dynamics 
 of the system. The van Hove function can be split into self and distinct 
 parts.
@@ -95,8 +95,8 @@ that the self-part of the van Hove function depends on. At $t=0$ there
 are no arrows since the vector of an atom with itself is zero so that 
 the van Hove function will be a delta function 
 $G_{\mathrm{s}}(\vec{r}, 0) = \delta(\vec{r})$. At $t \neq 0$ the 
-self-part of the van Hove function depends on distances between atoms 
-with itself at different times.
+self-part of the van Hove function depends on distances between
+the same atom's positions at different times.
 
 ## Scenario of this tutorial
 
@@ -159,8 +159,8 @@ The trajectory should load up automatically once the conversion has been
 completed. You can view and examine the trajectory in the 'Trajectories' tab.
 
 ## Calculate the distinct-part of the van Hove function
-Select the VanHoveFunctionDistinct job leaving the setting to the 
-defaults. To speed the calculation up you may want to switch the 
+Select the VanHoveFunctionDistinct job, leaving all settings at their 
+default values. To speed the calculation up you may want to switch the 
 `running_mode` to `multicore` and the number of processes to a number 
 greater than `1`. Set the outputs file to setting to 
 `mdanse_outputs/vanhovefunctiondistinct.mda`, hit 'RUN!' and wait 
@@ -170,7 +170,7 @@ for the job to complete.
     <img width="800" src="pictures/vhd_gui.png"/>
 </p>
 
-Once complete the results would load up automatically. Go to the 
+Once complete, the results would load up automatically. Go to the 
 'Plot Creator' and plot the `g(r,t)_total` result. Go to the 'Plot Holder' 
 and in the dataset table set the `g(r,t)_total` to have a 'Main axis' of 
 `r` and the 'Use it?' with a setting of `0,10,20`.
@@ -181,7 +181,7 @@ and in the dataset table set the `g(r,t)_total` to have a 'Main axis' of
 
 Note that in MDANSE the van Hove function is spherically averaged and normalized 
 by dividing by $n_0$. This means that for liquid and gas system, 
-the van Hove function tends towards 1 for large values of $r$. We can see that 
+the van Hove function tends towards 1 for large values of $r$. We can see that, 
 as time advances, the van Hove function begins to flatten and the 
 correlation hole around each atom begins to fill up. The correlation hole 
 is absence of atoms that exists around each atom due to the short-range 
@@ -194,18 +194,18 @@ Hove function is the PDF. What does the van Hove function become as
 $t \rightarrow \infty$ for solid, liquid and gaseous systems?
 
 ## Calculate the self-part of the van Hove function
-Select the VanHoveFunctionSelf job and leave the settings to the defaults 
-except for the correlation frames which we will set to `31`. This will 
-mean that there will have 31 time steps of the correlation function, the 
-number configurations each time step of the correlation function will be 
-averaged over will be 971 = 1001 - 30 + 1. The greater number of configurations 
-that the correlation function is averaged over will lead to an overall 
+Select the VanHoveFunctionSelf job and leave the inputs set to the defaults 
+except for the correlation frames which we will set to `31`. This
+means that there will be 31 time steps of the correlation function, the 
+number of configurations each time step of the correlation function will be 
+averaged over will be 971 = 1001 - 30 + 1. When the correlation function is
+averaged over as greater number of configurations, it will lead to an overall 
 reduction in the noise of the plots. Set the outputs file setting to 
 `mdanse_outputs/vanhovefunctionself.mda` and hit 'RUN!'. 
 
 Go to the 'Plot Creator' tab and plot the `g(r,t)_total` result. Go to the 'Plot 
 Holder' tab and in the dataset table set the 'Main axis' of `g(r,t)_total` to `r`. 
-Notice that for $t=0$ you get one large value near zero, remember that at 
+Notice that for $t=0$ you get one large value near zero; remember that at 
 $t=0$ the self-part of the van Hove function is a delta function. Set the 
 'Main axis' to `r` and 'Use it?' setting to `10,20,30`. You may need to 
 zoom in for the plots towards smaller distances.
@@ -217,8 +217,8 @@ zoom in for the plots towards smaller distances.
 Similarly to the distinct-part, the self-part of the van Hove function 
 is spherically averaged and is divided by $n_0$. We can see from the above 
 plots the distributions of the atoms from its initial position at 10, 20 and 
-30 time steps from $t=0$. At greater times we see the van Hove function become 
-wider corresponding to the atoms bring found at greater distances from 
+30 time steps from $t=0$. At greater times we see the van Hove function becomes 
+wider, corresponding to the atom being found at greater distances from 
 it original position as it diffuses across the system.
 
 **Question 3**: What does the self-part of the van Hove function become as 
@@ -244,19 +244,19 @@ distances from the other atoms.
 \frac{\mathrm{d}N(r)}{\mathrm{d}r} = \frac{1}{N} \sum_{k \neq j} \langle \delta (r - \vert \vec{r}_k - \vec{r}_j \vert) \rangle
 ```
 
-Where we have written the sum of delta functions inside the angle brackets
+where we have written the sum of delta functions inside the angle brackets
 so that the positions are thermally averaged and also average the thermal 
 average over all possible atom origins.
 
 ## Question 2:
 
-For solid systems, atoms are fixed in specific sites so the 
+For solid systems, atoms are fixed at specific sites so the 
 distinct-part of the van Hove function does not change much. As 
 $t \rightarrow \infty$, the van Hove function is more or less the same 
 as it is for any other time. For liquid and gaseous systems the situation 
 is quite different since atoms are free to move across the system, 
 $G_{\mathrm{d}}(\vec{r}, t \rightarrow \infty) \sim n_0$ or $1$ in MDANSE 
-since it has been normalized. In other words, this results tell us that 
+since it has been normalized. In other words, these results tell us that 
 there is no correlation between the configurations at $t=0$ and $t = \infty$.
 
 ## Question 3:
