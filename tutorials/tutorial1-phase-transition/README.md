@@ -1,4 +1,4 @@
-# MDANSE Tutorial: a phase transition
+# MDANSE Tutorial 1: a phase transition
 
 This tutorial will show you:
 * how to convert a LAMMPS trajectory to the MDANSE format,
@@ -82,7 +82,7 @@ create plain text output of analysis. Please read:
 
 # The actual tutorial, step by step.
 
-In the text of the tutorial, we will be concentrate on the
+In the text of the tutorial, we will concentrate on the
 MDANSE GUI. However, the conversion and analysis jobs can
 be run also without the GUI. The scripts for running all
 the parts of the tutorial are provided in `md_inputs/script*`.
@@ -112,7 +112,9 @@ Go to the 'Converters' tab in the GUI, and pick the LAMMPS
 converter. Now you have to pass the correct inputs to the
 converter.
 
-![converter](pictures/gui_converter.png)
+<p align="center">
+    <img width="800" src="pictures/gui_converter.png"/>
+</p>
 
 The LAMMPS configuration file is
 `md_inputs/structure.txt`, and the LAMMPS trajectory file
@@ -127,14 +129,18 @@ GUI will try to make it clear
 by disabling the 'RUN!' button and highlighting the
 wrong entries.
 
-![entries](pictures/gui_converter_errors.png)
+<p align="center">
+    <img width="800" src="pictures/gui_converter_errors.png"/>
+</p>
 
 Run the conversion
 by pressing the 'RUN!' button in the bottom-right corner.
 You can now see a new entry in the 'Running Jobs' tab,
 showing the progress of the conversion.
 
-![running](pictures/gui_jobs.png)
+<p align="center">
+    <img width="800" src="pictures/gui_jobs.png"/>
+</p>
 
 For the moment we are going through all the steps
 using the MDANSE_GUI. However, you can also get the same
@@ -153,7 +159,9 @@ frame of the trajectory in the 3D viewer. Also, basic information
 about the trajectory will be displayed in the bottom-left
 text box.
 
-![trajectory](pictures/gui_trajectory.png)
+<p align="center">
+    <img width="800" src="pictures/gui_trajectory.png"/>
+</p>
 
 You can watch the animation of the trajectory, just to see if
 anything unexpected happened in your system during the run.
@@ -162,7 +170,7 @@ the 'bonds' option of the visualiser. Press the play button
 to start the animation. (If you don't have the patience to watch
 every single frame, you can press fast forward instead.)
 
-**Question**: What is the difference between the structures
+**Question 1**: What is the difference between the structures
 in the beginning and at the end of the simulation?
 
 ## Calculate the temperature of the system
@@ -180,7 +188,9 @@ the GUI. (If not, go back to the previous step.)
 In the Actions tab, find the analysis called 'Temperature'.
 It is located in 'Analysis -> Thermodynamics -> Temperature'.
 
-![temperature_analysis](pictures/gui_actions.png)
+<p align="center">
+    <img width="800" src="pictures/gui_actions.png"/>
+</p>
 
 You can pick the interpolation
 order used for the determination of velocities. In the script
@@ -191,7 +201,9 @@ in `mdanse_outputs/temperature.mda`.
 You can plot the calculated temperature by going to the
 'Plot Creator' tab.
 
-![plot_creator](pictures/gui_plot_creator.png)
+<p align="center">
+    <img width="800" src="pictures/gui_plot_creator.png"/>
+</p>
 
 Load the analysis result using the
 'Load .MDA results' button. Now, unfold the contents
@@ -207,7 +219,9 @@ will be significantly different to the other points. This
 is to be expected since interpolation will not be accurate
 when values are only available on one side of its data point.
 
-![plot_temperature](pictures/gui_plot.png)
+<p align="center">
+    <img width="800" src="pictures/gui_plot.png"/>
+</p>
 
 Now, open the simulation log `md_outputs/simulation_log.txt`
 in any text editor, and check the temperature values logged there.
@@ -215,7 +229,7 @@ The temperature values in the log file were calculated by
 the MD engine based on the velocity values at those specific
 simulation steps.
 
-**Question**: The MDANSE temperature values don't match
+**Question 2**: The MDANSE temperature values don't match
 the values in the log. Why?
 
 ## Calculate the Root Mean Square Displacement of atoms
@@ -241,7 +255,7 @@ root mean square displacement of atoms from the
 reference position (which in our analysis was
 the initial position).
 
-**Question**: Based on this plot, the system has
+**Question 3**: Based on this plot, the system has
 melted in the second half of the simulation.
 At what temperature did the melting occur?
 
@@ -270,7 +284,9 @@ data set from each of the two files to the plot and click
 'Plot Data'. In the Plot Holder tab you should now
 see a plot like this one:
 
-![PDF_plot](pictures/pdf_results.png)
+<p align="center">
+    <img width="800" src="pictures/pdf_results.png"/>
+</p>
 
 The plot shows that the interatomic distances in the
 liquid molybdenum are more evenly spread compared to
