@@ -35,7 +35,7 @@ at a time $0$. $F_{\mathrm{inc}}(\vec{q}, t)$ is the self intermediate scatterin
 function, $S_{\mathrm{inc}}(\vec{q}, \omega)$ is the self dynamic structure 
 factor and $\vec{q}$ and $\omega$ are the momentum and energy changes of the 
 neutron after the scattering event respectively. If a neutron 
-has an initial and final momentum of $\vec{k}_{\mathrm{i}}$ and $\vec{k}_{\mathrm{f}}$ 
+has an initial and final momentum of $\vec{k_{\mathrm{i}}}$ and $\vec{k_{\mathrm{f}}}$ 
 with an initial and final energy of $E_{\mathrm{i}}$ and $E_{\mathrm{f}}$
 then
 
@@ -50,17 +50,17 @@ and
 There are a number of ways to show how the self dynamic structure 
 factor is related to the diffusion constant of a particle. We will start 
 by rewriting the self intermediate scattering function so that is an exponential 
-of a series of cumulants of $\vec{d}_{j}(t) = \vec{q} \cdot [r_{j}(t) - r_{j}(0)]$ 
+of a series of cumulants of $\vec{d_{j}}(t) = \vec{q} \cdot \[r_{j}(t) - r_{j}(0)\]$ 
 which is the displacement of atom $j$ after a time $t$ along the vector $\vec{q}$.
 ```math
 F_{\mathrm{inc}}(\vec{q}, t) = \frac{1}{N} \sum_{j} \exp [-\frac{q^2}{2} \langle d^{2}_{j}(t) \rangle + \cdots ]
 ```
 The Gaussian approximation is obtained by taking only the leading term of the 
-exponent: $\langle d^{2}_{j}(t) \rangle$ which is the 2nd moment 
-of $\vec{d}_{j}(t)$. For an isotropic system, 2nd moment is related to 
+exponent: $\langle d_{j}^{2}(t) \rangle$ which is the 2nd moment 
+of $\vec{d_{j}}(t)$. For an isotropic system, 2nd moment is related to 
 the mean squared displacement (MSD) of the atom $j$ and diffusion constant.
 ```math
-$\langle d^{2}_{j}(t) \rangle = 3 \mathrm{MSD}_{j}(t) = 2 D_{j} \vert t \vert$
+\langle d^{2}_{j}(t) \rangle = 3 \mathrm{MSD}_{j}(t) = 2 D_{j} \vert t \vert
 ```
 We therefore can rewrite the intermediate scattering function with the 
 Gaussian approximation for isotropic systems as
