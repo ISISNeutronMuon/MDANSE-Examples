@@ -74,7 +74,7 @@ Fourier transforming the intermediate scattering function we can obtain
 expression of the van Hove function and the DISF in terms of the diffusion 
 constants
 ```math
-G_{\mathrm{s}}(\vec{r}, t) = \left( \frac{1}{4 \pi D \vert t \vert} \right)^{3/2} \exp\left( - \frac{r^2}{4 D \vert t \vert} \right).
+G_{\mathrm{s}}(\vec{r}, t) = \left( \frac{1}{4 \pi D \vert t \vert} \right)^{3/2} \exp\left( - \frac{r^2}{4 D \vert t \vert} \right)
 ```
 and
 ```math
@@ -87,4 +87,5 @@ $\hbar \gamma(q)$ of the QENS peak as a function of $q^2$.
 
 # Further reading
 Boothroyd, A. T. (2020). Principles of Neutron Scattering from Condensed Matter. OUP Oxford.
+
 Boon, J. P., Yip, S. (1991). Molecular Hydrodynamics. Dover Publications.
