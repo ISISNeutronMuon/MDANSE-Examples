@@ -17,7 +17,7 @@ parameters = {
     'lammps_units': 'real',                             # LAMMPS unit system
     'n_steps': '0',                                     # Number of time steps (0 for automatic detection)
     'output_files': ('../mdanse_outputs/converted_trajectory', 64, 128, 'gzip', 'INFO'),  # MDANSE trajectory (filename, format)
-    'time_step': '1.0',                                 # Time step (lammps units, depends on unit system)
+    'time_step': '2.0',                                 # Time step (lammps units, depends on unit system)
     'trajectory_file': '../md_outputs/argon_traj_120fs_85k.txt',  # LAMMPS trajectory file
     'trajectory_format': 'custom',                      # LAMMPS trajectory format
 }
