@@ -46,7 +46,7 @@ and
 
 There are a number of ways to show how the DISF is related to the 
 diffusion constant of a particle. We will start by rewriting the incoherent 
-intermediate scattering function so that is an exponential 
+intermediate scattering function so that it is an exponential 
 of the cumulants of $\vec{d_{j}}(t) = \vec{q} \cdot \[r_{j}(t) - r_{j}(0)\]$ 
 which is the displacement of atom $j$ along $\vec{q}$.
 ```math
@@ -60,13 +60,14 @@ the mean squared displacement (MSD)
 \langle d^{2}_{j}(t) \rangle = \mathrm{MSD}_{j}(t) / 3.
 ```
 
-Assuming that the atom or molecules undergoes brownian motion, the MSD of 
-atom or molecule will be proportional to time
+This approximation is exact for a system which undergoes Fickian diffusion 
+(normal diffusion) where the MSD is linear in time so that
 ```math
 \mathrm{MSD}(t) = 6 D \vert t \vert
 ```
-where $D$ is diffusion constant. So for a monoatomic isotropic system, 
-we can rewrite the intermediate scattering function with the Gaussian approximation as 
+where $D$ is diffusion constant, the higher order cumulants are zero. So 
+for a monoatomic isotropic system, we can rewrite the intermediate scattering 
+function with the Gaussian approximation as 
 ```math
 F_{\mathrm{inc}}(\vec{q}, t) = \exp(- D q^2 \vert t \vert ),
 ```
@@ -84,6 +85,49 @@ here $S_{\mathrm{inc}}(\vec{q}, t)$ is a Lorentzian function with a
 half-width at half maximum of $\hbar \gamma(q)$ and $\Gamma(q) = D q^2$.
 The diffusion constant of can be obtained from a QENS experiment by measuring 
 $\hbar \gamma(q)$ of the QENS peak as a function of $q^2$.
+
+**Question 1**: Another example where the Gaussian approximation is 
+exact is for a free particle, what is $\langle d^{2}_{j}(t) \rangle$ for 
+this system and what is the van Hove function, the intermediate scattering 
+function and dynamic structure factor for this system?
+
+
+
+## Scenario of this tutorial
+
+First we will have a look at the differences in the scattering functions 
+and dynamic structure factors when the Gaussian approximation is applied 
+for a liquid argon system.
+
+
+# Answers
+
+## Question 1:
+
+For an isotropic system of free particles
+```math
+\langle d^{2}_{j}(t) \rangle = \frac{1}{3} \langle \vert \vec{r}(t) - \vec{r}(0) \vert^2 \rangle 
+```
+additionally their velocities will follow the Maxwell-Boltzmann distribution. 
+We must average the displacements over this distribution. By noting that 
+$\vert \vec{r}(t) - \vec{r}(0) \vert^2 = (v t)^2$ where $v$ is the speed of a particle, 
+```math
+\langle d^{2}_{j}(t) \rangle = \frac{1}{3} \langle \vert \vec{r}(t) - \vec{r}(0) \vert^2 \rangle 
+```
+we can then integrate $(v t)^2$ over the Maxwell-Boltzmann distribution so that
+```math
+\langle d^{2}_{j}(t) \rangle = \frac{t^2}{3} \int_{0}^{\inf} \mathrm{d}v \, v^2 f(v)
+```
+where
+```math
+f(v) = \left( \frac{m}{2\pi k_{\mathrm{B}} T}\right)^{3 / 2} 4 \pi v^2 \exp\left(- \frac{m v^2}{2 k_{\mathrm{B}} T} \right)
+```
+is the Maxwell-Boltzmann distribution. Solving this gives the following result
+```math
+\langle d^{2}_{j}(t) \rangle = \frac{1}{2} (v_{\mathrm{p}} t)^2
+```
+where $v_{\mathrm{p}} = \sqrt(3k_{\mathrm{B}} T / M)$ is the most probable 
+speed and $M$ is its mass.
 
 # Further reading
 Boothroyd, A. T. (2020). Principles of Neutron Scattering from Condensed Matter. OUP Oxford.
