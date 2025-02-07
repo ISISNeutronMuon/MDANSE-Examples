@@ -124,13 +124,13 @@ We can now plug this result into the Gaussian approximation of the intermediate
 function and Fourier transform to obtain the van Hove and dynamic structure 
 factor for a system of free particles.
 ```math
-G_{\mathrm{s}}(\vec{r}, t) = \left( \frac{1}{\pi v_{\mathrm{p}^2 t^2} \right)^{3/2} \exp\left[ - \left(\frac{r}{v_{\mathrm{p} t}\right)^2 \right]
+G_{\mathrm{s}}(\vec{r}, t) = \left( \frac{1}{\pi v_{\mathrm{p}}^2 t^2} \right)^{3/2} \exp\left[ - \left(\frac{r}{v_{\mathrm{p}} t}\right)^2 \right]
 ```
 ```math
-F_{\mathrm{inc}}(\vec{q}, t) =  \exp\left[ - \frac{1}{2} (q v_{\mathrm{p} t)^2 \right]
+F_{\mathrm{inc}}(\vec{q}, t) =  \exp\left[ - \frac{1}{2} (q v_{\mathrm{p}} t)^2 \right]
 ```
 ```math
-S_{\mathrm{inc}}(\vec{q}, t) = \frac{1}{\sqrt{2 \pi} q v_{\mathrm{p}} \exp\left[ \frac{1}{2}\left(\frac{\omega}{q v_{\mathrm{p}}\right)^2 \right]
+S_{\mathrm{inc}}(\vec{q}, t) = \frac{1}{\sqrt{2 \pi} q v_{\mathrm{p}}} \exp\left[ \frac{1}{2}\left(\frac{\omega}{q v_{\mathrm{p}}}\right)^2 \right]
 ```
 
 
