@@ -54,26 +54,20 @@ F_{\mathrm{inc}}(\vec{q}, t) = \frac{1}{N} \sum_{j} \exp [-\frac{q^2}{2} \langle
 ```
 The Gaussian approximation is obtained by taking only the leading term of the 
 exponent: $\langle d_{j}^{2}(t) \rangle$ which is the 2nd moment 
-of $\vec{d_{j}}(t)$. The 2nd moment is related to 
-the mean squared displacement (MSD)
-```math
-\langle d^{2}_{j}(t) \rangle = \mathrm{MSD}_{j}(t) / 3.
-```
-
-This approximation is exact for a system which undergoes Fickian diffusion 
+of $\vec{d_{j}}(t)$. This approximation is exact for a system which undergoes Fickian diffusion 
 (normal diffusion) where the MSD is linear in time so that
 ```math
-\mathrm{MSD}(t) = 6 D \vert t \vert
+\langle d^{2}_{j}(t) \rangle = \mathrm{MSD}_{j}(t) = 6 D_{j} \vert t \vert
 ```
-where $D$ is diffusion constant, the higher order cumulants are zero. So 
-for a monoatomic isotropic system, we can rewrite the intermediate scattering 
+where $D_j$ is diffusion constant of atom $j$, the higher order cumulants are zero. So 
+for an isotropic monoatomic system, we can rewrite the intermediate scattering 
 function with the Gaussian approximation as 
 ```math
 F_{\mathrm{inc}}(\vec{q}, t) = \exp(- D q^2 \vert t \vert ),
 ```
 Fourier transforming the intermediate scattering function we can obtain 
 expression of the van Hove function and the DISF in terms of the diffusion 
-constants
+constant
 ```math
 G_{\mathrm{s}}(\vec{r}, t) = \left( \frac{1}{4 \pi D \vert t \vert} \right)^{3/2} \exp\left( - \frac{r^2}{4 D \vert t \vert} \right)
 ```
@@ -87,10 +81,10 @@ The diffusion constant of can be obtained from a QENS experiment by measuring
 $\hbar \gamma(q)$ of the QENS peak as a function of $q^2$.
 
 **Question 1**: Another example where the Gaussian approximation is 
-exact is for a free particle, what is $\langle d^{2}_{j}(t) \rangle$ for 
-this system and what is the van Hove function, the intermediate scattering 
-function and dynamic structure factor for this system?
-
+exact is for a system of free particles. What is $\langle d^{2}_{j}(t) \rangle$ for 
+this system given that the particles velocities are distributed following 
+the Maxwell-Boltzmann distribution? Finally, what is the van Hove function, 
+the intermediate scattering function and dynamic structure factor? 
 
 
 ## Scenario of this tutorial
@@ -106,28 +100,39 @@ for a liquid argon system.
 
 For an isotropic system of free particles
 ```math
-\langle d^{2}_{j}(t) \rangle = \frac{1}{3} \langle \vert \vec{r}(t) - \vec{r}(0) \vert^2 \rangle 
+\langle d^{2}_{j}(t) \rangle = \frac{1}{3} \langle \vert \vec{r}(t) - \vec{r}(0) \vert^2 \rangle.
 ```
-additionally their velocities will follow the Maxwell-Boltzmann distribution. 
-We must average the displacements over this distribution. By noting that 
-$\vert \vec{r}(t) - \vec{r}(0) \vert^2 = (v t)^2$ where $v$ is the speed of a particle, 
+Given their velocities will follow the Maxwell-Boltzmann distribution,
+we must average the displacements over this distribution. By noting that 
+$\vert \vec{r}(t) - \vec{r}(0) \vert^2 = (v t)^2$ where $v$ is the speed for a given
+particle we can then integrate $(v t)^2$ over the Maxwell-Boltzmann distribution so that
 ```math
-\langle d^{2}_{j}(t) \rangle = \frac{1}{3} \langle \vert \vec{r}(t) - \vec{r}(0) \vert^2 \rangle 
-```
-we can then integrate $(v t)^2$ over the Maxwell-Boltzmann distribution so that
-```math
-\langle d^{2}_{j}(t) \rangle = \frac{t^2}{3} \int_{0}^{\inf} \mathrm{d}v \, v^2 f(v)
+\langle d^{2}_{j}(t) \rangle = \frac{t^2}{3} \int_{0}^{\infty} \mathrm{d}v \, v^2 f(v)
 ```
 where
 ```math
 f(v) = \left( \frac{m}{2\pi k_{\mathrm{B}} T}\right)^{3 / 2} 4 \pi v^2 \exp\left(- \frac{m v^2}{2 k_{\mathrm{B}} T} \right)
 ```
-is the Maxwell-Boltzmann distribution. Solving this gives the following result
+is the Maxwell-Boltzmann distribution. Solving the above we obtain the following result
 ```math
 \langle d^{2}_{j}(t) \rangle = \frac{1}{2} (v_{\mathrm{p}} t)^2
 ```
-where $v_{\mathrm{p}} = \sqrt(3k_{\mathrm{B}} T / M)$ is the most probable 
-speed and $M$ is its mass.
+where $v_{\mathrm{p}} = \sqrt{3k_{\mathrm{B}} T / M}$ is the most probable 
+speed and $M$ is the mass of the particles.
+
+We can now plug this result into the Gaussian approximation of the intermediate 
+function and Fourier transform to obtain the van Hove and dynamic structure 
+factor for a system of free particles.
+```math
+G_{\mathrm{s}}(\vec{r}, t) = \left( \frac{1}{\pi v_0^2 t^2} \right)^{3/2} \exp\left[ - \left(\frac{r}{v_0 t}\right)^2 \right]
+```
+```math
+F_{\mathrm{inc}}(\vec{q}, t) =  \exp\left[ - \frac{1}{2} (q v_0 t)^2 \right]
+```
+```math
+S_{\mathrm{inc}}(\vec{q}, t) = \frac{1}{\sqrt{2 \pi} q v_0} \exp\left[ \frac{1}{2}\left(\frac{\omega}{q v_0}\right^2 \right]
+```
+
 
 # Further reading
 Boothroyd, A. T. (2020). Principles of Neutron Scattering from Condensed Matter. OUP Oxford.
