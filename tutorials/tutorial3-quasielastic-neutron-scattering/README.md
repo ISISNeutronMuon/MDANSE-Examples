@@ -130,7 +130,7 @@ G_{\mathrm{s}}(\vec{r}, t) = \left( \frac{1}{\pi v_0^2 t^2} \right)^{3/2} \exp\l
 F_{\mathrm{inc}}(\vec{q}, t) =  \exp\left[ - \frac{1}{2} (q v_0 t)^2 \right]
 ```
 ```math
-S_{\mathrm{inc}}(\vec{q}, t) = \frac{1}{\sqrt{2 \pi} q v_0} \exp\left[ \frac{1}{2}\left(\frac{\omega}{q v_0}\right^2 \right]
+S_{\mathrm{inc}}(\vec{q}, t) = \frac{1}{\sqrt{2 \pi} q v_0} \exp\left[ \frac{1}{2}\left(\frac{\omega}{q v_0}\right)^2 \right]
 ```
 
 
