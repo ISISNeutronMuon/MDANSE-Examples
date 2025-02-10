@@ -174,7 +174,7 @@ results for different values of $q$.
     <img width="800" src="pictures/disf_gdisf_small.png"/>
 </p>
 <p align="center">
-    <img width="800" src="pictures/disf_gdisf_med.png"/>
+    <img width="800" src="pictures/disf_gdisf_mid.png"/>
 </p>
 <p align="center">
     <img width="800" src="pictures/disf_gdisf_large.png"/>
