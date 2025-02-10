@@ -161,10 +161,11 @@ $q = 10$.
     <img width="800" src="pictures/cov_comparison.png"/>
 </p>
 
-Even though our first DISF and GDISF results looked OK we can see that now 
+Even though our first DISF and GDISF results looked OK we can see now 
 that they weren't long enough for $q = 10$. Proper convergence testing 
 is a must for these scattering related calculations. 
-Compare the differences for the other values of $q$. We will assume 
+Compare the differences for the other values of $q$ and have a look at 
+how this affected the `s(q,w)` results. We will assume 
 that the `*_long.mda` results are converged and continue with the rest of the 
 tutorial. Plot the `s(q,w)` for the DISF and GDISF calculations and compare the 
 results for different values of $q$.
@@ -173,15 +174,15 @@ results for different values of $q$.
     <img width="800" src="pictures/disf_gdisf_small.png"/>
 </p>
 <p align="center">
+    <img width="800" src="pictures/disf_gdisf_med.png"/>
+</p>
+<p align="center">
     <img width="800" src="pictures/disf_gdisf_large.png"/>
 </p>
 
-**Question 2**: The atoms in our liquid Argon trajectory should behave 
-like particle undergoing brownian motion, looking at the 3D view 
-visually appears to confirm this. Given that the Gaussian approximation 
-is exact for a system of particles undergoing brownian motion why do we 
-still see differences between our DISF and GDISF calculations?
-
+**Question 2**: Visually it looks like the best agreements between the 
+DISF and GDISF are obtained for the smallest and largest values of $q$. 
+Why does GDISF perform well for these values of $q$?
 
 # Answers
 
@@ -191,8 +192,9 @@ For an isotropic monoatomic system of free particles
 ```math
 \langle d^{2}(t) \rangle = \frac{1}{3} \langle \vert \vec{r}(t) - \vec{r}(0) \vert^2 \rangle.
 ```
-By noting that $\vert \vec{r}(t) - \vec{r}(0) \vert^2 = (v t)^2$ where $v$ is the speed for a given
-particle we can then integrate $(v t)^2$ over the Maxwell-Boltzmann distribution so that
+By noting that since free particles move in a straight line, 
+$\vert \vec{r}(t) - \vec{r}(0) \vert^2 = (v t)^2$ where $v$ is the speed for a given
+particle. We can then integrate $(v t)^2$ over the Maxwell-Boltzmann distribution so that
 ```math
 \langle d^{2}(t) \rangle = \frac{t^2}{3} \int_{0}^{\infty} \mathrm{d}v \, v^2 f(v)
 ```
@@ -222,9 +224,13 @@ S_{\mathrm{inc}}(\vec{q}, t) = \frac{1}{\sqrt{2 \pi} q v_{\mathrm{p}}} \exp\left
 
 ## Question 2:
 
-At short time scales the atoms in the liquid Argon trajectory behave 
+As explained earlier the Gaussian approximation is exact for system of 
+free particles and a system of particles undergoing brownian motion.
+At short time scales the atoms in the liquid Argon trajectory behaves 
 like a free particle while at long time scales it will behave like a 
-particle undergoing brownian motion.
+particle undergoing brownian motion. Since these time scales correspond 
+to short (large $q$) and long (small $q$) wavelength dynamics we should 
+expect good agreements between the GDISF and DISF results at these limits.
 
 
 # Further reading
