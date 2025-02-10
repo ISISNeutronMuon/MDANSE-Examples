@@ -105,7 +105,10 @@ described in this tutorial.
 * script1_conversion.py - produces the MDANSE-format trajectory from the lammps trajectory files in tutorial 2.
 
 ## mdanse_outputs
-All the files created by MDANSE will be written here.
+All the files created by MDANSE will be written here. We included some 
+precalculated results using a long Argon trajectory.
+* dynamicincoherentstructurefactor_long.mda - DISF of an Argon trajectory.
+* gaussiandynamicincoherentstructurefactor_long.mda - GDISF of an Argon trajectory.
 
 # The actual tutorial, step by step.
 In the text of the tutorial, we will concentrate on the
@@ -184,6 +187,52 @@ results for different values of $q$.
 DISF and GDISF are obtained for the smallest and largest values of $q$. 
 Why does GDISF perform well for these values of $q$?
 
+
+## Calculated the diffusion constant of Argon
+
+Using our DISF results lets determine the diffusion constant from it. 
+Obviously, we can determine the diffusion constant from a mean squared 
+displacement calculation using MDANSE but let's see if we understood the 
+theory and check if the implementation of DISF calculation in MDANSE looks 
+correct. Under the Gaussian approximation,
+
+```math
+S_{\mathrm{inc}}(\vec{q}, t) = \frac{1}{\pi} \frac{\hbar \Gamma(q) }{(\hbar \omega)^2 + (\hbar \Gamma(q))^2}
+```
+
+which is a Lorentzian function which has a half-width at half-maximum of 
+$\hbar \Gamma(q) = \hbar D q^2$. 
+
+**Question 3**: Using the cursor in the MDANSE plotter 
+determine the half-width at half-maximum of `s(q,w)` from 
+`mdanse_outputs/dynamicincoherentstructurefactor_long.mda` for all 
+values of $q$ and save your results into a spreadsheet. Do this same thing on 
+another spreadsheet using `s(q,w)` from 
+`mdanse_outputs/gaussiandynamicincoherentstructurefactor_long.mda`. 
+Since $\hbar \Gamma(q) = \hbar D q^2$ determine the 
+diffusion constant by plotting $\hbar \Gamma(q)$ against $q^2$ and fitting 
+the results to a line with the intercept set to $0$.
+
+<p align="center">
+    <img width="400" src="pictures/spreadsheet_example.png"/>
+</p>
+
+Remember that you can switch between different values of $q$ by setting 
+the 'Use it?' value. Since shells was set to `(10, 44, 2)`, the index 0 
+corresponds to $q = 1.0$ Å, index 1 corresponds to $q = 1.2$ Å and so on. 
+$(x, y)$ values are shown in the bottom right corner of the plot tab.
+
+<p align="center">
+    <img width="800" src="pictures/cursor_example.png"/>
+</p>
+
+Finally, run a mean squared displacement calculation with the Argon trajectory 
+from Tutorial 2 and determine the diffusion constant using 
+$D = \mathrm{MSD}(t) / 6t$ with the largest value of $t$ from the calculation. 
+You should find that the results from the GDISF, DISF and MSD are similar 
+but not exactly the same. Why not, was this expected?
+
+
 # Answers
 
 ## Question 1:
@@ -231,6 +280,11 @@ like a free particle while at long time scales it will behave like a
 particle undergoing brownian motion. Since these time scales correspond 
 to short (large $q$) and long (small $q$) wavelength dynamics we should 
 expect good agreements between the GDISF and DISF results at these limits.
+At intermediate values of $q$ this is where so called nongaussian effects 
+occur which results in deviations between the GDISF and DISF results.
+
+# Question 3:
+
 
 
 # Further reading
