@@ -12,7 +12,7 @@ at the end of the tutorial.
 
 Quasielastic scattering is a special case of inelastic scattering and leads 
 to a broad peak around $\omega = 0$. Incoherent 
-QENS can be used to study the diffusion and other similar processes. To understand 
+QENS can be used to study diffusion and other similar processes. To understand 
 how QENS is related to the diffusion of a particle we can start from the 
 self-part of the van Hove function (see **MDANSE Tutorial 2: the van Hove functions**).
 
@@ -29,7 +29,7 @@ S_{\mathrm{inc}}(\vec{q}, \omega) = \frac{1}{2 \pi}\int \mathrm{d}\omega \, F_{\
 ```
 where $G_{\mathrm{s}}(\vec{r}, t)$ is the self-part of the van Hove function which 
 describes the probability of a particle at a time $t$ from its initial position 
-at a time $0$. $F_{\mathrm{inc}}(\vec{q}, t)$ is the incoherent intermediate scattering 
+at time $0$. $F_{\mathrm{inc}}(\vec{q}, t)$ is the incoherent intermediate scattering 
 function, $S_{\mathrm{inc}}(\vec{q}, \omega)$ is the DISF and 
 $\vec{q}$ and $\omega$ are the momentum and energy changes of the 
 neutron after the scattering event respectively. If a neutron 
@@ -47,19 +47,19 @@ and
 There are a number of ways to show how the DISF is related to the 
 diffusion constant of a particle. We will start by rewriting the incoherent 
 intermediate scattering function so that it is an exponential 
-of the cumulants of $\vec{d_{j}}(t) = \vec{q} \cdot \[r_{j}(t) - r_{j}(0)\]$ 
+of the cumulants of $\vec{d_{j}}(t) = \vec{q} \cdot \[\vec{r_{j}}(t) - \vec{r_{j}}(0)\]$ 
 which is the displacement of atom $j$ along $\vec{q}$.
 ```math
-F_{\mathrm{inc}}(\vec{q}, t) = \frac{1}{N} \sum_{j} \exp [-\frac{q^2}{2} \langle d^{2}_{j}(t) \rangle + \cdots ]
+F_{\mathrm{inc}}(\vec{q}, t) = \frac{1}{N} \sum_{j} \exp \left[-\frac{q^2}{2} \langle d^{2}_{j}(t) \rangle + \cdots \right]
 ```
 The Gaussian approximation is obtained by taking only the leading term of the 
-exponent: $\langle d_{j}^{2}(t) \rangle$ which is the 2nd moment 
+exponent, where $\langle d_{j}^{2}(t) \rangle$ which is the 2nd moment 
 of $\vec{d_{j}}(t)$. This approximation is exact for a system which undergoes Fickian diffusion 
 (normal diffusion) where the MSD is linear in time so that
 ```math
 \langle d^{2}_{j}(t) \rangle = \mathrm{MSD}_{j}(t) = 6 D_{j} \vert t \vert
 ```
-where $D_j$ is diffusion constant of atom $j$, the higher order cumulants are zero. So 
+where $D_j$ is diffusion constant of atom $j$. So 
 for an isotropic monoatomic system, we can rewrite the intermediate scattering 
 function with the Gaussian approximation as 
 ```math
@@ -76,16 +76,16 @@ and
 S_{\mathrm{inc}}(\vec{q}, t) = \frac{1}{\pi} \frac{\hbar \Gamma(q) }{(\hbar \omega)^2 + (\hbar \Gamma(q))^2}
 ```
 here $S_{\mathrm{inc}}(\vec{q}, t)$ is a Lorentzian function with a 
-half-width at half maximum of $\hbar \gamma(q)$ and $\Gamma(q) = D q^2$.
+half-width at half maximum of $\hbar \Gamma(q)$ where $\Gamma(q) = D q^2$.
 The diffusion constant of can be obtained from a QENS experiment by measuring 
-$\hbar \gamma(q)$ of the QENS peak as a function of $q^2$.
+$\hbar \Gamma(q)$ of the QENS peak as a function of $q^2$.
 
 **Question 1**: Some other examples where the Gaussian approximation is 
-exact include the perfect gas, harmonic oscillator and th Debye lattice. For the 
+exact include the perfect gas, harmonic oscillator and the Debye lattice. For the 
 perfect gas (free particles) what is $\langle d^{2}_{j}(t) \rangle$ for this 
 system given that the particles velocities are distributed following the 
 Maxwell-Boltzmann distribution? Finally, what is the van Hove function, the 
-intermediate scattering function and dynamic structure factor? 
+intermediate scattering function and dynamic structure factor for this system? 
 
 
 ## Scenario of this tutorial
@@ -140,7 +140,7 @@ setting to `(10, 44, 1)` and the `weights` setting to `equal`. Set the outputs f
 
 We must check the intermediate scattering function results to ensure 
 that the results are converged and the trajectories were long enough to 
-have decayed properly. Let's plot $f(q,t)_total$ for both the DISF and 
+have decayed properly. Let's plot `f(q,t)_total` for both the DISF and 
 GDISF and use "Use it?" to `0`.
 
 <p align="center">
@@ -161,7 +161,7 @@ $q = 10$.
     <img width="800" src="pictures/cov_comparison.png"/>
 </p>
 
-Even though our DISF and GDISF results looked OK we can see that now 
+Even though our first DISF and GDISF results looked OK we can see that now 
 that they weren't long enough for $q = 10$. Proper convergence testing 
 is a must for these scattering related calculations. 
 Compare the differences for the other values of $q$. We will assume 
