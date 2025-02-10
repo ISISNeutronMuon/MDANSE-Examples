@@ -6,7 +6,8 @@ This tutorial will show you:
 
 **Questions** will be asked in different sections
 of this tutorial. The **answers** will be provided
-at the end of the tutorial.
+at the end of the tutorial. We recommend completing 
+**MDANSE Tutorial 2: the van Hove functions** before starting this one.
 
 ## Background
 
