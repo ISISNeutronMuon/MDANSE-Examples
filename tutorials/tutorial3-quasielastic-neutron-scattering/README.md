@@ -107,9 +107,10 @@ described in this tutorial.
 
 ## mdanse_outputs
 All the files created by MDANSE will be written here. We included some 
-precalculated results using a long Argon trajectory.
+precalculated results using a longer Argon trajectory.
 * dynamicincoherentstructurefactor_long.mda - DISF of an Argon trajectory.
 * gaussiandynamicincoherentstructurefactor_long.mda - GDISF of an Argon trajectory.
+* meansquareddisplacement_long.mda - MSD of an Argon trajectory.
 
 # The actual tutorial, step by step.
 In the text of the tutorial, we will concentrate on the
@@ -119,13 +120,17 @@ the parts of the tutorial are provided in `md_inputs/script*`.
 
 ## Convert and load the trajectory
 This tutorial will use by using the trajectory files from tutorial 2, 
-see **MDANSE Tutorial 2: the van Hove functions** for details.
+see **MDANSE Tutorial 2: the van Hove functions** for details. Alternatively 
+use the `mdanse_inputs/script1_conversion.py` script, the converted 
+trajectory will be in `mdanse_outputs/converted_trajectory.mdt`.
 
 ## Calculated the DISF and GDISF
 Open and select the `converted_trajectory.mdt` from tutorial 2 and then select the 
 DynamicIncoherentStructureFactor job and set the `q_vectors` setting to
 `SphericalQVectors`, shells to `(10, 44, 2)`, `n_vectors` to `100` and `width` 
-to `0` and the `weights` setting to `equal`. To speed the calculation up, 
+to `0` and the `weights` setting to `equal`. This setting will mean 
+that $q$ values from $1.0$  to $4.4$ Å in steps of $0.2$ Å will be calculated. 
+To speed the calculation up, 
 switch the `running_mode` to `multicore` and the number of processes to a 
 number greater than `1`. Set the outputs file setting to 
 `mdanse_outputs/dynamicincoherentstructurefactor.mda` and hit 'RUN!'. 
@@ -186,7 +191,7 @@ results for different values of $q$.
 
 **Question 2**: Visually it looks like the best agreements between the 
 DISF and GDISF are obtained for the smallest and largest values of $q$. 
-Why does GDISF perform well for these values of $q$?
+Why does the Gaussian approximation perform well for these values of $q$?
 
 
 ## Calculated the diffusion constant of Argon
@@ -305,11 +310,11 @@ gives a diffusion constant of $1.96$ cm$^2$s$^-1$.
 
 We should expect some differences from all three results, 
 it is only at specific limits where they will agree with each other. 
-This occurs when the MSD is calculated at $t \rightarrow \infty$ and the 
+This occurs when the MSD is calculated at large $t$ and the 
 diffusion is calculated from QENS peaks at small $q$. Small $q$ values 
-are required as this ensures that nongaussian effects in the DISF are 
-small and also where the main contribution to the QENS peak are from 
-long wavelength dynamics for both GDISF and DISF.
+are required as this is where the nongaussian effects in the DISF are 
+small and also where the main contribution to the QENS peak for both GDISF and DISF 
+are from long wavelength dynamics.
 
 Since our linear fits were made over a range of $q$ our calculations 
 for the diffusion constant will be inaccurate due to the effects mentioned 
