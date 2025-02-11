@@ -56,17 +56,17 @@ F_{\mathrm{inc}}(\vec{q}, t) = \frac{1}{N} \sum_{j} \exp \left[-\frac{q^2}{2} \l
 The Gaussian approximation is obtained by taking only the leading term of the 
 exponent, where $\langle d_{j}^{2}(t) \rangle$ which is the 2nd moment 
 of $\vec{d_{j}}(t)$. This approximation is exact for a system which undergoes Fickian diffusion 
-(normal diffusion) where the MSD is linear in time so that
+(normal diffusion) where the MSD is linear in time where for an 
+isotropic monoatomic system
 ```math
-\langle d^{2}_{j}(t) \rangle = \mathrm{MSD}_{j}(t) = 6 D_{j} \vert t \vert
+\langle d^{2}_{j}(t) \rangle = \mathrm{MSD}(t) = 6 D \vert t \vert
 ```
-where $D_j$ is diffusion constant of atom $j$. So 
-for an isotropic monoatomic system, we can rewrite the intermediate scattering 
-function with the Gaussian approximation as 
+where $D$ is diffusion constant and the intermediate scattering 
+function with the Gaussian approximation can be written as 
 ```math
-F_{\mathrm{inc}}(\vec{q}, t) = \exp(- D q^2 \vert t \vert ),
+F_{\mathrm{inc}}(\vec{q}, t) = \exp(- D q^2 \vert t \vert ).
 ```
-Fourier transforming the intermediate scattering function we can obtain 
+By Fourier transforming this intermediate scattering function we can obtain 
 expression of the van Hove function and the DISF in terms of the diffusion 
 constant
 ```math
@@ -220,7 +220,7 @@ diffusion constant by plotting $\hbar \Gamma(q)$ against $q^2$ and fitting
 the results to a line with the intercept set to $0$.
 
 <p align="center">
-    <img width="400" src="pictures/spreadsheet_example.png"/>
+    <img width="600" src="pictures/spreadsheet_example.png"/>
 </p>
 
 Remember that you can switch between different values of $q$ by setting 
@@ -296,17 +296,17 @@ against $q^2$ with a line of best fit with the intercept set to run
 through the origin.
 
 <p align="center">
-    <img width="400" src="pictures/gdisf_diffusion_plot.png"/>
+    <img width="600" src="pictures/gdisf_diffusion_plot.png"/>
 </p>
 <p align="center">
-    <img width="400" src="pictures/disf_diffusion_plot.png"/>
+    <img width="600" src="pictures/disf_diffusion_plot.png"/>
 </p>
 
 
 From the linear fits the diffusion constant from the GDISF and DISF is
-$2.46$ and $2.08$ cm$^2$s$^-1$ respectively. Calculating the diffusion 
+$2.46$ and $2.08$ $\mathrm{cm}^2\mathrm{s}^-1$ respectively. Calculating the diffusion 
 constant from the MSD using $D = \mathrm{MSD}(t) / 6t$ with $t=60000$ fs
-gives a diffusion constant of $1.96$ cm$^2$s$^-1$. 
+gives a diffusion constant of $1.96$ $\mathrm{cm}^2\mathrm{s}^-1$. 
 
 We should expect some differences from all three results, 
 it is only at specific limits where they will agree with each other. 
