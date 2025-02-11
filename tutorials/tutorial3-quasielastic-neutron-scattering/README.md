@@ -249,11 +249,11 @@ For an isotropic monoatomic system of free particles
 ```math
 \langle d^{2}(t) \rangle = \frac{1}{3} \langle \vert \vec{r}(t) - \vec{r}(0) \vert^2 \rangle.
 ```
-By noting that since free particles move in a straight line, 
+Since free particles move in a straight line, 
 $\vert \vec{r}(t) - \vec{r}(0) \vert^2 = (v t)^2$ where $v$ is the speed for a given
 particle. We can then integrate $(v t)^2$ over the Maxwell-Boltzmann distribution so that
 ```math
-\langle d^{2}(t) \rangle = \frac{t^2}{3} \int_{0}^{\infty} \mathrm{d}v \, v^2 f(v)
+\langle d^{2}(t) \rangle = \frac{t^2}{3} \int_{0}^{\infty} \mathrm{d}v \: v^2 f(v)
 ```
 where
 ```math
