@@ -104,6 +104,8 @@ These are the scripts that, when run from the mdanse_inputs
 directory, will produce the outputs of the mdanse runs
 described in this tutorial.
 * script1_conversion.py - produces the MDANSE-format trajectory from the lammps trajectory files in tutorial 2.
+* script2_disf.py - calculates the dynamic incoherent structure factor of the simulated system.
+* script3_gdisf.py - calculates the Gaussian dynamic incoherent structure factor of the simulated system.
 
 ## mdanse_outputs
 All the files created by MDANSE will be written here. We included some 
