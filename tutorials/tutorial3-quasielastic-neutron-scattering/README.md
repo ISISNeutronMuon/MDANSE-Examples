@@ -227,11 +227,11 @@ $(x, y)$ values are shown in the bottom right corner of the plot tab.
     <img width="800" src="pictures/cursor_example.png"/>
 </p>
 
-Finally, run a mean squared displacement calculation with the Argon trajectory 
-from Tutorial 2 and determine the diffusion constant using 
-$D = \mathrm{MSD}(t) / 6t$ with the largest value of $t$ from the calculation. 
-You should find that the results from the GDISF, DISF and MSD are similar 
-but not exactly the same. Why not, was this expected?
+Load the `mdanse_outputs/meansquareddisplacement_long.mda` results into the 
+plotter and calculated the diffusion constant from $D = \mathrm{MSD}(t) / 6t$ 
+with the largest value of $t$ from the calculation. You should find that the 
+results from the GDISF, DISF and MSD are similar but not exactly the same. 
+Why not, was this expected?
 
 
 # Answers
@@ -284,8 +284,37 @@ expect good agreements between the GDISF and DISF results at these limits.
 At intermediate values of $q$ this is where so called nongaussian effects 
 occur which results in deviations between the GDISF and DISF results.
 
-# Question 3:
+## Question 3:
 
+Here are the results for the GDISF and DISF plots of the QENS peak HWHM 
+against $q^2$ with a line of best fit with the intercept set to run 
+through the origin.
+
+<p align="center">
+    <img width="400" src="pictures/gdisf_diffusion_plot.png"/>
+</p>
+<p align="center">
+    <img width="400" src="pictures/disf_diffusion_plot.png"/>
+</p>
+
+
+From the linear fits the diffusion constant from the GDISF and DISF is
+$2.46$ and $2.08$ cm$^2$s$^-1$ respectively. Calculating the diffusion 
+constant from the MSD using $D = \mathrm{MSD}(t) / 6t$ with $t=60000$ fs
+gives a diffusion constant of $1.96$ cm$^2$s$^-1$. 
+
+We should expect some differences from all three results, 
+it is only at specific limits where they will agree with each other. 
+This occurs when the MSD is calculated at $t \rightarrow \infty$ and the 
+diffusion is calculated from QENS peaks at small $q$. Small $q$ values 
+are required as this ensures that nongaussian effects in the DISF are 
+small and also where the main contribution to the QENS peak are from 
+long wavelength dynamics for both GDISF and DISF.
+
+Since our linear fits were made over a range of $q$ our calculations 
+for the diffusion constant will be inaccurate due to the effects mentioned 
+above. Try refitting the data using only the smaller values of $q$ you 
+should see closer agreements with the MSD results.
 
 
 # Further reading
