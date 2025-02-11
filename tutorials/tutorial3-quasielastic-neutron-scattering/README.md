@@ -296,10 +296,10 @@ against $q^2$ with a line of best fit with the intercept set to run
 through the origin.
 
 <p align="center">
-    <img width="600" src="pictures/gdisf_diffusion_plot.png"/>
+    <img width="400" src="pictures/gdisf_diffusion_plot.png"/>
 </p>
 <p align="center">
-    <img width="600" src="pictures/disf_diffusion_plot.png"/>
+    <img width="400" src="pictures/disf_diffusion_plot.png"/>
 </p>
 
 
