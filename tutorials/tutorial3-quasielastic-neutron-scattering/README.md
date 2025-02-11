@@ -56,12 +56,12 @@ F_{\mathrm{inc}}(\vec{q}, t) = \frac{1}{N} \sum_{j} \exp \left[-\frac{q^2}{2} \l
 The Gaussian approximation is obtained by taking only the leading term of the 
 exponent, where $\langle d_{j}^{2}(t) \rangle$ which is the 2nd moment 
 of $\vec{d_{j}}(t)$. This approximation is exact for a system which undergoes Fickian diffusion 
-(normal diffusion) where for an isotropic monoatomic system
+(normal diffusion) so that for an isotropic monoatomic system
 ```math
 \langle d^{2}_{j}(t) \rangle = \mathrm{MSD}(t) = 6 D \vert t \vert
 ```
 where $D$ is diffusion constant and the intermediate scattering 
-function with the Gaussian approximation can be written as 
+function with the Gaussian approximation will be 
 ```math
 F_{\mathrm{inc}}(\vec{q}, t) = \exp(- D q^2 \vert t \vert ).
 ```
