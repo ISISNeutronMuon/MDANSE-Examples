@@ -92,7 +92,8 @@ intermediate scattering function and dynamic structure factor for this system?
 
 First we will have a look at the differences in the scattering functions 
 and dynamic structure factors when the Gaussian approximation is applied 
-for a liquid argon system. 
+for a liquid argon system. Will we then determine the diffusion constant 
+from the QENS peaks simulated from the DISF and GDISF calculations.
 
 # Files
 
