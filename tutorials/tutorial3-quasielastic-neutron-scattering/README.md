@@ -194,7 +194,7 @@ DISF and GDISF are obtained for the smallest and largest values of $q$.
 Why does the Gaussian approximation perform well for these values of $q$?
 
 
-## Calculated the diffusion constant of Argon
+## Calculate the diffusion constant of Argon
 
 Using our DISF results lets determine the diffusion constant from it. 
 Obviously, we can determine the diffusion constant from a mean squared 
