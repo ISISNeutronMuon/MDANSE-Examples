@@ -306,9 +306,9 @@ through the origin.
 
 
 From the linear fits the diffusion constant from the GDISF and DISF is
-$2.46$ and $2.08$ $\mathrm{cm}^2\mathrm{s}^{-1}$ respectively. Calculating the diffusion 
+$2.46 \times 10^{-5}$ and $2.08 \times 10^{-5}$ $\mathrm{cm}^2\mathrm{s}^{-1}$ respectively. Calculating the diffusion 
 constant from the MSD using $D = \mathrm{MSD}(t) / 6t$ with $t=60000$ fs
-gives a diffusion constant of $1.96$ $\mathrm{cm}^2\mathrm{s}^{-1}$. 
+gives a diffusion constant of $1.96 \times 10^{-5}$ $\mathrm{cm}^2\mathrm{s}^{-1}$. 
 
 We should expect some differences from all three results, 
 it is only at specific limits where they will agree with each other. 
