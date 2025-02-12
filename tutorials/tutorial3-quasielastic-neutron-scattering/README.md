@@ -58,7 +58,7 @@ exponent, where $\langle d_{j}^{2}(t) \rangle$ which is the 2nd moment
 of $d_{j}(t)$. This approximation is exact for a system which undergoes Fickian diffusion 
 (normal diffusion) so that for an isotropic monoatomic system
 ```math
-\langle d^{2}_{j}(t) \rangle = \mathrm{MSD}(t) = 6 D \vert t \vert
+\langle d^{2}_{j}(t) \rangle = \mathrm{MSD}(t) / 3 = 2 D \vert t \vert
 ```
 where $D$ is diffusion constant and the intermediate scattering 
 function with the Gaussian approximation will be 
