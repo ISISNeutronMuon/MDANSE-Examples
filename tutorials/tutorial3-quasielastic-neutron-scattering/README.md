@@ -48,14 +48,14 @@ and
 There are a number of ways to show how the DISF is related to the 
 diffusion constant of a particle. We will start by rewriting the incoherent 
 intermediate scattering function so that it is an exponential 
-of the cumulants of $\vec{d_{j}}(t) = \vec{q} \cdot \[\vec{r_{j}}(t) - \vec{r_{j}}(0)\]$ 
-which is the displacement of atom $j$ along $\vec{q}$.
+of the cumulants of $d_{j}(t) = \hat{q} \cdot \[\vec{r_{j}}(t) - \vec{r_{j}}(0)\]$ 
+which is the displacement of atom $j$ along the unit vector ($\hat{q}$) of $\vec{q}$.
 ```math
 F_{\mathrm{inc}}(\vec{q}, t) = \frac{1}{N} \sum_{j} \exp \left[-\frac{q^2}{2} \langle d^{2}_{j}(t) \rangle + \cdots \right]
 ```
 The Gaussian approximation is obtained by taking only the leading term of the 
 exponent, where $\langle d_{j}^{2}(t) \rangle$ which is the 2nd moment 
-of $\vec{d_{j}}(t)$. This approximation is exact for a system which undergoes Fickian diffusion 
+of $d_{j}(t)$. This approximation is exact for a system which undergoes Fickian diffusion 
 (normal diffusion) so that for an isotropic monoatomic system
 ```math
 \langle d^{2}_{j}(t) \rangle = \mathrm{MSD}(t) = 6 D \vert t \vert
