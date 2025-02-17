@@ -11,8 +11,8 @@ at the end of the tutorial. We recommend completing
 
 ## Background
 
-Quasielastic scattering is a special case of inelastic scattering and leads 
-to a broad peak around $\omega = 0$. Incoherent 
+Quasielastic scattering is a special case of inelastic scattering with low
+energy transfer and leads to a broad peak around $\omega = 0$. Incoherent 
 QENS can be used to study diffusion and other similar processes. To understand 
 how QENS is related to the diffusion of a particle we can start from the 
 self-part of the van Hove function (see **MDANSE Tutorial 2: the van Hove functions**).
@@ -77,12 +77,12 @@ S_{\mathrm{inc}}(\vec{q}, t) = \frac{1}{\pi} \frac{\hbar \Gamma(q) }{(\hbar \ome
 ```
 here $S_{\mathrm{inc}}(\vec{q}, t)$ is a Lorentzian function with a 
 half-width at half maximum of $\hbar \Gamma(q)$ where $\Gamma(q) = D q^2$.
-The diffusion constant of can be obtained from a QENS experiment by measuring 
+The diffusion constant can be obtained from a QENS experiment by measuring 
 $\hbar \Gamma(q)$ of the QENS peak as a function of $q^2$.
 
 **Question 1**: Some other examples where the Gaussian approximation is 
-exact include the perfect gas, harmonic oscillator and the Debye lattice. For the 
-perfect gas (free particles) what is $\langle d^{2}_{j}(t) \rangle$ for this 
+exact include the ideal gas, harmonic oscillator and the Debye lattice. For the 
+ideal gas (free particles) what is $\langle d^{2}_{j}(t) \rangle$ for this 
 system given that the particles velocities are distributed following the 
 Maxwell-Boltzmann distribution? Finally, what is the van Hove function, the 
 intermediate scattering function and dynamic structure factor for this system? 
@@ -174,7 +174,7 @@ $q = 10$.
 
 Even though our first DISF and GDISF results looked OK we can see now 
 that they weren't long enough for $q = 10$. Proper convergence testing 
-is a must for these scattering related calculations. 
+is a must for these scattering-related calculations. 
 Compare the differences for the other values of $q$ and have a look at 
 how this affected the `s(q,w)` results. We will assume 
 that the `*_long.mda` results are converged and continue with the rest of the 
@@ -198,7 +198,7 @@ Why does the Gaussian approximation perform well for these values of $q$?
 
 ## Calculate the diffusion constant of Argon
 
-Using our DISF results lets determine the diffusion constant from it. 
+Using our DISF results, let's determine the diffusion constant from it. 
 Obviously, we can determine the diffusion constant from a mean squared 
 displacement calculation using MDANSE but let's see if we understood the 
 theory and check if the implementation of DISF calculation in MDANSE looks 
@@ -235,7 +235,7 @@ $(x, y)$ values are shown in the bottom right corner of the plot tab.
 </p>
 
 Load the `mdanse_outputs/meansquareddisplacement_long.mda` results into the 
-plotter and calculated the diffusion constant from $D = \mathrm{MSD}(t) / 6t$ 
+plotter and calculate the diffusion constant from $D = \mathrm{MSD}(t) / 6t$ 
 with the largest value of $t$ from the calculation. You should find that the 
 results from the GDISF, DISF and MSD are similar but not exactly the same. 
 Why not, was this expected?
@@ -306,11 +306,12 @@ through the origin.
 
 
 From the linear fits the diffusion constant from the GDISF and DISF is
-$2.46 \times 10^{-5}$ and $2.08 \times 10^{-5}$ $\mathrm{cm}^2\mathrm{s}^{-1}$ respectively. Calculating the diffusion 
+$2.46 \times 10^{-5}$ and $2.08 \times 10^{-5}$ $\mathrm{cm}^2\mathrm{s}^{-1}$
+respectively. Calculating the diffusion 
 constant from the MSD using $D = \mathrm{MSD}(t) / 6t$ with $t=60000$ fs
 gives a diffusion constant of $1.96 \times 10^{-5}$ $\mathrm{cm}^2\mathrm{s}^{-1}$. 
 
-We should expect some differences from all three results, 
+We should expect some differences from all three results; 
 it is only at specific limits where they will agree with each other. 
 This occurs when the MSD is calculated at large $t$ and the 
 diffusion is calculated from QENS peaks at small $q$. Small $q$ values 
@@ -318,9 +319,9 @@ are required as this is where the nongaussian effects in the DISF are
 small and also where the main contribution to the QENS peak for both GDISF and DISF 
 are from long wavelength dynamics.
 
-Since our linear fits were made over a range of $q$ our calculations 
+Since our linear fits were made over a range of $q$, our calculations 
 for the diffusion constant will be inaccurate due to the effects mentioned 
-above. Try refitting the data using only the smaller values of $q$ you 
+above. Try refitting the data using only the smaller values of $q$. You 
 should see closer agreements with the MSD results.
 
 
