@@ -270,3 +270,7 @@ $t \rightarrow \infty$ all possible distances will be explored.
 $G_{\mathrm{s}}(\vec{r}, t \rightarrow \infty) \sim V^{-1}$ or $N^{-1}$ 
 in MDANSE since it has been normalized, in the thermodynamic 
 limit $V \rightarrow \infty$ and $N \rightarrow \infty$.
+
+
+# Further reading
+Hansen, J., & McDonald, I. (2006). Theory of Simple Liquids. Academic Press.
