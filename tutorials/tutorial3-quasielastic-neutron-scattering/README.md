@@ -142,7 +142,7 @@ number greater than `1`. Set the outputs file setting to
 </p>
 
 Select the GaussianDynamicIncoherentStructureFactor job and set the `q_shells`
-setting to `(10, 44, 1)` and the `weights` setting to `equal`. Set the outputs file setting to 
+setting to `(10, 44, 2)` and the `weights` setting to `equal`. Set the outputs file setting to 
 `mdanse_outputs/gaussiandynamicincoherentstructurefactor.mda` and hit 'RUN!'. 
 
 <p align="center">
