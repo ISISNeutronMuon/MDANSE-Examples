@@ -95,8 +95,8 @@ incoherent structure factor).
 Using MDANSE we will create three new atom types (`Atm1`, `Atm2`, and `Atm1Atm2`), 
 `Atm1Atm2` will be a combined atom type of Atm1 and Atm2. We will calculate 
 the dynamic coherent structure factor (DCSF) and dynamic 
-incoherent structure factor (DISF) for a 50/50 mixture of At1 and At2 
-and a system of 100% Atm1Atm2. We will then combine the DCSF and DISF 
+incoherent structure factor (DISF) for a 50/50 mixture of `Atm1` and `Atm2` 
+and a system of 100% `Atm1Atm2`. We will then combine the DCSF and DISF 
 results using the neutron total dynamic structure factor (NTDSF) job.
 We will them compare the coherent and incoherent signal between the two 
 systems.
