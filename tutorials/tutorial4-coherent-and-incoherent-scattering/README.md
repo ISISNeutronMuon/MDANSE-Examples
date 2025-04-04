@@ -155,7 +155,14 @@ and
 b_{\mathrm{inc,Atm1Atm2}}^2 = 0.5 (1 \times 10^{-5})^2 + 0.5 (2 \times 10^{-5})^2 - b_{\mathrm{coh,Atm1Atm2}}^2  = 1 \times 10^{-10}.
 ```
 
-Now load up `converted_trajectory.mdt` and go to the TrajectoryEditor job in the 
-Actions tab. Run the `mdanse_inputs/script2_random.py`, this will generate a 
+Run the `mdanse_inputs/script2_random.py`, this will generate a 
 transmutation setting string which tells MDANSE to transmute 128 atoms to 
-`Atm1` and 128 to `Atm2` randomly. 
+`Atm1` and 128 to `Atm2` randomly. Now load up `converted_trajectory.mdt` 
+and go to the TrajectoryEditor job in the Actions tab. Copy the setting 
+string into the transmutation setting box and save the trajectory to 
+`mdanse_outputs/converted_atm1_atm2.mdt`.
+
+<p align="center">
+    <img width="800" src="pictures/traj_edit_atm1_atm2.png"/>
+</p>
+
