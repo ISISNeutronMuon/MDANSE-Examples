@@ -1,4 +1,4 @@
-#!C:\Users\xcb63893\AppData\Local\anaconda3\envs\MDANSE\python.exe
+#!/usr/bin/env python
 
 ########################################################
 # This is an automatically generated MDANSE run script #

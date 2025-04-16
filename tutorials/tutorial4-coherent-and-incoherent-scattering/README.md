@@ -134,15 +134,23 @@ tutorial we will need to create two new trajectories from the argon one.
 
 First lets create `Atm1`, `Atm2`, and `Atm1Atm2` atom types. Click the MDANSE 
 Chemical Elements Database Editor button (next to the periodic table button) 
-to load up the editor. Right-click on the table and add three new atoms 
-`Atm1`, `Atm2`, and `Atm1Atm2`. Then set the `b_coherent` and `b_incoherent2`
-properties as shown in the screenshot below.
+to load up the editor. Right-click on the table, click `New Custom Atom` and 
+add three new atoms `Atm1`, `Atm2`, and `Atm1Atm2` (if these custom atoms 
+already exist then delete them before editing). 
+Then set the `b_coherent` and `b_incoherent2` properties following the 
+screenshot below. 
 
 <p align="center">
     <img width="800" src="pictures/atom_editor.png"/>
 </p>
 
-We defined `Atm1Atm2` to be formed from a 50/50 mixture of Atm1 and Atm2 
+When creating a new atom the default color is white,
+change `Atm1`, `Atm2`, and `Atm1Atm2` color so that they are different 
+to each other. Finally, set the `vdw_radius` key to `0.188` so that the 
+different atom types will be visible in the 3D view and have different 
+colors to each other.
+
+We defined `Atm1Atm2` to be formed from a 50/50 mixture of `Atm1` and `Atm2`
 so that 
 
 ```math
@@ -164,5 +172,13 @@ string into the transmutation setting box and save the trajectory to
 
 <p align="center">
     <img width="800" src="pictures/traj_edit_atm1_atm2.png"/>
+</p>
+
+Go to the 3D view to view your edited trajectory, it should be the same 
+as the original except it will be formed of two different atom types.
+Check that `Atm1` and `Atm2` are randomly distributed across the unit cell.
+
+<p align="center">
+    <img width="800" src="pictures/traj_3D_atm1_atm2.png"/>
 </p>
 
