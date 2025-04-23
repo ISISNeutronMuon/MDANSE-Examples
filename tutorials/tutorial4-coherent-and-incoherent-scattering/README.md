@@ -83,12 +83,12 @@ and isotopic incoherence is made.
 
 ### Chemical Incoherence
 
-Incoherent scattering can arise from a system when two or more atoms with 
+Incoherent scattering can arise from a system when two or more atom types with 
 different scattering lengths which share similar trajectories and distributions 
 across the system. Incoherent scattering from this source of randomness 
 is known as *chemical incoherence* and is dependent on the system. Chemical 
 incoherence is included in MDANSE but will turn up in the coherent signal,
-(dynamic coherent structure factor) rather than the incohoerent (dynamic 
+(dynamic coherent structure factor) rather than the incoherent (dynamic 
 incoherent structure factor).
 
 ## Scenario of this tutorial
@@ -227,7 +227,7 @@ selected in the dropdown on the left side of the GUI.
     <img width="800" src="pictures/ndtsf.png"/>
 </p>
 
-Run the NDTSF calculations with the ouputs results saved to
+Run the NDTSF calculations with the outputs results saved to
 `mdanse_outputs/ndtsf_atm1atm2.mda` and `mdanse_outputs/ndtsf_atm1_atm2.mda`.
 
 ## Plotting the Results
