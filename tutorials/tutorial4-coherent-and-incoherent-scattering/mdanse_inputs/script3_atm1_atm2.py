@@ -11,7 +11,7 @@ ATOMS_DATABASE.set_value("Atm1", "b_coherent", 1e-5)
 ATOMS_DATABASE.set_value("Atm1", "b_incoherent2", 0.0)
 ATOMS_DATABASE.set_value("Atm1", "color", "255;0;0")
 ATOMS_DATABASE.set_value("Atm1", "vdw_radius", 0.188)
-ATOMS_DATABASE.set_value("Atm2", "b_coherent", 2e-5)
+ATOMS_DATABASE.set_value("Atm2", "b_coherent", 1e-4)
 ATOMS_DATABASE.set_value("Atm2", "b_incoherent2", 0.0)
 ATOMS_DATABASE.set_value("Atm2", "color", "247;0;255")
 ATOMS_DATABASE.set_value("Atm2", "vdw_radius", 0.188)
@@ -24,7 +24,7 @@ ATOMS_DATABASE.set_value("Atm2", "vdw_radius", 0.188)
 # Atm1 or Atm2 randomly.
 isotopes = ["Atm1"] * 128 + ["Atm2"] * 128
 mapping = {}
-for i in list(range(256)):
+for i in range(256):
     random_element = random.choice(isotopes)
     isotopes.remove(random_element)
     mapping[str(i)] = random_element

@@ -11,7 +11,6 @@ from MDANSE.Framework.Jobs.IJob import IJob
 ########################################################
 
 parameters = {
-    'atom_selection': '{"all": true}',                  # atom_selection
     'atom_transmutation': '{}',                         # atom_transmutation
     'frames': [0, 1000, 1],                             # frames
     'grouping_level': 'atom',                           # grouping_level

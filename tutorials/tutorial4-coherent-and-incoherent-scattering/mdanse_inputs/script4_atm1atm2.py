@@ -4,20 +4,17 @@ from MDANSE.Framework.Jobs.IJob import IJob
 # Create the custom atom types
 if "Atm1Atm2" not in ATOMS_DATABASE.atoms:
     ATOMS_DATABASE.add_atom("Atm1Atm2")
-ATOMS_DATABASE.set_value("Atm1Atm2", "b_coherent", 1.5e-5)
-ATOMS_DATABASE.set_value("Atm1Atm2", "b_incoherent2", 1e-10)
+ATOMS_DATABASE.set_value("Atm1Atm2", "b_coherent", 5.5e-5)
+ATOMS_DATABASE.set_value("Atm1Atm2", "b_incoherent2", 2.025e-9)
 ATOMS_DATABASE.set_value("Atm1Atm2", "color", "0;0;255")
 ATOMS_DATABASE.set_value("Atm1Atm2", "vdw_radius", 0.188)
-# uncomment the line below if you wish to save Atm1 and Atm2 to your
+# uncomment the line below if you wish to save Atm1Atm2 to your
 # local atom database
 # ATOMS_DATABASE.save()
 
 
 # Generate a mapping which transmutes all atoms to Atm1Atm2
-mapping = {}
-for i in list(range(256)):
-    mapping[str(i)] = "Atm1Atm2"
-
+mapping = {str(i): "Atm1Atm2" for i in range(256)}
 
 # setup to parameters to run the trajectory editor.
 parameters = {

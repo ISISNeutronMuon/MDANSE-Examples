@@ -77,8 +77,8 @@ b_{\mathrm{inc,Ar}}^2 = 0.00337 (24.9 \times 10^{-5})^2 + 0.00063 (3.5 \times 10
 By using the Ar atom type we specify to MDANSE that the isotopes of argon 
 in our system are randomly distributed and follow their natural abundances. 
 When we use the atom types which are not specific isotopes 
-(e.g. H and Ar) the contribution to $b_{\mathrm{inc}}^2$ from spin and 
-isotopic incoherence is made.
+(e.g. H and Ar) the contribution to $b_{\mathrm{inc}}^2$ from only spin 
+and isotopic incoherence is made.
 
 
 ### Chemical Incoherence
@@ -156,13 +156,13 @@ We defined `Atm1Atm2` to be formed from a 50/50 mixture of `Atm1` and `Atm2`
 so that 
 
 ```math
-b_{\mathrm{coh,Atm1Atm2}} = 0.5 (1 \times 10^{-5}) + 0.5 (2 \times 10^{-5}) = 1.5 \times 10^{-5}
+b_{\mathrm{coh,Atm1Atm2}} = 0.5 (1 \times 10^{-5}) + 0.5 (1 \times 10^{-4}) = 5.5 \times 10^{-5}
 ```
 
 and
 
 ```math
-b_{\mathrm{inc,Atm1Atm2}}^2 = 0.5 (1 \times 10^{-5})^2 + 0.5 (2 \times 10^{-5})^2 - b_{\mathrm{coh,Atm1Atm2}}^2  = 1 \times 10^{-10}.
+b_{\mathrm{inc,Atm1Atm2}}^2 = 0.5 (1 \times 10^{-5})^2 + 0.5 (1 \times 10^{-4})^2 - b_{\mathrm{coh,Atm1Atm2}}^2  = 2.025 \times 10^{-9}.
 ```
 
 Run the `mdanse_inputs/script2_random.py`, this will generate a 
@@ -204,5 +204,30 @@ filled up.
 Save the trajectory to `mdanse_outputs/converted_atm1_atm2.mdt` 
 and run the TrajectoryEditor job.
 
-## Run DISF, DCSF and NDTSF
+## DISF, DCSF and NDTSF Calculations
 
+Now run the DISF and DCSF calculations with both the `converted_atm1_atm2.mdt` 
+and `converted_atm1atm2.mdt` trajectories using the following setting for
+the qvector generation.
+
+<p align="center">
+    <img width="800" src="pictures/qvector_generation.png"/>
+</p>
+
+We used seed=1 to ensure that the qvectors that are generated and selected 
+are the same. Run the calculation with the output results 
+saved to `mdanse_outputs/disf_atm1atm2.mda`, `mdanse_outputs/dcsf_atm1atm2.mda` 
+`mdanse_outputs/disf_atm1_atm2.mda` and `mdanse_outputs/dcsf_atm1_atm2.mda`.
+
+Next run the NeutronDynamicTotalStructureFactor job, this job is run using 
+the DCSF and DISF calculations. Ensure that you have the same trajectory 
+selected in the dropdown on the left side of the GUI. 
+
+<p align="center">
+    <img width="800" src="pictures/ndtsf.png"/>
+</p>
+
+Run the NDTSF calculations with the ouputs results saved to
+`mdanse_outputs/ndtsf_atm1atm2.mda` and `mdanse_outputs/ndtsf_atm1_atm2.mda`.
+
+## Plotting the Results

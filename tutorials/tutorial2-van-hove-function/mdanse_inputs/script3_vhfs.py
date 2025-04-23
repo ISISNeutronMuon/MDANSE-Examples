@@ -11,7 +11,6 @@ from MDANSE.Framework.Jobs.IJob import IJob
 ########################################################
 
 parameters = {
-    'atom_selection': '{"all": true}',                  # atom_selection
     'frames': [0, 1001, 1, 31],                         # frames
     'output_files': ('../mdanse_outputs/vanhovefunctionself', ['MDAFormat'], 'INFO'),  # output_files
     'r_values': [0.0, 1.14, 0.01],                      # r values (nm)
