@@ -48,6 +48,7 @@ b_{\mathrm{inc,H1}}^2 = \frac{1}{4} (-47.5 \times 10^{-5})^2 + \frac{3}{4} (10.8
 
 Let's compare the scattering lengths of hydrogen with argon.
 
+
 | Atom Type | $b_{\mathrm{coh}}$ / nm | $b_{\mathrm{inc}}^2$ / nm<sup>2</sup> |
 |-----------|-------------------------|---------------------------------------|
 | Ar36      | $24.9 \times 10^{-5}$   | $0.0$                                 |
@@ -125,6 +126,7 @@ the parts of the tutorial are provided in `md_inputs/script*`.
 
 
 ## Convert, edit and load the trajectory
+
 This tutorial will use by using the trajectory files from tutorial 2, 
 see **MDANSE Tutorial 2: the van Hove functions** for details. Alternatively 
 use the `mdanse_inputs/script1_conversion.py` script, the converted 
@@ -168,7 +170,7 @@ transmutation setting string which tells MDANSE to transmute 128 atoms to
 `Atm1` and 128 to `Atm2` randomly. Now load up `converted_trajectory.mdt` 
 and go to the TrajectoryEditor job in the Actions tab. Copy the setting 
 string into the transmutation setting box and save the trajectory to 
-`mdanse_outputs/converted_atm1_atm2.mdt`.
+`mdanse_outputs/converted_atm1_atm2.mdt` and run the TrajectoryEditor job.
 
 <p align="center">
     <img width="800" src="pictures/traj_edit_atm1_atm2.png"/>
@@ -181,4 +183,26 @@ Check that `Atm1` and `Atm2` are randomly distributed across the unit cell.
 <p align="center">
     <img width="800" src="pictures/traj_3D_atm1_atm2.png"/>
 </p>
+
+Next we need to run another trajectory conversion on `converted_trajectory.mdt`
+but instead transmute all atoms to `Atm1Atm2`. The easiest way is to use the 
+atom transmutation helper. Click the transmutation helper and then select 
+`Atm1Atm2` in the transmutation dropdown.
+
+<p align="center">
+    <img width="800" src="pictures/transmutation.png"/>
+</p>
+
+Next click `Transmute` button then the `Use Setting` button and close 
+the helper. You should see that the transmutation setting box has been 
+filled up.  
+
+<p align="center">
+    <img width="800" src="pictures/traj_edit_atm1atm2.png"/>
+</p>
+
+Save the trajectory to `mdanse_outputs/converted_atm1_atm2.mdt` 
+and run the TrajectoryEditor job.
+
+## Run DISF, DCSF and NDTSF
 
