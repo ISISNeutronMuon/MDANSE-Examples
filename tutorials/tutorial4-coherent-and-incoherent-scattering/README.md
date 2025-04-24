@@ -231,3 +231,21 @@ Run the NDTSF calculations with the outputs results saved to
 `mdanse_outputs/ndtsf_atm1atm2.mda` and `mdanse_outputs/ndtsf_atm1_atm2.mda`.
 
 ## Plotting the Results
+Load up both `ndtsf_atm1atm2.mda` and `ndtsf_atm1_atm2.mda` into the plot 
+holder and plot `s(q,f)_coh_total`, `s(q,f)_inc_total`, and `s(q,f)_total`
+setting the `Main axis` to `q` and `Use it?` to `500`. Compare the results 
+between `ndtsf_atm1atm2.mda` and `ndtsf_atm1_atm2.mda`.
+
+<p align="center">
+    <img width="800" src="pictures/plot_atm1_atm2.png"/>
+</p>
+
+<p align="center">
+    <img width="800" src="pictures/plot_atm1atm2.png"/>
+</p>
+
+First lets compare the results for the `s(q,f)_total`, they won't be 
+exactly the same because we used a small system size and short trajectory, 
+but quantitatively they are similar. The `s(q,f)_coh_total` and 
+`s(q,f)_inc_total` between `ndtsf_atm1atm2.mda` and `ndtsf_atm1_atm2.mda` 
+are quite different.
