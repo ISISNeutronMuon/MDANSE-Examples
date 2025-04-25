@@ -260,12 +260,12 @@ are quite different.
 How we interpret what is going on depends on what the meaning of what 
 `Atm1`, `Atm2`, and `Atm1Atm2` are. First remember that we generated both 
 trajectories by transmuting a trajectory of pure liquid Argon so all 
-transmuted atoms are in chemically equivalent positions. If `Atm1` and 
+transmuted atoms are in equivalent positions. If `Atm1` and 
 `Atm2` are isotopes of the same element then by using these two atoms 
 types then we will not be including any contributions to `s(q,f)_inc_total`
 from isotopic incoherence. The way that `b_coherent` and `b_incoherent2`
 is defined in `Atm1Atm2` are specifically for trajectories when `Atm1` 
-and `Atm2` are in chemically equivalent positions and have a 1:1 ratio. 
+and `Atm2` are in equivalent positions and have a 1:1 ratio. 
 When `Atm1Atm2` is used, contributions from isotopic incoherence is 
 separated from `s(q,f)_coh_total` and put into `s(q,f)_inc_total`. If `Atm1` 
 and `Atm2` are different elements then a similar line of reasoning follows 
