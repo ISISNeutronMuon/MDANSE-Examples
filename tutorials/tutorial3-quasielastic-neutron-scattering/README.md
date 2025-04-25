@@ -104,12 +104,12 @@ These are the scripts that, when run from the mdanse_inputs
 directory, will produce the outputs of the mdanse runs
 described in this tutorial.
 * script1_conversion.py - produces the MDANSE-format trajectory from the lammps trajectory files in tutorial 2.
-* script2_disf.py - calculates the dynamic incoherent structure factor of the simulated system.
-* script3_gdisf.py - calculates the Gaussian dynamic incoherent structure factor of the simulated system.
+* script2_disf.py - calculates the DISF of the simulated system.
+* script3_gdisf.py - calculates the GDISF of the simulated system.
 
 ## mdanse_outputs
 All the files created by MDANSE will be written here. We included some 
-precalculated results using a longer Argon trajectory.
+precalculated results using a longer and larger Argon trajectory.
 * dynamicincoherentstructurefactor_long.mda - DISF of an Argon trajectory.
 * gaussiandynamicincoherentstructurefactor_long.mda - GDISF of an Argon trajectory.
 * meansquareddisplacement_long.mda - MSD of an Argon trajectory.

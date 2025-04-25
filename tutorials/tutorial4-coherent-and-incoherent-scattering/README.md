@@ -110,12 +110,19 @@ This tutorial contains the following files:
 These are the scripts that, when run from the mdanse_inputs
 directory, will produce the outputs of the mdanse runs
 described in this tutorial.
-* 
+* script1_conversion.py - produces the MDANSE-format trajectory from the lammps trajectory files in tutorial 2.
+* script2_random.py - generates a transmutation setting which randomly transmutes atoms to the Atm1 or Atm2 atom type.
+* script3_atm1_atm2.py - transmutes the argon trajectory is that it is formed of Atm1 and Atm2 atom types.
+* script4_atm1atm2.py - transmutes the argon trajectory is that it is formed of the Atm1Atm2 atom type.
+* script5_disf.py - calculates the DISF of the Atm1+Atm2 and Atm1Atm2 systems.
+* script6_dcsf.py - calculates the DCSF of the Atm1+Atm2 and Atm1Atm2 systems.
+* script7_ndtsf.py - calculates the NDTSF using the Atm1+Atm2 and Atm1Atm2 DISF and DCSF results.
 
 ## mdanse_outputs
 All the files created by MDANSE will be written here. We included some 
 precalculated results using a longer Argon trajectory.
-* 
+* ndtsf_atm1_atm2_long.mda - the NDTSF results using a longer and larger Atm1+Atm2 system.
+* ndtsf_atm1atm2_long.mda - the NDTSF results using a longer and larger Atm1Atm2 system.
 
 
 # The actual tutorial, step by step.
@@ -249,3 +256,17 @@ exactly the same because we used a small system size and short trajectory,
 but quantitatively they are similar. The `s(q,f)_coh_total` and 
 `s(q,f)_inc_total` between `ndtsf_atm1atm2.mda` and `ndtsf_atm1_atm2.mda` 
 are quite different.
+
+How we interpret what is going on depends on what the meaning of what 
+`Atm1`, `Atm2`, and `Atm1Atm2` are. First remember that we generated both 
+trajectories by transmuting a trajectory of pure liquid Argon so all 
+transmuted atoms are in chemically equivalent positions. If `Atm1` and 
+`Atm2` are isotopes of the same element then by using these two atoms 
+types then we will not be including any contributions to `s(q,f)_inc_total`
+from isotopic incoherence. The way that `b_coherent` and `b_incoherent2`
+is defined in `Atm1Atm2` are specifically for trajectories when `Atm1` 
+and `Atm2` are in chemically equivalent positions and have a 1:1 ratio. 
+When `Atm1Atm2` is used, contributions from isotopic incoherence is 
+separated from `s(q,f)_coh_total` and put into `s(q,f)_inc_total`. If `Atm1` 
+and `Atm2` are different elements then a similar line of reasoning follows 
+but with chemical incoherence in place of isotopic incoherence.
