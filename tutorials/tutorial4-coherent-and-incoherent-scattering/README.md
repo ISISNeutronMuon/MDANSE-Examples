@@ -254,13 +254,21 @@ between `ndtsf_atm1atm2.mda` and `ndtsf_atm1_atm2.mda`.
 First lets compare the results for the `s(q,f)_total`, they won't be 
 exactly the same because we used a small system size and short trajectory, 
 but quantitatively they are similar. The `s(q,f)_coh_total` and 
-`s(q,f)_inc_total` between `ndtsf_atm1atm2.mda` and `ndtsf_atm1_atm2.mda` 
-are quite different.
+`s(q,f)_inc_total` of `ndtsf_atm1atm2.mda` and `ndtsf_atm1_atm2.mda` 
+are quite different. In `mdanse_outputs` NDTSF results using a larger
+(2048 atom) and longer (100001 frames and 501 correlation frames) can 
+be found. With this trajectory the results for the `s(q,f)_total` 
+from `ndtsf_atm1atm2_long.mda` and `ndtsf_atm1_atm2_long.mda` are quite 
+similar.
+
+<p align="center">
+    <img width="800" src="pictures/long_traj_comparison.png"/>
+</p>
 
 How we interpret what is going on depends on what the meaning of what 
 `Atm1`, `Atm2`, and `Atm1Atm2` are. First remember that we generated both 
 trajectories by transmuting a trajectory of pure liquid Argon so all 
-transmuted atoms are in equivalent positions. If `Atm1` and 
+transmuted atoms are in equivalent. If `Atm1` and 
 `Atm2` are isotopes of the same element then by using these two atoms 
 types then we will not be including any contributions to `s(q,f)_inc_total`
 from isotopic incoherence. The way that `b_coherent` and `b_incoherent2`
@@ -269,4 +277,4 @@ and `Atm2` are in equivalent positions and have a 1:1 ratio.
 When `Atm1Atm2` is used, contributions from isotopic incoherence is 
 separated from `s(q,f)_coh_total` and put into `s(q,f)_inc_total`. If `Atm1` 
 and `Atm2` are different elements then a similar line of reasoning follows 
-but with chemical incoherence in place of isotopic incoherence.
+but with chemical incoherence instead of isotopic incoherence.
