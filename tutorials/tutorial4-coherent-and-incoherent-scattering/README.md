@@ -3,10 +3,8 @@
 This tutorial will show you:
 * how to run an analysis related to the coherent and incoherent scattering,
 
-**Questions** will be asked in different sections
-of this tutorial. The **answers** will be provided
-at the end of the tutorial. We recommend completing 
-**MDANSE Tutorial 3: Quasielastic neutron scattering (QENS)** before starting this one.
+We recommend completing **MDANSE Tutorial 3: Quasielastic neutron 
+scattering (QENS)** before starting this one.
 
 ## Background
 
@@ -29,7 +27,7 @@ depend on the natural abundances of the three isotopes.
 For the isotopes H1, H2, and H3, $b_{\mathrm{coh}}$ and $b_{\mathrm{inc}}^2$ depend on 
 their $b_{-}$ and $b_{+}$, and $p_{-}$ and $p_{+}$ values, which are the scattering lengths 
 and occupation probabilities for the combined neutron plus nucleus system with 
-spins $I-\frac{1}{2}$ and $I+\frac{1}{2}$. For example, H1 has a spin of $I = \frac{1}{2}$
+spins $I-\frac{1}{2}$ or $I+\frac{1}{2}$. For example, H1 has a spin of $I = \frac{1}{2}$
 and combined spin with the neutron of 0 and 1 with degeneracies of 1 and 3. The measured 
 scattering lengths are $b_{-,\text{H1}} = -47.5 \times 10^{-5}$ and $b_{+,\text{H1}} = 10.85 \times 10^{-5}$. 
 Therefore, the coherent and the squared incoherent scattering length will be
@@ -46,7 +44,7 @@ b_{\mathrm{inc,H1}}^2 = \frac{1}{4} (-47.5 \times 10^{-5})^2 + \frac{3}{4} (10.8
 
 ### Isotopic Incoherence
 
-Let's compare the scattering lengths of hydrogen with argon.
+Let's compare the scattering lengths of argon.
 
 
 | Atom Type | $b_{\mathrm{coh}}$ / nm | $b_{\mathrm{inc}}^2$ / nm<sup>2</sup> |
@@ -56,7 +54,7 @@ Let's compare the scattering lengths of hydrogen with argon.
 | Ar40      | $1.83 \times 10^{-5}$   | $0.0$                                 |
 | Ar        | $1.909 \times 10^{-5}$  | $1.7956 \times 10^{-10}$              |
 
-These isotopes all have zero spin nuclei which lead to zero 
+These isotopes are all zero spin nuclei which lead to zero 
 $b_{\mathrm{inc}}^2$ values. Unlike the hydrogen atoms, there will be no
 contribution to the incoherent scattering from spin incoherence. The $b_{\mathrm{inc}}^2$ 
 for the Ar atom type arises from isotopic incoherence. The natural abundances
@@ -99,7 +97,7 @@ the dynamic coherent structure factor (DCSF) and dynamic
 incoherent structure factor (DISF) for a 50/50 mixture of `Atm1` and `Atm2` 
 and a system of 100% `Atm1Atm2`. We will then combine the DCSF and DISF 
 results using the neutron total dynamic structure factor (NTDSF) job.
-We will them compare the coherent and incoherent signal between the two 
+We will compare the coherent and incoherent signal between the two 
 systems.
 
 # Files
@@ -112,8 +110,8 @@ directory, will produce the outputs of the mdanse runs
 described in this tutorial.
 * script1_conversion.py - produces the MDANSE-format trajectory from the lammps trajectory files in tutorial 2.
 * script2_random.py - generates a transmutation setting which randomly transmutes atoms to the Atm1 or Atm2 atom type.
-* script3_atm1_atm2.py - transmutes the argon trajectory is that it is formed of Atm1 and Atm2 atom types.
-* script4_atm1atm2.py - transmutes the argon trajectory is that it is formed of the Atm1Atm2 atom type.
+* script3_atm1_atm2.py - transmutes the argon trajectory so that it is formed of Atm1 and Atm2 atom types.
+* script4_atm1atm2.py - transmutes the argon trajectory so that it is formed of the Atm1Atm2 atom type.
 * script5_disf.py - calculates the DISF of the Atm1+Atm2 and Atm1Atm2 systems.
 * script6_dcsf.py - calculates the DCSF of the Atm1+Atm2 and Atm1Atm2 systems.
 * script7_ndtsf.py - calculates the NDTSF using the Atm1+Atm2 and Atm1Atm2 DISF and DCSF results.
@@ -146,7 +144,7 @@ Chemical Elements Database Editor button (next to the periodic table button)
 to load up the editor. Right-click on the table, click `New Custom Atom` and 
 add three new atoms `Atm1`, `Atm2`, and `Atm1Atm2` (if these custom atoms 
 already exist then delete them before editing). 
-Then set the `b_coherent` and `b_incoherent2` properties following the 
+Next set the `b_coherent` and `b_incoherent2` properties following the 
 screenshot below. 
 
 <p align="center">
@@ -221,7 +219,7 @@ the qvector generation.
     <img width="800" src="pictures/qvector_generation.png"/>
 </p>
 
-We used seed=1 to ensure that the qvectors that are generated and selected 
+We used `seed=1` to ensure that the qvectors that are generated and selected 
 are the same. Run the calculation with the output results 
 saved to `mdanse_outputs/disf_atm1atm2.mda`, `mdanse_outputs/dcsf_atm1atm2.mda` 
 `mdanse_outputs/disf_atm1_atm2.mda` and `mdanse_outputs/dcsf_atm1_atm2.mda`.
