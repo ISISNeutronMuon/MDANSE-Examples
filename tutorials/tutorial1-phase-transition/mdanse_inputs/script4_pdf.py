@@ -11,6 +11,7 @@ from MDANSE.Framework.Jobs.IJob import IJob
 ########################################################
 
 parameters = {
+    'atom_transmutation': '{}',                         # atom_transmutation
     'frames': [0, 500, 1],                              # frames
     'output_files': ('../mdanse_outputs/pair_distribution_function_solid', ['MDAFormat'], "INFO"),  # output_files
     'r_values': [0.0, 1.32, 0.01],                      # r values (nm)

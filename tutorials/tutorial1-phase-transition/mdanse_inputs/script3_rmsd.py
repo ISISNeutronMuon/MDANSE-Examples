@@ -11,6 +11,7 @@ from MDANSE.Framework.Jobs.IJob import IJob
 ########################################################
 
 parameters = {
+    'atom_transmutation': '{}',                         # atom_transmutation
     'frames': [0, 1000, 1],                             # frames
     'grouping_level': 'atom',                           # grouping_level
     'output_files': ('../mdanse_outputs/root_mean_square_displacement', ['MDAFormat'], "INFO"),  # output_files

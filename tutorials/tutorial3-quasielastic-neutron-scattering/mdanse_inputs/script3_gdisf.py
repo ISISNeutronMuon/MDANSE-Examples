@@ -1,4 +1,4 @@
-#!C:\Users\xcb63893\AppData\Local\anaconda3\envs\MDANSE\python.exe
+#!/usr/bin/env python
 
 ########################################################
 # This is an automatically generated MDANSE run script #
@@ -11,6 +11,7 @@ from MDANSE.Framework.Jobs.IJob import IJob
 ########################################################
 
 parameters = {
+    'atom_transmutation': '{}',                         # atom_transmutation
     'frames': [0, 1001, 1, 501],                        # frames
     'grouping_level': 'atom',                           # grouping_level
     'instrument_resolution': ('ideal', {}),             # instrument_resolution
