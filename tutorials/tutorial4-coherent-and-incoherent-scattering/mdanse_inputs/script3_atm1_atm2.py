@@ -7,12 +7,12 @@ if "Atm1" not in ATOMS_DATABASE.atoms:
     ATOMS_DATABASE.add_atom("Atm1")
 if "Atm2" not in ATOMS_DATABASE.atoms:
     ATOMS_DATABASE.add_atom("Atm2")
-ATOMS_DATABASE.set_value("Atm1", "b_coherent", 1e-5)
-ATOMS_DATABASE.set_value("Atm1", "b_incoherent2", 0.0)
+ATOMS_DATABASE.set_value("Atm1", "b_coherent", 1.0)
+ATOMS_DATABASE.set_value("Atm1", "b_incoherent", 0.0)
 ATOMS_DATABASE.set_value("Atm1", "color", "255;0;0")
 ATOMS_DATABASE.set_value("Atm1", "vdw_radius", 0.188)
-ATOMS_DATABASE.set_value("Atm2", "b_coherent", 1e-4)
-ATOMS_DATABASE.set_value("Atm2", "b_incoherent2", 0.0)
+ATOMS_DATABASE.set_value("Atm2", "b_coherent", 10.0)
+ATOMS_DATABASE.set_value("Atm2", "b_incoherent", 0.0)
 ATOMS_DATABASE.set_value("Atm2", "color", "247;0;255")
 ATOMS_DATABASE.set_value("Atm2", "vdw_radius", 0.188)
 # uncomment the line below if you wish to save Atm1 and Atm2 to your

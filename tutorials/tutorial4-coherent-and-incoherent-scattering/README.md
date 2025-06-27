@@ -12,7 +12,7 @@ scattering (QENS)** before starting this one.
 
 In MDANSE, the separation into the coherent and incoherent parts of the 
 neutron scattering functions is calculated based on the values of `b_coherent`
-and `b_incoherent2` (neutron scattering lengths) of the atoms in the
+and `b_incoherent` (neutron scattering lengths) of the atoms in the
 simulated system. There are 
 four default hydrogen atom types that can be used. 
 H1, H2 and H3 are labels for specific hydrogen isotopes: $^{1}$H,
@@ -20,29 +20,29 @@ $^{2}$H (deuterium) and $^{3}$H (tritium).
 The fourth one, H, is an averaged atom type with scattering lengths which 
 depend on the natural abundances of the three isotopes.
 
-| Atom Type | $b_{\mathrm{coh}}$ / nm  | $b_{\mathrm{inc}}^2$ / nm<sup>2</sup> |
-|-----------|--------------------------|---------------------------------------|
-| H1        | $-3.7406 \times 10^{-5}$ | $6.3878 \times 10^{-8}$               |
-| H2        | $6.671 \times 10^{-5}$   | $1.6322 \times 10^{-9}$               |
-| H3        | $4.792 \times 10^{-5}$   | $1.0816 \times 10^{-10}$              |
-| H         | $-3.739 \times 10^{-5}$  | $6.3869 \times 10^{-8}$               |
+| Atom Type | $b_{\mathrm{coh}}$ / fm  | $b_{\mathrm{inc}}$ / fm   |
+|-----------|--------------------------|---------------------------|
+| H1        | $-3.7406$                | $25.274$                  |
+| H2        | $6.671$                  | $4.04$                    |
+| H3        | $4.792$                  | $1.056$                   |
+| H         | $-3.739$                 | $25.272$                  |
 
 For the isotopes H1, H2, and H3, $b_{\mathrm{coh}}$ and $b_{\mathrm{inc}}^2$ depend on 
 their $b_{-}$ and $b_{+}$, and $p_{-}$ and $p_{+}$ values, which are the scattering lengths 
 and occupation probabilities for the combined neutron-plus-nucleus system with 
 spins $I-\frac{1}{2}$ or $I+\frac{1}{2}$. For example, H1 has a spin of $I = \frac{1}{2}$
 and combined spin with the neutron of 0 and 1 with degeneracies of 1 and 3. The measured 
-scattering lengths are $b_{-,\text{H1}} = -47.5 \times 10^{-5}$ and $b_{+,\text{H1}} = 10.85 \times 10^{-5}$. 
+scattering lengths are $b_{-,\text{H1}} = -47.5$ and $b_{+,\text{H1}} = 10.85$. 
 Therefore, the coherent and the squared incoherent scattering lengths will be
 
 ```math
-b_{\mathrm{coh,H1}} = \frac{1}{4} (-47.5 \times 10^{-5}) + \frac{3}{4} (10.85 \times 10^{-5}) = -3.7406 \times 10^{-5}
+b_{\mathrm{coh,H1}} = \frac{1}{4} (-47.5) + \frac{3}{4} 10.85 = -3.7406
 ```
 
 and
 
 ```math
-b_{\mathrm{inc,H1}}^2 = \frac{1}{4} (-47.5 \times 10^{-5})^2 + \frac{3}{4} (10.85 \times 10^{-5})^2 - b_{\mathrm{coh,H1}}^2  = 6.3878 \times 10^{-8}.
+b_{\mathrm{inc,H1}} = (\frac{1}{4} (-47.5)^2 + \frac{3}{4} (10.85)^2 - b_{\mathrm{coh,H1}}^2)^{\frac{1}{2}}  = 25.272.
 ```
 
 ### Isotopic Incoherence
@@ -50,35 +50,35 @@ b_{\mathrm{inc,H1}}^2 = \frac{1}{4} (-47.5 \times 10^{-5})^2 + \frac{3}{4} (10.8
 Let's compare the scattering lengths of argon.
 
 
-| Atom Type | $b_{\mathrm{coh}}$ / nm | $b_{\mathrm{inc}}^2$ / nm<sup>2</sup> |
-|-----------|-------------------------|---------------------------------------|
-| Ar36      | $24.9 \times 10^{-5}$   | $0.0$                                 |
-| Ar38      | $3.5 \times 10^{-5}$    | $0.0$                                 |
-| Ar40      | $1.83 \times 10^{-5}$   | $0.0$                                 |
-| Ar        | $1.909 \times 10^{-5}$  | $1.7956 \times 10^{-10}$              |
+| Atom Type | $b_{\mathrm{coh}}$ / fm | $b_{\mathrm{inc}}$ / fm   |
+|-----------|-------------------------|---------------------------|
+| Ar36      | $24.9$                  | $0.0$                     |
+| Ar38      | $3.5$                   | $0.0$                     |
+| Ar40      | $1.83$                  | $0.0$                     |
+| Ar        | $1.909$                 | $1.3381$                  |
 
 These isotopes are all zero spin nuclei which lead to zero 
-$b_{\mathrm{inc}}^2$ values. Unlike for the hydrogen atoms, there will be no
-contribution to the incoherent scattering from spin incoherence. The $b_{\mathrm{inc}}^2$ 
+$b_{\mathrm{inc}}$ values. Unlike for the hydrogen atoms, there will be no
+contribution to the incoherent scattering from spin incoherence. The $b_{\mathrm{inc}}$ 
 for the Ar atom type arises from isotopic incoherence. The natural abundances
 of the argon isotopes are 0.337%, 0.063%, and 99.6% for the Ar36, Ar38, and Ar40 
 isotopes, respectively. Therefore, the coherent and the squared incoherent scattering
 lengths of Ar are 
 
 ```math
-b_{\mathrm{coh,Ar}} = 0.00337 (24.9 \times 10^{-5}) + 0.00063 (3.5 \times 10^{-5}) + 0.996 (1.83 \times 10^{-5}) = 1.909 \times 10^{-5}
+b_{\mathrm{coh,Ar}} = 0.00337 \times 24.9 + 0.00063 \times 3.5 + 0.996 \times 1.83 = 1.909
 ```
 
 and
 
 ```math
-b_{\mathrm{inc,Ar}}^2 = 0.00337 (24.9 \times 10^{-5})^2 + 0.00063 (3.5 \times 10^{-5})^2 + 0.996 (1.83 \times 10^{-5})^2 - b_{\mathrm{coh,Ar}}^2  = 1.7956 \times 10^{-10}.
+b_{\mathrm{inc,Ar}} = (0.00337 (24.9)^2 + 0.00063 (3.5)^2 + 0.996 (1.83)^2 - b_{\mathrm{coh,Ar}}^2)^{\frac{1}{2}}  = 1.3381.
 ```
 
 When we use the Ar atom type in MDANSE, we assume that the isotopes of argon 
 in our system are randomly distributed and follow their natural abundances. 
 In the case of the atom types which are not specific isotopes 
-(e.g. H and Ar) the $b_{\mathrm{inc}}^2$ contains contributions from only spin 
+(e.g. H and Ar) the $b_{\mathrm{inc}}$ contains contributions from only spin 
 and isotopic incoherence.
 
 
@@ -147,14 +147,14 @@ Chemical Elements Database Editor button (next to the periodic table button)
 to start the editor. Right-click on the table, click `New Custom Atom` and 
 add three new atoms `Atm1`, `Atm2`, and `Atm1Atm2` (if these custom atoms 
 already exist, then delete them before starting this step of the tutorial). 
-Next, set the `b_coherent` and `b_incoherent2` properties to the values
+Next, set the `b_coherent` and `b_incoherent` properties to the values
 given here:
 
-| Atom Type | $b_{\mathrm{coh}}$ / nm | $b_{\mathrm{inc}}^2$ / nm<sup>2</sup> |
-|-----------|-------------------------|---------------------------------------|
-| Atm1      | $1.0 \times 10^{-5}$    | $0.0$                                 |
-| Atm2      | $1.0 \times 10^{-4}$    | $0.0$                                 |
-| Atm1Atm2  | $5.5 \times 10^{-5}$    | $2.025 \times 10^{-9}$                |
+| Atom Type | $b_{\mathrm{coh}}$ / fm | $b_{\mathrm{inc}}$ / fm |
+|-----------|-------------------------|-------------------------|
+| Atm1      | $1.0$                   | $0.0$                   |
+| Atm2      | $10.0$                  | $0.0$                   |
+| Atm1Atm2  | $5.5$                   | $4.5$                   |
 
 The element table with the correct values is shown in the screenshot below.
 
@@ -171,13 +171,13 @@ We defined `Atm1Atm2` to be formed from a 50/50 mixture of `Atm1` and `Atm2`
 so that 
 
 ```math
-b_{\mathrm{coh,Atm1Atm2}} = 0.5 (1 \times 10^{-5}) + 0.5 (1 \times 10^{-4}) = 5.5 \times 10^{-5}
+b_{\mathrm{coh,Atm1Atm2}} = 0.5 \times 1 + 0.5 \times 10 = 5.5
 ```
 
 and
 
 ```math
-b_{\mathrm{inc,Atm1Atm2}}^2 = 0.5 (1 \times 10^{-5})^2 + 0.5 (1 \times 10^{-4})^2 - b_{\mathrm{coh,Atm1Atm2}}^2  = 2.025 \times 10^{-9}.
+b_{\mathrm{inc,Atm1Atm2}} = (0.5 (1)^2 + 0.5 (10)^2 - b_{\mathrm{coh,Atm1Atm2}}^2)^{\frac{1}{2}} = 4.5.
 ```
 
 Run the `mdanse_inputs/script2_random.py`. This will generate a 
@@ -287,7 +287,7 @@ from isotopic incoherence. If `Atm1`
 and `Atm2` are different chemical elements
 then a similar line of reasoning follows,
 but with chemical incoherence instead of isotopic incoherence.
-The way that `b_coherent` and `b_incoherent2`
+The way that `b_coherent` and `b_incoherent`
 are defined in `Atm1Atm2` is specifically for trajectories where `Atm1` 
 and `Atm2` are in equivalent positions and have a 1:1 ratio. 
 When `Atm1Atm2` is used, the contribution from isotopic incoherence is 
