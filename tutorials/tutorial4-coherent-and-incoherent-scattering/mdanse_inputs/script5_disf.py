@@ -20,7 +20,7 @@ parameters_atm1_atm2 = {
     'q_vectors': ('SphericalLatticeQVectors', {'seed': 1, 'shells': [10.0, 44.0, 2.0], 'n_vectors': 100, 'width': 0.2}),  # q_vectors
     'running_mode': ('single-core',),                   # running_mode
     'trajectory': '../mdanse_outputs/converted_atm1_atm2.mdt',  # trajectory
-    'weights': 'b_incoherent2',                                 # weights
+    'weights': 'b_incoherent',                                 # weights
 }
 parameters_atm1atm2 = {
     'atom_transmutation': '{}',                         # atom_transmutation
@@ -32,7 +32,7 @@ parameters_atm1atm2 = {
     'q_vectors': ('SphericalLatticeQVectors', {'seed': 1, 'shells': [10.0, 44.0, 2.0], 'n_vectors': 100, 'width': 0.2}),  # q_vectors
     'running_mode': ('single-core',),                   # running_mode
     'trajectory': '../mdanse_outputs/converted_atm1atm2.mdt',  # trajectory
-    'weights': 'b_incoherent2',                                 # weights
+    'weights': 'b_incoherent',                                 # weights
 }
 
 
