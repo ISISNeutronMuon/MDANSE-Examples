@@ -15,8 +15,8 @@ neutron scattering functions is calculated based on the values of `b_coherent`
 and `b_incoherent` (neutron scattering lengths) of the atoms in the
 simulated system. There are 
 four default hydrogen atom types that can be used. 
-H1, H2 and H3 are labels for specific hydrogen isotopes: $^{1}$H,
-$^{2}$H (deuterium) and $^{3}$H (tritium).
+H1, H2 and H3 are labels for specific hydrogen isotopes: $^{1}\mathrm{H}$,
+$^{2}\mathrm{H}$ (deuterium) and $^{3}\mathrm{H}$ (tritium).
 The fourth one, H, is an averaged atom type with scattering lengths which 
 depend on the natural abundances of the three isotopes.
 
@@ -27,7 +27,7 @@ depend on the natural abundances of the three isotopes.
 | H3        | $4.792$                  | $1.056$                   |
 | H         | $-3.739$                 | $25.272$                  |
 
-For the isotopes H1, H2, and H3, $b_{\mathrm{coh}}$ and $b_{\mathrm{inc}}^2$ depend on 
+For the isotopes H1, H2, and H3, $b_{\mathrm{coh}}$ and $b_{\mathrm{inc}}$ depend on 
 their $b_{-}$ and $b_{+}$, and $p_{-}$ and $p_{+}$ values, which are the scattering lengths 
 and occupation probabilities for the combined neutron-plus-nucleus system with 
 spins $I-\frac{1}{2}$ or $I+\frac{1}{2}$. For example, H1 has a spin of $I = \frac{1}{2}$
@@ -72,7 +72,7 @@ b_{\mathrm{coh,Ar}} = 0.00337 \times 24.9 + 0.00063 \times 3.5 + 0.996 \times 1.
 and
 
 ```math
-b_{\mathrm{inc,Ar}} = (0.00337 (24.9)^2 + 0.00063 (3.5)^2 + 0.996 (1.83)^2 - b_{\mathrm{coh,Ar}}^2)^{\frac{1}{2}}  = 1.3381.
+b_{\mathrm{inc,Ar}} = (0.00337 \times (24.9)^2 + 0.00063 \times (3.5)^2 + 0.996 \times (1.83)^2 - b_{\mathrm{coh,Ar}}^2)^{\frac{1}{2}}  = 1.3381.
 ```
 
 When we use the Ar atom type in MDANSE, we assume that the isotopes of argon 
@@ -177,7 +177,7 @@ b_{\mathrm{coh,Atm1Atm2}} = 0.5 \times 1 + 0.5 \times 10 = 5.5
 and
 
 ```math
-b_{\mathrm{inc,Atm1Atm2}} = (0.5 (1)^2 + 0.5 (10)^2 - b_{\mathrm{coh,Atm1Atm2}}^2)^{\frac{1}{2}} = 4.5.
+b_{\mathrm{inc,Atm1Atm2}} = (0.5 \times (1)^2 + 0.5 \times (10)^2 - b_{\mathrm{coh,Atm1Atm2}}^2)^{\frac{1}{2}} = 4.5.
 ```
 
 Run the `mdanse_inputs/script2_random.py`. This will generate a 
