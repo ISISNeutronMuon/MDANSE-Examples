@@ -1,4 +1,4 @@
-#!C:\Users\xcb63893\AppData\Local\miniconda3\envs\MDANSE\python.exe
+#!/usr/bin/env python
 
 import os
 
