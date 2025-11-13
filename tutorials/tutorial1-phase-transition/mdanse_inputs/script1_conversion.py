@@ -1,25 +1,41 @@
 #!/usr/bin/env python
 
+import os
+
+os.environ.update(
+    OMP_NUM_THREADS="1",
+    OPENBLAS_NUM_THREADS="1",
+    MKL_NUM_THREADS="1",
+    VECLIB_MAXIMUM_THREADS="1",
+    NUMEXPR_NUM_THREADS="1",
+)
+
 ########################################################
 # This is an automatically generated MDANSE run script #
 ########################################################
 
-from MDANSE.Framework.Jobs.IJob import IJob
+from MDANSE.Framework.Converters.Converter import Converter
 
 ########################################################
 # Job parameters                                       #
 ########################################################
 
 parameters = {
-    'atom_aliases': '{"mass=96.0": {"1": "Mo"}}',       # Atom mapping
-    'config_file': '../md_inputs/structure.txt',  # LAMMPS configuration file
-    'fold': False,                                      # Fold coordinates in to box
-    'lammps_units': 'electron',                         # LAMMPS unit system
-    'n_steps': '0',                                     # Number of time steps (0 for automatic detection)
-    'output_files': ('../mdanse_outputs/converted_trajectory', 32, 128, 'gzip', "INFO"),  # MDANSE trajectory (filename, format)
-    'time_step': '0.2',                                 # Time step (lammps units, depends on unit system)
-    'trajectory_file': '../md_outputs/trajectory.txt',  # LAMMPS trajectory file
-    'trajectory_format': 'custom',                      # LAMMPS trajectory format
+    "atom_aliases": '{"mass=96.0": {"1": "Mo"}}',  # Atom mapping
+    "config_file": "../md_inputs/structure.txt",  # LAMMPS configuration file
+    "fold": False,  # Fold coordinates in to box
+    "lammps_units": "electron",  # LAMMPS unit system
+    "n_steps": "0",  # Number of time steps (0 for automatic detection)
+    "output_files": (
+        "../mdanse_outputs/converted_trajectory",
+        32,
+        128,
+        "gzip",
+        "INFO",
+    ),  # MDANSE trajectory (filename, datatype, chunk size, compression, logfile output)
+    "time_step": "0.2",  # Time step (lammps units, depends on unit system)
+    "trajectory_file": "../md_outputs/trajectory.txt",  # LAMMPS trajectory file
+    "trajectory_format": "custom",  # LAMMPS trajectory format
 }
 
 ########################################################
@@ -27,5 +43,7 @@ parameters = {
 ########################################################
 
 if __name__ == "__main__":
-    lammps = IJob.create('LAMMPS')
-    lammps.run(parameters, status=True)
+    lammps = Converter.create("LAMMPS")
+    # Progress bars only available if tqdm available.
+    # Install with `cli` optional dependency.
+    lammps.run(parameters, status=True, prog_bar=True)
