@@ -1,6 +1,19 @@
+#!/usr/bin/env python
+
+import os
+
+os.environ.update(
+    OMP_NUM_THREADS="1",
+    OPENBLAS_NUM_THREADS="1",
+    MKL_NUM_THREADS="1",
+    VECLIB_MAXIMUM_THREADS="1",
+    NUMEXPR_NUM_THREADS="1",
+)
+
 import random
 from MDANSE.Chemistry import ATOMS_DATABASE
 from MDANSE.Framework.Jobs.IJob import IJob
+
 
 # Create the custom atom types
 if "Atm1" not in ATOMS_DATABASE.atoms:
@@ -32,16 +45,24 @@ for i in range(256):
 
 # setup to parameters to run the trajectory editor.
 parameters = {
-    'atom_charges': '{}',                               # atom_charges
-    'atom_selection': '{}',                             # atom_selection
-    'atom_transmutation': str(mapping).replace("'", '"'),  # atom_transmutation
-    'frames': [0, 1001, 1],                             # frames
-    'molecule_tolerance': [False, 0.04],                # molecule_tolerance
-    'output_files': ('../mdanse_outputs/converted_atm1_atm2', 64, 128, 'gzip', 'INFO'),  # MDANSE trajectory (filename, format)
-    'trajectory': '../mdanse_outputs/converted_trajectory.mdt',  # trajectory
+    "atom_charges": "{}",  # atom_charges
+    "atom_selection": "{}",  # atom_selection
+    "atom_transmutation": str(mapping).replace("'", '"'),  # atom_transmutation
+    "frames": [0, 1001, 1],  # frames
+    "molecule_tolerance": [False, 0.04],  # molecule_tolerance
+    "output_files": (
+        "../mdanse_outputs/converted_atm1_atm2",
+        64,
+        128,
+        "gzip",
+        "no logs",
+    ),  # MDANSE trajectory (filename, datatype, chunk size, compression, logfile output)
+    "trajectory": "../mdanse_outputs/converted_trajectory.mdt",  # trajectory
 }
 
 
 if __name__ == "__main__":
-    trajectoryeditor = IJob.create('TrajectoryEditor')
-    trajectoryeditor.run(parameters, status=True)
+    trajectoryeditor = IJob.create("TrajectoryEditor")
+    # Progress bars only available if tqdm available.
+    # Install with `cli` optional dependency.
+    trajectoryeditor.run(parameters, status=True, prog_bar=True)
