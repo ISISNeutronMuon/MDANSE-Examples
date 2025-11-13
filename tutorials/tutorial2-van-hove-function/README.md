@@ -173,7 +173,7 @@ for the job to complete.
 Once complete, the results would load up automatically. Go to the 
 'Plot Creator' and plot the `g(r,t)_total` result. Go to the 'Plot Holder' 
 and in the dataset table set the `g(r,t)_total` to have a 'Main axis' of 
-`r` and the 'Use it?' with a setting of `0,10,20`.
+`r` and the 'Use it?' with a setting of `0:30:10`.
 
 <p align="center">
     <img width="800" src="pictures/vhd_plotting_gui.png"/>
@@ -207,7 +207,7 @@ Go to the 'Plot Creator' tab and plot the `g(r,t)_total` result. Go to the 'Plot
 Holder' tab and in the dataset table set the 'Main axis' of `g(r,t)_total` to `r`. 
 Notice that for $t=0$ you get one large value near zero; remember that at 
 $t=0$ the self-part of the van Hove function is a delta function. Set the 
-'Main axis' to `r` and 'Use it?' setting to `10,20,30`. You may need to 
+'Main axis' to `r` and 'Use it?' setting to `10:40:10`. You may need to 
 zoom in for the plots towards smaller distances.
 
 <p align="center">
