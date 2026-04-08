@@ -36,7 +36,7 @@ parameters = {
         {
             "seed": 0,
             "shells": [10.0, 44.0, 2.0],
-            "n_vectors": 100,
+            "n_vectors": 1000,
             "width": 0.0,
         },
     ),  # q_vectors
