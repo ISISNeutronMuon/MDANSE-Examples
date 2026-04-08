@@ -107,6 +107,10 @@ contain this information. Here we used the
 which required us to use the *electron* unit system. Another
 crucial detail is the size of the simulation time step.
 You can also find it in the LAMMPS script (and it set to 0.2).
+Since the frames are numbered in the LAMMPS output, the converter
+uses the time step of the simulation, and calculates the time
+step of the trajectory (which may include only a subset of all
+the frames) based on the frame numbers.
 
 Go to the 'Converters' tab in the GUI, and pick the LAMMPS
 converter. Now you have to pass the correct inputs to the
@@ -127,7 +131,7 @@ name `mdanse_outputs/converted_trajectory.mdt`.
 If some of the fields are not filled out correctly, the
 GUI will try to make it clear
 by disabling the 'RUN!' button and highlighting the
-wrong entries.
+invalid entries.
 
 <p align="center">
     <img width="800" src="pictures/gui_converter_errors.png"/>
@@ -153,7 +157,16 @@ from mdanse_inputs as the working directory.
 
 ## Load the trajectory
 
-Go to the 'Trajectories' tab and load the trajectory created
+Once the conversion of the trajectory has completed, the
+trajectory will be loaded automatically. You can see it in
+the 'Trajectories' tab. (If you switch off the GUI and start it
+again, none of the trajectories will be loaded initially,
+but you can load them again using the top menu File -> Open
+Recent Trajectory File. Otherwise you can go to the 'Trajectories'
+tab and click 'Load .MDT Trajectories' to load one or more
+trajectories manually.)
+
+Go to the 'Trajectories' tab and select the trajectory created
 by the converter in the previous step. You should see the first
 frame of the trajectory in the 3D viewer. Also, basic information
 about the trajectory will be displayed in the bottom-left
@@ -205,13 +218,14 @@ You can plot the calculated temperature by going to the
     <img width="800" src="pictures/gui_plot_creator.png"/>
 </p>
 
-Load the analysis result using the
-'Load .MDA results' button. Now, unfold the contents
-tree in the data view below, and click on the 'temperature'
-dataset. It will appear in the box on the right.
-Since we only have one curve to plot, you can just click
-the 'Plot Data' button. The curve will be plotted in
-the current plot in the 'Plot Holder' tab.
+Once the temperature calculation has ended, the results will
+be loaded into the 'Plot Creator' tab.
+(If you switched off the GUI after the calculation and started
+it again, you can quickly load the results again using the
+File -> Open Recent Results File. You can also load one or more
+result files using the 'Load .MDA results' button in the 
+'Plot Creator' tab.) In the 'Plot Creator' tab, double-click
+the file name to create the plot.
 
 Go to the 'Plot Holder' tab and have a look at the results.
 Most likely the first and last values of the temperature
@@ -238,7 +252,7 @@ Same as in the previous part of the tutorial,
 make sure that the trajectory has been loaded into the GUI.
 
 In the Actions tab, go to
-'Analysis -> Structure -> RootMeanSquareDeviation'.
+'Analysis -> Dynamics -> RootMeanSquareDeviation'.
 The default values of the input fields should work well
 in this example; the only thing that needs to be set
 is the output filename. In the script we used
@@ -246,11 +260,9 @@ the destination `mdanse_outputs/root_mean_square_displacement.mda`.
 
 Again, you can observe the progress of the analysis in the
 'Running Jobs' tab. Once the calculation has finished,
-go to the 'Plot Creator' tab. On the right side, 'Clear'
-the table of data and create a 'New Plot'. Then, load the
-output file you just created, and select the dataset
-'rmsd_all'. On the right, click 'Plot Data' and go
-to the Plot Holder tab. You will see the calculated
+go to the 'Plot Creator' tab. Double-click the
+name of the new file and go
+to the 'Plot Holder' tab. You will see the calculated
 root mean square displacement of atoms from the
 reference position (which in our analysis was
 the initial position).
@@ -278,10 +290,13 @@ set frames to 700, 900, 1, change the output file name to
 and click 'RUN!' again. (The script that will do the same thing
 for you outside of the GUI 'script4_pdf.py')
 
-In the Plot Creator tab click 'Clear', 'New Plot', and load
-both the output files you just created. Add 'pdf_total'
-data set from each of the two files to the plot and click
-'Plot Data'. In the Plot Holder tab you should now
+In the 'Plot Creator' tab, we will overplot the results of the
+two Pair Distribution Function calculations. Click 'Clear',
+then 'New Plot', and finally unfold the data tree of each
+of the two files. You will see several data groups ('pdf', 'rdf',
+and 'tcf'). You can add datasets to the current plot selection
+by clicking their names. From each file pick the 'pdf/total' dataset,
+then click 'Plot Data'. In the 'Plot Holder' tab you should now
 see a plot like this one:
 
 <p align="center">
