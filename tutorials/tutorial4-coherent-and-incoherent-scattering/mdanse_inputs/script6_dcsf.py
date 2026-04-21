@@ -27,10 +27,12 @@ parameters_atm1_atm2 = {
     "q_vectors": (
         "SphericalLatticeQVectors",
         {
+            "force_equal_weights": False,
+            "n_samples": 100000,
+            "n_vectors": 100,
             "seed": 1,
             "shells": [10.0, 44.0, 2.0],
-            "n_vectors": 1000,
-            "width": 0.2,
+            "width": 0.25
         },
     ),  # q_vectors
     "running_mode": ("single-core",),  # running_mode
@@ -51,10 +53,12 @@ parameters_atm1atm2 = {
     "q_vectors": (
         "SphericalLatticeQVectors",
         {
+            "force_equal_weights": False,
+            "n_samples": 100000,
+            "n_vectors": 100,
             "seed": 1,
             "shells": [10.0, 44.0, 2.0],
-            "n_vectors": 1000,
-            "width": 0.2,
+            "width": 0.25
         },
     ),  # q_vectors
     "running_mode": ("single-core",),  # running_mode
