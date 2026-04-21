@@ -129,7 +129,7 @@ trajectory will be in `mdanse_outputs/converted_trajectory.mdt`.
 ## Calculated the DISF and GDISF
 Open and select the `converted_trajectory.mdt` from tutorial 2 and then select the 
 DynamicIncoherentStructureFactor job and set the `q_vectors` setting to
-`SphericalQVectors`, shells to `(10, 44, 2)`, `n_vectors` to `1000` and `width` 
+`SphericalQVectors`, shells to `(10, 44, 2)`, `n_vectors` to `100` and `width` 
 to `0` and the `weights` setting to `equal`. This setting will mean 
 that $q$ values from $1.0$  to $4.4$ Å in steps of $0.2$ Å will be calculated. 
 To speed the calculation up, 
