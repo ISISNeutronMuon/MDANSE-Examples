@@ -69,7 +69,7 @@ obtain
 ```math
 \langle \exp(i q_x d_x(t) + i q_y d_y(t)  + i q_z d_z(t) ) \rangle  \approx  \exp(-\frac{1}{2}\langle d^2(t) \rangle q^{2}) 
 ```
-where we have used $\langle d^2(t) \rangle / 3 = \langle d_x^2(t) \rangle = \langle d_y^2(t) \rangle = \langle d_z^2(t) \rangle$ and
+where we have used $\langle d^2(t) \rangle = \langle d_x^2(t) \rangle = \langle d_y^2(t) \rangle = \langle d_z^2(t) \rangle$ and
 $q^{2} = q_x^{2} + q_y^{2} + q_z^{2}$.
 
 This approximation is exact for a system which undergoes Fickian diffusion 
