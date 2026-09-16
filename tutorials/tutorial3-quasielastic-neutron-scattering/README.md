@@ -46,19 +46,36 @@ and
 ```
 
 There are a number of ways to show how the DISF is related to the 
-diffusion constant of a particle. We will start by rewriting the incoherent 
-intermediate scattering function so that it is an exponential 
-of the cumulants of $d_{j}(t) = \hat{q} \cdot \[\vec{r_{j}}(t) - \vec{r_{j}}(0)\]$ 
-which is the displacement of atom $j$ along the unit vector ($\hat{q}$) of $\vec{q}$.
+diffusion constant of a particle. We first note that the natural log 
+of the dynamic intermediate scattering function can be written as a 
+series of cumulants
 ```math
-F_{\mathrm{inc}}(\vec{q}, t) = \frac{1}{N} \sum_{j} \exp \left[-\frac{q^2}{2} \langle d^{2}_{j}(t) \rangle + \cdots \right]
+\ln \langle \exp(i q_x d_x(t) + i q_y d_y(t)  + i q_z d_z(t) ) \rangle  = \sum_a^{\infty} \sum_b^{\infty} \sum_c^{\infty} \frac{\langle \langle d_x^{a}(t) d_y^{b}(t) d_z^{c}(t)  \rangle \rangle}{ a ! b ! c !} (iq_x)^{a} (iq_y)^{b} (iq_z)^{c}
 ```
-The Gaussian approximation is obtained by taking only the leading term of the 
-exponent, where $\langle d_{j}^{2}(t) \rangle$ which is the 2nd moment 
-of $d_{j}(t)$. This approximation is exact for a system which undergoes Fickian diffusion 
+where $d_x = r_x(t) - r_x(0)$. We then truncate the above to terms second order in $q$ 
+```math
+\ln \langle \exp(i q_x d_x(t) + i q_y d_y(t)  + i q_z d_z(t) ) \rangle  \approx \langle \langle d_x(t) \rangle \rangle i q_x + \cdots - \frac{1}{2}\langle \langle d_x^2(t) \rangle \rangle q_x^{2}  -  \langle \langle d_x(t) d_y(t)  \rangle \rangle q_x q_y - \cdots
+```
+where 
+```math
+\langle\langle d_x(t) \rangle \rangle = \langle d_x(t) \rangle = 0
+```
+since our system should be in equilibrium and
+```math
+\langle \langle d_x(t) d_y(t) \rangle \rangle  = \langle  d_x(t) d_y(t) \rangle - \langle d_x(t) \rangle \langle d_y(t) \rangle  = 0.
+```
+for an isotropic system. Taking the exponential of our truncated series we 
+obtain
+```math
+\langle \exp(i q_x d_x(t) + i q_y d_y(t)  + i q_z d_z(t) ) \rangle  \approx  \exp(-\frac{1}{2}\langle d^2(t) \rangle q^{2}) 
+```
+where we have used $d^2(t) = d_x^2(t) + d_y^2(t) + d_z^2(t)$ and
+$q^{2} = q_x^{2} + q_y^{2} + q_z^{2}$.
+
+This approximation is exact for a system which undergoes Fickian diffusion 
 (normal diffusion) so that for an isotropic monoatomic system
 ```math
-\langle d^{2}_{j}(t) \rangle = \mathrm{MSD}(t) / 3 = 2 D \vert t \vert
+\langle d^{2}(t) \rangle = \mathrm{MSD}(t) = 6 D \vert t \vert
 ```
 where $D$ is diffusion constant and the intermediate scattering 
 function with the Gaussian approximation will be 
@@ -73,16 +90,16 @@ G_{\mathrm{s}}(\vec{r}, t) = \left( \frac{1}{4 \pi D \vert t \vert} \right)^{3/2
 ```
 and
 ```math
-S_{\mathrm{inc}}(\vec{q}, t) = \frac{1}{\pi} \frac{\hbar \Gamma(q) }{(\hbar \omega)^2 + (\hbar \Gamma(q))^2}
+S_{\mathrm{inc}}(\vec{q}, \omega) = \frac{1}{\pi} \frac{\hbar \Gamma(q) }{(\hbar \omega)^2 + (\hbar \Gamma(q))^2}
 ```
-here $S_{\mathrm{inc}}(\vec{q}, t)$ is a Lorentzian function with a 
+here $S_{\mathrm{inc}}(\vec{q}, \omega)$ is a Lorentzian function with a 
 half-width at half maximum of $\hbar \Gamma(q)$ where $\Gamma(q) = D q^2$.
 The diffusion constant can be obtained from a QENS experiment by measuring 
 $\hbar \Gamma(q)$ of the QENS peak as a function of $q^2$.
 
 **Question 1**: Some other examples where the Gaussian approximation is 
 exact include the ideal gas, harmonic oscillator and the Debye lattice. For the 
-ideal gas (free particles) what is $\langle d^{2}_{j}(t) \rangle$ for this 
+ideal gas (free particles) what is $\langle d^{2}(t) \rangle$ for this 
 system given that the particles velocities are distributed following the 
 Maxwell-Boltzmann distribution? Finally, what is the van Hove function, the 
 intermediate scattering function and dynamic structure factor for this system? 
@@ -263,7 +280,7 @@ is the Maxwell-Boltzmann distribution. Solving the above we obtain the following
 ```math
 \langle d^{2}(t) \rangle = \frac{1}{2} (v_{\mathrm{p}} t)^2
 ```
-where $v_{\mathrm{p}} = \sqrt{3k_{\mathrm{B}} T / m}$ is the most probable 
+where $v_{\mathrm{p}} = \sqrt{2k_{\mathrm{B}} T / m}$ is the most probable 
 speed and $m$ is the mass of the particles.
 
 We can now plug this result into the Gaussian approximation of the intermediate 
@@ -276,7 +293,7 @@ G_{\mathrm{s}}(\vec{r}, t) = \left( \frac{1}{\pi v_{\mathrm{p}}^2 t^2} \right)^{
 F_{\mathrm{inc}}(\vec{q}, t) =  \exp\left[ - \frac{1}{2} (q v_{\mathrm{p}} t)^2 \right]
 ```
 ```math
-S_{\mathrm{inc}}(\vec{q}, t) = \frac{1}{\sqrt{2 \pi} q v_{\mathrm{p}}} \exp\left[ \frac{1}{2}\left(\frac{\omega}{q v_{\mathrm{p}}}\right)^2 \right]
+S_{\mathrm{inc}}(\vec{q}, \omega) = \frac{1}{\sqrt{2 \pi} q v_{\mathrm{p}}} \exp\left[ \frac{1}{2}\left(\frac{\omega}{q v_{\mathrm{p}}}\right)^2 \right]
 ```
 
 ## Question 2:
