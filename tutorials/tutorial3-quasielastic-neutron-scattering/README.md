@@ -69,13 +69,13 @@ obtain
 ```math
 \langle \exp(i q_x d_x(t) + i q_y d_y(t)  + i q_z d_z(t) ) \rangle  \approx  \exp(-\frac{1}{2}\langle d^2(t) \rangle q^{2}) 
 ```
-where we have used $d^2(t) = d_x^2(t) + d_y^2(t) + d_z^2(t)$ and
+where we have used $d^2(t) / 3 = d_x^2(t) = d_y^2(t) = d_z^2(t)$ and
 $q^{2} = q_x^{2} + q_y^{2} + q_z^{2}$.
 
 This approximation is exact for a system which undergoes Fickian diffusion 
 (normal diffusion) so that for an isotropic monoatomic system
 ```math
-\langle d^{2}(t) \rangle = \mathrm{MSD}(t) = 6 D \vert t \vert
+\langle d^{2}(t) \rangle = \mathrm{MSD}(t) / 3 = 2 D \vert t \vert
 ```
 where $D$ is diffusion constant and the intermediate scattering 
 function with the Gaussian approximation will be 
