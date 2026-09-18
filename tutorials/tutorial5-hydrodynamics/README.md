@@ -27,7 +27,7 @@ of change of $A(t)$ over time is
 \frac{\mathrm{d} A(t)}{\mathrm{d}t} = - \int_{S} \mathrm{d}\vec{s} \cdot \vec{J}_{a}(\vec{r}, t) + \int_{V} \mathrm{d}^3 r\ \sigma_{a}(\vec{r}, t)
 ```
 where the first integral on the right describes the current flow of $a$ into or
-out of the volume $V$ and $\sigma_{x}(\vec{r}, t)$ is a function which describes 
+out of the volume $V$ and $\sigma_{a}(\vec{r}, t)$ is a function which describes 
 a change in property $a$ due to some internal sink or source of $a$. From 
 Gauss' theorem we can change the above surface integral to a volume integral
 so that
