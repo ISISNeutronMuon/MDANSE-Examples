@@ -88,7 +88,7 @@ For a compressible Newtonian fluid the stress tensor is as follows
 \overleftrightarrow{\sigma}(\vec{r}, t) = - p(\vec{r}, t)\overleftrightarrow{I} + \eta_{s} \left[ \vec{\nabla}\otimes \vec{v}(\vec{r}, t) +  (\vec{\nabla}\otimes \vec{v}(\vec{r}, t))^{\mathrm{T}} - \frac{2}{3} (\vec{\nabla} \cdot \vec{v}(\vec{r}, t)) \overleftrightarrow{I}\right] + \eta_{v} (\vec{\nabla} \cdot \vec{v}(\vec{r}, t))\overleftrightarrow{I}
 ```
 where $p$ is the pressure density, and $\eta_{s}$ and $\eta_{v}$ are the shear and bulk viscosities, 
-see Further reading for more details. The $\vec{Q}$ is the flux of the heat energy density
+see Further reading for more details. The flux of the heat energy density $\vec{Q}$
 is given by Fourier's law
 ```math
 \vec{Q}(\vec{r}, t) = - \lambda \vec{\nabla} T(\vec{r}, t)
