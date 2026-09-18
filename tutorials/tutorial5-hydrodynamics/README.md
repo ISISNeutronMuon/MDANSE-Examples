@@ -53,10 +53,10 @@ momentum, and energy flux densities.
 \frac{\partial \rho(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \left[ \rho(\vec{r}, t) \vec{v}(\vec{r}, t) \right] = 0
 ```
 ```math
-\frac{\partial \rho(\vec{r}, t)\vec{v}(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \left[ \rho(\vec{r}, t) \vec{v}(\vec{r}, t) \otimes \vec{v}(\vec{r}, t) - \overleftrightarrow{\sigma}(\vec{r}, t) \right] = 0.
+\frac{\partial \rho(\vec{r}, t)\vec{v}(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \left[ \rho(\vec{r}, t) \vec{v}(\vec{r}, t) \otimes \vec{v}(\vec{r}, t) - \overleftrightarrow{\sigma}(\vec{r}, t) \right] = 0
 ```
 ```math
-\frac{\partial e(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \left[ e(\vec{r}, t) \vec{v}(\vec{r}, t) + \vec{Q}(\vec{r}, t) + \vec{v}(\vec{r}, t) \dot \overleftrightarrow{\sigma}(\vec{r}, t) \right] = 0.
+\frac{\partial e(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \left[ e(\vec{r}, t) \vec{v}(\vec{r}, t) + \vec{Q}(\vec{r}, t) + \vec{v}(\vec{r}, t) \cdot \overleftrightarrow{\sigma}(\vec{r}, t) \right] = 0
 ```
 where $\rho$ is the local mass density, $\vec{v}$ is the fluid velocity,
 $\overleftrightarrow{\sigma}$ is the stress tensor, and $\vec{Q}$ is the 
