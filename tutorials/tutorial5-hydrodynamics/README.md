@@ -73,15 +73,15 @@ and the flux of the momentum density is
 ```
 where the first term is flux of momentum density due to the fluid velocity and 
 for the second term is the flux of the momentum density due to external forces from
-the bulk. Finally, the third equation is the conservation of energy and 
-the flux of the energy density is
+the bulk onto our element of fluid. Finally, the third 
+equation is the conservation of energy and the flux of the energy density is
 ```math
  e(\vec{r}, t) \vec{v}(\vec{r}, t) + \vec{Q}(\vec{r}, t) - \vec{v}(\vec{r}, t) \cdot \overleftrightarrow{\sigma}(\vec{r}, t)
 ```
 where the first term is the flux of the energy due to the fluid velocity,
 the second is the flux of the energy due to heat diffusion, and the 
-last term is the flux of the energy due to external work by the bulk.
-
+last term is the flux of the energy due to external work done by the bulk
+onto our element of fluid.
 
 
 # Further reading
