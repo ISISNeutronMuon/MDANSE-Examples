@@ -73,7 +73,7 @@ and the flux of the momentum density is
  \rho(\vec{r}, t) \vec{v}(\vec{r}, t) \otimes \vec{v}(\vec{r}, t) - \overleftrightarrow{\sigma}(\vec{r}, t)
 ```
 where the first and second terms are flux of momentum density due to the 
-fluid velocity and external forces from the bulk onto our element of fluid. 
+fluid velocity and the external forces from the bulk onto our element of fluid respectively. 
 Finally, the third equation is the conservation of energy and the flux of the 
 energy density is
 ```math
@@ -81,7 +81,7 @@ energy density is
 ```
 where the first, second, and third terms are the flux of the energy due to the 
 fluid velocity, heat diffusion, and external work done by the bulk
-onto our element of fluid.
+onto our element of fluid respectively.
 
 For a compressible Newtonian fluid the stress tensor is as follows 
 ```math
