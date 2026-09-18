@@ -36,9 +36,18 @@ so that
 ```
 and since the volume $V$ was arbitrary 
 ```math
-\frac{\partial a(t)}{\partial t} + \vec{\nabla} \cdot \vec{J}_{a}(\vec{r}, t) = \sigma_{a}(\vec{r}, t).
+\frac{\partial a(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \vec{J}_{a}(\vec{r}, t) = \sigma_{a}(\vec{r}, t).
 ```
 
+To obtain the hydrodynamic equations requires the application of the above conservation 
+equation to the properties of mass, momentum, and energy where in all cases
+$\sigma_{a}(\vec{r}, t) = 0$ since there will be no sinks or sources of
+mass, momentum, or energy in our system. 
+```math
+\frac{\partial a(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \vec{J}_{a}(\vec{r}, t) = 0.
+```
+Therefore, what remains is to find a form of the current density for mass,
+momentum, and energy.
 
 
 # Further reading
