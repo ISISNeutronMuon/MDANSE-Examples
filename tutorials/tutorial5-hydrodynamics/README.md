@@ -59,8 +59,24 @@ momentum, and energy flux densities.
 \frac{\partial e(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \left[ e(\vec{r}, t) \vec{v}(\vec{r}, t) + \vec{Q}(\vec{r}, t) + \vec{v}(\vec{r}, t) \cdot \overleftrightarrow{\sigma}(\vec{r}, t) \right] = 0
 ```
 where $\rho$ is the local mass density, $\vec{v}$ is the fluid velocity,
-$\overleftrightarrow{\sigma}$ is the stress tensor, and $\vec{Q}$ is the 
-heat flux density. 
+$\overleftrightarrow{\sigma}$ is the stress tensor, $e$ it the local energy density, 
+and $\vec{Q}$ is the flux of the heat energy density. The first equation describes a fluid 
+which converse mass and the flux of the mass density is simply 
+```math
+\rho(\vec{r}, t) \vec{v}(\vec{r}, t)
+```
+since the flow of mass density across our fluid will be purely due to the 
+fluid velocity. The second equation describes a fluid which conserves momentum
+and the flux of the momentum density is 
+```math
+ \rho(\vec{r}, t) \vec{v}(\vec{r}, t) \otimes \vec{v}(\vec{r}, t) - \overleftrightarrow{\sigma}(\vec{r}, t)
+```
+where the first term is flux of momentum density due to the fluid velocity and 
+for the second term is the flux of the momentum density due to external forces from
+the bulk. 
+
+
+
 
 # Further reading
 Boon, J. P., Yip, S. (1991). Molecular Hydrodynamics. Dover Publications.
