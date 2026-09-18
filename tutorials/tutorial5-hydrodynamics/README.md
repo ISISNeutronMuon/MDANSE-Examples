@@ -85,7 +85,7 @@ onto our element of fluid.
 
 For a compressible Newtonian fluid the stress tensor is as follows 
 ```math
-\overleftrightarrow{\sigma}(\vec{r}, t) = - p(\vec{r}, t)\overleftrightarrow{I} + \eta_{s} \vec{\nabla} \cdot \left[ \vec{\nabla}\otimes \vec{v}(\vec{r}, t) +  (\vec{\nabla}\otimes \vec{v}(\vec{r}, t))^{\mathrm{T}} - \frac{2}{3} \vec{\nabla} \cdot \vec{v}(\vec{r}, t) \overleftrightarrow{I}\right] + \eta_{v} \vec{\nabla} \cdot \left[ \vec{\nabla} \cdot \vec{v}(\vec{r}, t) \overleftrightarrow{I} \right]
+\overleftrightarrow{\sigma}(\vec{r}, t) = - p(\vec{r}, t)\overleftrightarrow{I} + \eta_{s} \left[ \vec{\nabla}\otimes \vec{v}(\vec{r}, t) +  (\vec{\nabla}\otimes \vec{v}(\vec{r}, t))^{\mathrm{T}} - \frac{2}{3} \vec{\nabla} \cdot \vec{v}(\vec{r}, t) \overleftrightarrow{I}\right] + \eta_{v} \left[ \vec{\nabla} \cdot \vec{v}(\vec{r}, t) \overleftrightarrow{I} \right]
 ```
 see Further reading for more details.
 
