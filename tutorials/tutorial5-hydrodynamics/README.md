@@ -26,9 +26,9 @@ of change of $A(t)$ over time is
 ```math
 \frac{\mathrm{d} A(t)}{\mathrm{d}t} = - \int_{S} \mathrm{d}\vec{s} \cdot \vec{J}_{a}(\vec{r}, t) + \int_{V} \mathrm{d}^3 r\ \sigma_{a}(\vec{r}, t)
 ```
-where the first integral on the right describes the current flow $\vec{J}_{a}$ of $a$ into or
+where the first integral on the right describes the current flow $\vec{J}_a$ of $a$ into or
 out of the volume $V$ through surface element $\mathrm{d}\vec{s}$ and 
-$\sigma_{a}(\vec{r}, t)$ is a function which describes 
+$\sigma_a$ is a function which describes 
 a change in property $a$ due to some internal sink or source of $a$. From 
 Gauss' theorem we can change the above surface integral to a volume integral
 so that
@@ -42,7 +42,7 @@ and since the volume $V$ was arbitrary
 
 To obtain the hydrodynamic equations requires the application of the above conservation 
 equation to the properties of mass, momentum, and energy where in all cases
-$\sigma_{a}(\vec{r}, t) = 0$ since there will be no sinks or sources of
+$\sigma_{a} = 0$ since there will be no sinks or sources of
 mass, momentum, or energy in our system. 
 ```math
 \frac{\partial a(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \vec{J}_{a}(\vec{r}, t) = 0.
@@ -60,7 +60,7 @@ momentum, and energy flux densities.
 ```
 where $\rho$ is the local mass density, $\vec{v}$ is the fluid velocity,
 $\overleftrightarrow{\sigma}$ is the stress tensor, and $\vec{Q}$ is the 
-heat flux density.
+heat flux density. 
 
 # Further reading
 Boon, J. P., Yip, S. (1991). Molecular Hydrodynamics. Dover Publications.
