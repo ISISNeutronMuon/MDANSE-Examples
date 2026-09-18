@@ -26,8 +26,9 @@ of change of $A(t)$ over time is
 ```math
 \frac{\mathrm{d} A(t)}{\mathrm{d}t} = - \int_{S} \mathrm{d}\vec{s} \cdot \vec{J}_{a}(\vec{r}, t) + \int_{V} \mathrm{d}^3 r\ \sigma_{a}(\vec{r}, t)
 ```
-where the first integral on the right describes the current flow of $a$ into or
-out of the volume $V$ and $\sigma_{a}(\vec{r}, t)$ is a function which describes 
+where the first integral on the right describes the current flow $\vec{J}_{a}$ of $a$ into or
+out of the volume $V$ through surface element $\mathrm{d}\vec{s}$ and 
+$\sigma_{a}(\vec{r}, t)$ is a function which describes 
 a change in property $a$ due to some internal sink or source of $a$. From 
 Gauss' theorem we can change the above surface integral to a volume integral
 so that
@@ -46,15 +47,20 @@ mass, momentum, or energy in our system.
 ```math
 \frac{\partial a(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \vec{J}_{a}(\vec{r}, t) = 0.
 ```
-Therefore, what remains is to find a form of the current density for mass,
-momentum, and energy.
+Therefore, what remains is to find a form of the mass,
+momentum, and energy flux densities.
 ```math
-\frac{\partial \rho(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot (\rho(\vec{r}, t) \vec{v}(\vec{r}, t)) = 0
+\frac{\partial \rho(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \left[ \rho(\vec{r}, t) \vec{v}(\vec{r}, t) \right] = 0
 ```
 ```math
-\frac{\partial \rho(\vec{r}, t)\vec{v}(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \left[ \rho(\vec{r}, t) \vec{v}(\vec{r}, t) \otimes \vec{v}(\vec{r}, t) - \overleftrightarrow{\sigma} \right] = 0.
+\frac{\partial \rho(\vec{r}, t)\vec{v}(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \left[ \rho(\vec{r}, t) \vec{v}(\vec{r}, t) \otimes \vec{v}(\vec{r}, t) - \overleftrightarrow{\sigma}(\vec{r}, t) \right] = 0.
 ```
-
+```math
+\frac{\partial e(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \left[ e(\vec{r}, t) \vec{v}(\vec{r}, t) + \vec{Q}(\vec{r}, t) + \vec{v}(\vec{r}, t) \dot \overleftrightarrow{\sigma}(\vec{r}, t) \right] = 0.
+```
+where $\rho$ is the local mass density, $\vec{v}$ is the fluid velocity,
+$\overleftrightarrow{\sigma}$ is the stress tensor, and $\vec{Q}$ is the 
+heat flux density.
 
 # Further reading
 Boon, J. P., Yip, S. (1991). Molecular Hydrodynamics. Dover Publications.
