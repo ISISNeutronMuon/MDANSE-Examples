@@ -47,6 +47,7 @@ mass, momentum, or energy in our system.
 ```math
 \frac{\partial a(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \vec{J}_{a}(\vec{r}, t) = 0.
 ```
+
 Therefore, what remains is to find a form of the mass,
 momentum, and energy flux densities.
 ```math
