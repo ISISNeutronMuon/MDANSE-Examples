@@ -11,7 +11,7 @@ the scattering function from the correlation function of density
 fluctuations of the fluid. The derivation of a scattering function from the 
 hydrodynamic equations and the derivation of the hydrodynamic equations 
 themselves are quite involved. We will provide some of the essential idea 
-and equations but a more thorough overview can be found else where, see the 
+and equations but a more thorough overview can be found elsewhere, see the 
 Further reading section.
 
 To build up a macroscopic theory of a fluid we first require an equation
