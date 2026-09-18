@@ -87,7 +87,14 @@ For a compressible Newtonian fluid the stress tensor is as follows
 ```math
 \overleftrightarrow{\sigma}(\vec{r}, t) = - p(\vec{r}, t)\overleftrightarrow{I} + \eta_{s} \left[ \vec{\nabla}\otimes \vec{v}(\vec{r}, t) +  (\vec{\nabla}\otimes \vec{v}(\vec{r}, t))^{\mathrm{T}} - \frac{2}{3} (\vec{\nabla} \cdot \vec{v}(\vec{r}, t)) \overleftrightarrow{I}\right] + \eta_{v} (\vec{\nabla} \cdot \vec{v}(\vec{r}, t))\overleftrightarrow{I}
 ```
-see Further reading for more details.
+where $p$ is the pressure density, and $\eta_{s}$ and $\eta_{v}$ are the shear and bulk viscosities, 
+see Further reading for more details. The $\vec{Q}$ is the flux of the heat energy density
+is given by Fourier's law
+```math
+\vec{Q}(\vec{r}, t) = - \lambda \vec{\nabla} T(\vec{r}, t)
+```
+where $\lambda$ is the materials thermal conductivity, and $\vec{\nabla} T(\vec{r}, t)$
+is the temperature gradient.
 
 # Further reading
 Boon, J. P., Yip, S. (1991). Molecular Hydrodynamics. Dover Publications.
