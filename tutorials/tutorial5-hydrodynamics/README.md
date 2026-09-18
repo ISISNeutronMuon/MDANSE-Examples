@@ -83,7 +83,11 @@ where the first, second, and third terms are the flux of the energy due to the
 fluid velocity, heat diffusion, and external work done by the bulk
 onto our element of fluid.
 
-
+For a compressible Newtonian fluid the stress tensor is as follows 
+```math
+\overleftrightarrow{\sigma}(\vec{r}, t) = -\vec{\nabla} p(\vec{r}, t) + \eta_{s} \vec{\nabla} \cdot \left[ \vec{\nabla}\otimes \vec{v}(\vec{r}, t) +  (\vec{\nabla}\otimes \vec{v}(\vec{r}, t))^{\mathrm{T}} - \frac{2}{3} \vec{\nabla} \cdot \vec{v}(\vec{r}, t) \mathbf{I}\right] + \eta_{v} \vec{\nabla} \left[ \vec{\nabla} \cdot \vec{v}(\vec{r}, t) \mathbf{I} \right]
+```
+see Further reading for more details.
 
 # Further reading
 Boon, J. P., Yip, S. (1991). Molecular Hydrodynamics. Dover Publications.
