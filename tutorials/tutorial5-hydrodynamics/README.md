@@ -56,25 +56,31 @@ momentum, and energy flux densities.
 \frac{\partial \rho(\vec{r}, t)\vec{v}(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \left[ \rho(\vec{r}, t) \vec{v}(\vec{r}, t) \otimes \vec{v}(\vec{r}, t) - \overleftrightarrow{\sigma}(\vec{r}, t) \right] = 0
 ```
 ```math
-\frac{\partial e(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \left[ e(\vec{r}, t) \vec{v}(\vec{r}, t) + \vec{Q}(\vec{r}, t) + \vec{v}(\vec{r}, t) \cdot \overleftrightarrow{\sigma}(\vec{r}, t) \right] = 0
+\frac{\partial e(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \left[ e(\vec{r}, t) \vec{v}(\vec{r}, t) + \vec{Q}(\vec{r}, t) - \vec{v}(\vec{r}, t) \cdot \overleftrightarrow{\sigma}(\vec{r}, t) \right] = 0
 ```
 where $\rho$ is the local mass density, $\vec{v}$ is the fluid velocity,
 $\overleftrightarrow{\sigma}$ is the stress tensor, $e$ it the local energy density, 
-and $\vec{Q}$ is the flux of the heat energy density. The first equation describes a fluid 
-which converse mass and the flux of the mass density is simply 
+and $\vec{Q}$ is the flux of the heat energy density. The first equation is the
+conservation of mass and the flux of the mass density is 
 ```math
 \rho(\vec{r}, t) \vec{v}(\vec{r}, t)
 ```
 since the flow of mass density across our fluid will be purely due to the 
-fluid velocity. The second equation describes a fluid which conserves momentum
+fluid velocity. The second equation is the conservation of momentum
 and the flux of the momentum density is 
 ```math
  \rho(\vec{r}, t) \vec{v}(\vec{r}, t) \otimes \vec{v}(\vec{r}, t) - \overleftrightarrow{\sigma}(\vec{r}, t)
 ```
 where the first term is flux of momentum density due to the fluid velocity and 
 for the second term is the flux of the momentum density due to external forces from
-the bulk. 
-
+the bulk. Finally, the third equation is the conservation of energy and 
+the flux of the energy density is
+```math
+ e(\vec{r}, t) \vec{v}(\vec{r}, t) + \vec{Q}(\vec{r}, t) - \vec{v}(\vec{r}, t) \cdot \overleftrightarrow{\sigma}(\vec{r}, t)
+```
+where the first term is the flux of the energy due to the fluid velocity,
+the second is the flux of the energy due to heat diffusion, and the 
+last term is the flux of the energy due to external work by the bulk.
 
 
 
