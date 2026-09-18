@@ -52,7 +52,7 @@ series of cumulants
 ```math
 \ln \langle \exp(i q_x d_x(t) + i q_y d_y(t)  + i q_z d_z(t) ) \rangle  = \sum_a^{\infty} \sum_b^{\infty} \sum_c^{\infty} \frac{\langle \langle d_x^{a}(t) d_y^{b}(t) d_z^{c}(t)  \rangle \rangle}{ a ! b ! c !} (iq_x)^{a} (iq_y)^{b} (iq_z)^{c}
 ```
-where $d_x = r_x(t) - r_x(0)$. We then truncate the above to terms second order in $q$ 
+where $d_x = r_x(t) - r_x(0)$ and $\langle \langle d_x^{a}(t) d_y^{b}(t) d_z^{c}(t)  \rangle \rangle$ are the joint cumulants of $d_x(t)$, $d_y(t)$, and $d_z(t)$. We then truncate the above to terms second order in $q$ 
 ```math
 \ln \langle \exp(i q_x d_x(t) + i q_y d_y(t)  + i q_z d_z(t) ) \rangle  \approx \langle \langle d_x(t) \rangle \rangle i q_x + \cdots - \frac{1}{2}\langle \langle d_x^2(t) \rangle \rangle q_x^{2}  -  \langle \langle d_x(t) d_y(t)  \rangle \rangle q_x q_y - \cdots
 ```
@@ -220,7 +220,7 @@ theory and check if the implementation of DISF calculation in MDANSE looks
 correct. Under the Gaussian approximation,
 
 ```math
-S_{\mathrm{inc}}(\vec{q}, t) = \frac{1}{\pi} \frac{\hbar \Gamma(q) }{(\hbar \omega)^2 + (\hbar \Gamma(q))^2}
+S_{\mathrm{inc}}(\vec{q}, \omega) = \frac{1}{\pi} \frac{\hbar \Gamma(q) }{(\hbar \omega)^2 + (\hbar \Gamma(q))^2}
 ```
 
 which is a Lorentzian function which has a half-width at half-maximum of 
