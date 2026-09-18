@@ -48,6 +48,11 @@ mass, momentum, or energy in our system.
 ```
 Therefore, what remains is to find a form of the current density for mass,
 momentum, and energy.
+```math
+\frac{\partial \rho(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot (\rho(\vec{r}, t) \vec{v}(\vec{r}, t)) = 0.
+\\
+\frac{\partial \rho(\vec{r}, t)\vec{v}(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \left[ (\rho(\vec{r}, t) \vec{v}(\vec{r}, t)) \otimes \vec{v}(\vec{r}, t)) - \overleftrightarrow{\sigma} \right] = 0.
+```
 
 
 # Further reading
