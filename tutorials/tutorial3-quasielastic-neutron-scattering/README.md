@@ -141,7 +141,7 @@ see **MDANSE Tutorial 2: the van Hove functions** for details. Alternatively
 use the `mdanse_inputs/script1_conversion.py` script, the converted 
 trajectory will be in `mdanse_outputs/converted_trajectory.mdt`.
 
-## Calculated the DISF and GDISF
+## Calculate the DISF and GDISF
 Open and select the `converted_trajectory.mdt` from tutorial 2 and then select the 
 DynamicIncoherentStructureFactor job and set the `q_vectors` setting to
 `SphericalQVectors`, shells to `(10, 44, 2)`, `n_vectors` to `100` and `width` 

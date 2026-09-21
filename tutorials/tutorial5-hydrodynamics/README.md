@@ -4,7 +4,7 @@ This tutorial will show you:
 * how to run an analysis related to the coherent scattering
 
 ## Background
-Tutorials 2 to 4, where built from a microscopic theory of the structure and 
+Tutorials 2 to 4, were built from a microscopic theory of the structure and 
 dynamics of a simple fluid by describing our system from a sum of particles. 
 However, we can instead begin from macroscopic theory of a continuous fluid and derive, for example, 
 the scattering function from the correlation function of density 
@@ -151,6 +151,32 @@ a microscopic theory of a liquid agrees with hydrodynamics.
 # Files
 
 This tutorial contains the following files:
+
+## mdanse_inputs
+These are the scripts that, when run from the mdanse_inputs
+directory, will produce the outputs of the mdanse runs
+described in this tutorial.
+* script1_conversion.py - produces the MDANSE-format trajectory from the lammps trajectory files in tutorial 2.
+* script2_dcsf.py - calculates the DCSF of the simulated system.
+
+## mdanse_outputs
+All the files created by MDANSE will be written here. We included some 
+precalculated results, created using a longer Argon trajectory.
+* dynamiccoherentstructurefactor_long.mda - the DCSF results using a longer and larger system.
+
+# The actual tutorial, step by step.
+In the text of the tutorial, we will concentrate on the
+MDANSE GUI. However, the conversion and analysis jobs can
+be run also without the GUI. The scripts for running all
+the parts of the tutorial are provided in `md_inputs/script*`.
+
+## Convert and load the trajectory
+This tutorial will use by using the trajectory files from tutorial 2, 
+see **MDANSE Tutorial 2: the van Hove functions** for details. Alternatively 
+use the `mdanse_inputs/script1_conversion.py` script, the converted 
+trajectory will be in `mdanse_outputs/converted_trajectory.mdt`.
+
+## Calculate the DCSF
 
 
 # Further reading
