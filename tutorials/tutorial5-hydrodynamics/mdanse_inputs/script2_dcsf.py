@@ -33,10 +33,12 @@ parameters = {
     "q_vectors": (
         "SphericalLatticeQVectors",
         {
-            "seed": 0,
-            "shells": [1.0, 15.0, 1.0],
+            "force_equal_weights": False,
+            "n_samples": 100000,
             "n_vectors": 100,
-            "width": 0.8,
+            "seed": 1,
+            "shells": [1.0, 25.0, 1.0],
+            "width": 0.8
         },
     ),  # q_vectors
     "running_mode": ("single-core",),  # running_mode
