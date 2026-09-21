@@ -88,13 +88,44 @@ For a compressible Newtonian fluid the stress tensor is as follows
 \overleftrightarrow{\sigma}(\vec{r}, t) = - p(\vec{r}, t)\overleftrightarrow{I} + \eta_{s} \left[ \vec{\nabla}\otimes \vec{v}(\vec{r}, t) +  (\vec{\nabla}\otimes \vec{v}(\vec{r}, t))^{\mathrm{T}} - \frac{2}{3} (\vec{\nabla} \cdot \vec{v}(\vec{r}, t)) \overleftrightarrow{I}\right] + \eta_{v} (\vec{\nabla} \cdot \vec{v}(\vec{r}, t))\overleftrightarrow{I}
 ```
 where $p$ is the pressure density, and $\eta_{s}$ and $\eta_{v}$ are the shear and bulk viscosities, 
-see Further reading for more details. The flux of the heat energy density $\vec{Q}$
+see Further reading for more details. The above stress tensor together with the 
+equation for momentum conservation lead to the Navier-Stokes equations
+for a compressible fluid. The flux of the heat energy density $\vec{Q}$
 is given by Fourier's law
 ```math
 \vec{Q}(\vec{r}, t) = - \lambda \vec{\nabla} T(\vec{r}, t)
 ```
 where $\lambda$ is the materials thermal conductivity, and $\vec{\nabla} T(\vec{r}, t)$
 is the temperature gradient.
+
+Since the above hydrodynamic equations can be simplified by linearizing 
+since the fluctuations in the density, momentum, energy, and temperature 
+are expected to be small. So that we have
+```math
+\rho(\vec{r}, t) = \rho_{0} + \rho_{1}(\vec{r}, t)
+```
+```math
+\vec{v}(\vec{r}, t) = \vec{v}_{0} + \vec{v}_{1}(\vec{r}, t) = \vec{v}_{1}(\vec{r}, t)
+```
+```math
+e(\vec{r}, t) = e_{0} + e_{1}(\vec{r}, t)
+```
+```math
+p(\vec{r}, t) = p_0 + p_1(\vec{r}, t)
+```
+```math
+T(\vec{r}, t) = T_{0} + T_{1}(\vec{r}, t)
+```
+where the terms with subscript $0$ are constants at their equilibrium values. The linearized
+hydrodynamic equations are 
+```math
+\frac{\partial \rho_1}{\partial t} + \rho_{0} \vec{\nabla} \cdot \vec{v} = 0
+```
+```math
+\rho_0 \frac{\partial \vec{v}}{\partial t} - \vec{\nabla} p_1 + \eta_{s}\nabla^{2}\vec{v} + \left(\eta_{v} + \frac{1}{3} \eta_{s}\right) \vec{\nabla}(\vec{\nabla} \cdot \vec{v}) = 0
+```
+
+
 
 # Further reading
 Boon, J. P., Yip, S. (1991). Molecular Hydrodynamics. Dover Publications.
