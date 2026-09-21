@@ -133,7 +133,7 @@ the density-density fluctuation correlation function. Using the linearlized
 hydrodynamics equation an approximation for the scattering function can be 
 obtained, see material in Further reading for more details.
 ```math
-S(\vec{q}, \omega) \approx \frac{1}{\pi} V \rho k_{\mathrm{B}}T \chi_{T} \left\{ \left(\frac{\gamma - 1}{\gamma} \right)\frac{D_{T} q^2}{\omega^2 + (D_{T} q^2)^2} + \frac{1}{\gamma} \left[ \frac{ \Gamma q^2 }{(\omega + c_{\mathrm{s}} q)^2 + (\Gamma q^2)^2}  + \frac{ \Gamma q^2 }{(\omega - c_{\mathrm{s}} q)^2 + (\Gamma q^2)^2} \right] \right\}
+S(\vec{q}, \omega) = \frac{1}{\pi} V \rho k_{\mathrm{B}}T \chi_{T} \left\{ \left(\frac{\gamma - 1}{\gamma} \right)\frac{D_{T} q^2}{\omega^2 + (D_{T} q^2)^2} + \frac{1}{\gamma} \left[ \frac{ \Gamma q^2 }{(\omega + c_{\mathrm{s}} q)^2 + (\Gamma q^2)^2}  + \frac{ \Gamma q^2 }{(\omega - c_{\mathrm{s}} q)^2 + (\Gamma q^2)^2} \right] \right\}
 ```
 Usually there is another term inside the curly braces, but it is usually small
 so we have neglected writing it here. In the equation above, $\chi_{T}$ is 
