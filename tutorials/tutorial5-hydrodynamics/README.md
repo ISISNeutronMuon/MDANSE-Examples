@@ -145,7 +145,7 @@ is the adiabatic sound speed.
 ## Scenario of this tutorial
 An approximation for $S(\vec{q}, \omega)$ was derived from the hydrodynamic 
 equations which is based on a macroscopic theory of liquids. Let's run some 
-molecular dynamics simulations to see if/when our numerical simulation based on
+molecular dynamics simulations to see if/when our numerical simulations based on
 a microscopic theory of a liquid agrees with hydrodynamics.
 
 # Files
