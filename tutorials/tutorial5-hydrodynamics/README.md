@@ -125,7 +125,15 @@ hydrodynamic equations are
 \rho_0 \frac{\partial \vec{v}}{\partial t}  = - \vec{\nabla} p_1 + \eta_{s}\nabla^{2}\vec{v} + \left(\eta_{v} + \frac{1}{3} \eta_{s}\right) \vec{\nabla}(\vec{\nabla} \cdot \vec{v})
 ```
 ```math
-\frac{\partial e_1}{\partial t} + (\rho_{0} + p_0) \vec{\nabla} \cdot \vec{v} = \lambda \nabla^2 T_{1}.
+\frac{\partial e_1}{\partial t} + (e_{0} + p_0) \vec{\nabla} \cdot \vec{v} = \lambda \nabla^2 T_{1}.
+```
+To obtain a scattering function from the above equation requires the 
+correlations functions between specific fluctuation terms, most notably 
+the density-density fluctuation correlation function. Using the linearlized
+hydrodynamics equation an approximation for the scattering function can be 
+obtained, see material in Further reading for more details.
+```math
+S(\vec{q}, \omega) = 
 ```
 
 
