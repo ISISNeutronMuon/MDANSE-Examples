@@ -133,7 +133,8 @@ the density-density fluctuation correlation function. Using the linearlized
 hydrodynamics equation an approximation for the scattering function can be 
 obtained, see material in Further reading for more details.
 ```math
-S(\vec{q}, \omega) = 
+S(\vec{q}, \omega) = \frac{1}{\pi} V \rho k_{\mathrm{b}}T \chi_{T} \Bigg\{ (\frac{\gamma - 1}{\gamma} )\frac{D_{T} q^2}{\omega^2 + [D_{T} q^2]^2} \\
++ \frac{1}{\gamma}
 ```
 
 
