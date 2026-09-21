@@ -17,7 +17,7 @@ Further reading section.
 To build up a macroscopic theory of a fluid we first require an equation
 which describes the conservation of some extensive property such as mass.
 Consider an element of a fluid with a fixed volume $V$ and surface $S$ in the bulk,
-the property of this element is simply
+the property (e.g. mass) for this element of fluid is simply
 ```math
 A(t) = \int_{V} \mathrm{d}^3 r\ a(\vec{r}, t)
 ```
@@ -49,7 +49,7 @@ mass, momentum, or energy in our system.
 ```
 
 Therefore, what remains is to find a form of the mass,
-momentum, and energy flux densities and are
+momentum, and energy flux densities. They are
 ```math
 \frac{\partial \rho}{\partial t} + \vec{\nabla} \cdot \left[ \rho \vec{v} \right] = 0
 ```
@@ -138,8 +138,19 @@ S(\vec{q}, \omega) = \frac{1}{\pi} V \rho k_{\mathrm{B}}T \chi_{T} \left\{ \left
 Usually there is another term inside the curly braces, but it is usually small
 so we have neglected writing it here. In the equation above, $\chi_{T}$ is 
 the isothermal compressibility, $\gamma = c_{\mathrm{p}} / c_{\mathrm{V}}$ 
-is the specific heat ratio, $D_{T}$ is the thermal diffusivity, and 
-$\Gamma$ is the classical attenuation coefficient of sound.
+is the specific heat ratio, $D_{T}$ is the thermal diffusivity, 
+$\Gamma$ is the classical attenuation coefficient of sound, and $c_{\mathrm{s}}$
+is the adiabatic sound speed.
+
+## Scenario of this tutorial
+An approximation for $S(\vec{q}, \omega)$ was derived from the hydrodynamic 
+equations which is based on a macroscopic theory of liquids. Let's run some 
+molecular dynamics simulations to see if/when our numerical simulation based on
+a microscopic theory of a liquid agrees with hydrodynamics.
+
+# Files
+
+This tutorial contains the following files:
 
 
 # Further reading
