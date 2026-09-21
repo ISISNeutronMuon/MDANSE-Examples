@@ -33,7 +33,7 @@ a change in property $a$ due to some internal sink or source of $a$. From
 Gauss' theorem we can change the above surface integral to a volume integral
 so that
 ```math
-\int_{V} \mathrm{d}^3 r\ \left[ \frac{\partial a(t)}{\partial t} + \vec{\nabla} \cdot \vec{J}_{a}(\vec{r}, t) - \sigma_{a}(\vec{r}, t) \right] = 0
+\int_{V} \mathrm{d}^3 r\ \left[ \frac{\partial a(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \vec{J}_{a}(\vec{r}, t) - \sigma_{a}(\vec{r}, t) \right] = 0
 ```
 and since the volume $V$ was arbitrary 
 ```math
@@ -51,33 +51,33 @@ mass, momentum, or energy in our system.
 Therefore, what remains is to find a form of the mass,
 momentum, and energy flux densities.
 ```math
-\frac{\partial \rho(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \left[ \rho(\vec{r}, t) \vec{v}(\vec{r}, t) \right] = 0
+\frac{\partial \rho}{\partial t} + \vec{\nabla} \cdot \left[ \rho \vec{v} \right] = 0
 ```
 ```math
-\frac{\partial \rho(\vec{r}, t)\vec{v}(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \left[ \rho(\vec{r}, t) \vec{v}(\vec{r}, t) \otimes \vec{v}(\vec{r}, t) - \overleftrightarrow{\sigma}(\vec{r}, t) \right] = 0
+\frac{\partial \rho\vec{v}}{\partial t} + \vec{\nabla} \cdot \left[ \rho \vec{v} \otimes \vec{v} - \overleftrightarrow{\sigma} \right] = 0
 ```
 ```math
-\frac{\partial e(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \left[ e(\vec{r}, t) \vec{v}(\vec{r}, t) + \vec{Q}(\vec{r}, t) - \vec{v}(\vec{r}, t) \cdot \overleftrightarrow{\sigma}(\vec{r}, t) \right] = 0
+\frac{\partial e}{\partial t} + \vec{\nabla} \cdot \left[ e \vec{v} + \vec{Q} - \vec{v} \cdot \overleftrightarrow{\sigma} \right] = 0
 ```
 where $\rho$ is the local mass density, $\vec{v}$ is the fluid velocity,
 $\overleftrightarrow{\sigma}$ is the stress tensor, $e$ it the local energy density, 
 and $\vec{Q}$ is the flux of the heat energy density. The first equation is the
 conservation of mass and the flux of the mass density is 
 ```math
-\rho(\vec{r}, t) \vec{v}(\vec{r}, t)
+\rho \vec{v}
 ```
 since the flow of mass density across our fluid will be purely due to the 
 fluid velocity. The second equation is the conservation of momentum
 and the flux of the momentum density is 
 ```math
- \rho(\vec{r}, t) \vec{v}(\vec{r}, t) \otimes \vec{v}(\vec{r}, t) - \overleftrightarrow{\sigma}(\vec{r}, t)
+ \rho \vec{v} \otimes \vec{v} - \overleftrightarrow{\sigma}
 ```
 where the first and second terms are flux of momentum density due to the 
 fluid velocity and the external forces from the bulk onto our element of fluid respectively. 
 Finally, the third equation is the conservation of energy and the flux of the 
 energy density is
 ```math
- e(\vec{r}, t) \vec{v}(\vec{r}, t) + \vec{Q}(\vec{r}, t) - \vec{v}(\vec{r}, t) \cdot \overleftrightarrow{\sigma}(\vec{r}, t)
+ e \vec{v} + \vec{Q} - \vec{v} \cdot \overleftrightarrow{\sigma}
 ```
 where the first, second, and third terms are the flux of the energy due to the 
 fluid velocity, heat diffusion, and external work done by the bulk
@@ -85,7 +85,7 @@ onto our element of fluid respectively.
 
 For a compressible Newtonian fluid the stress tensor is as follows 
 ```math
-\overleftrightarrow{\sigma}(\vec{r}, t) = - p(\vec{r}, t)\overleftrightarrow{I} + \eta_{s} \left[ \vec{\nabla}\otimes \vec{v}(\vec{r}, t) +  (\vec{\nabla}\otimes \vec{v}(\vec{r}, t))^{\mathrm{T}} - \frac{2}{3} (\vec{\nabla} \cdot \vec{v}(\vec{r}, t)) \overleftrightarrow{I}\right] + \eta_{v} (\vec{\nabla} \cdot \vec{v}(\vec{r}, t))\overleftrightarrow{I}
+\overleftrightarrow{\sigma} = - p\overleftrightarrow{I} + \eta_{s} \left[ \vec{\nabla}\otimes \vec{v} +  (\vec{\nabla}\otimes \vec{v})^{\mathrm{T}} - \frac{2}{3} (\vec{\nabla} \cdot \vec{v}) \overleftrightarrow{I}\right] + \eta_{v} (\vec{\nabla} \cdot \vec{v})\overleftrightarrow{I}
 ```
 where $p$ is the pressure density, and $\eta_{s}$ and $\eta_{v}$ are the shear and bulk viscosities, 
 see Further reading for more details. The above stress tensor together with the 
@@ -93,28 +93,28 @@ equation for momentum conservation lead to the Navier-Stokes equations
 for a compressible fluid. The flux of the heat energy density $\vec{Q}$
 is given by Fourier's law
 ```math
-\vec{Q}(\vec{r}, t) = - \lambda \vec{\nabla} T(\vec{r}, t)
+\vec{Q} = - \lambda \vec{\nabla} T
 ```
-where $\lambda$ is the materials thermal conductivity, and $\vec{\nabla} T(\vec{r}, t)$
+where $\lambda$ is the materials thermal conductivity, and $\vec{\nabla} T$
 is the temperature gradient.
 
-Since the above hydrodynamic equations can be simplified by linearizing 
+The above hydrodynamic equations can be simplified by linearizing 
 since the fluctuations in the density, momentum, energy, and temperature 
 are expected to be small. So that we have
 ```math
-\rho(\vec{r}, t) = \rho_{0} + \rho_{1}(\vec{r}, t)
+\rho = \rho_{0} + \rho_{1}
 ```
 ```math
-\vec{v}(\vec{r}, t) = \vec{v}_{0} + \vec{v}_{1}(\vec{r}, t) = \vec{v}_{1}(\vec{r}, t)
+\vec{v} = \vec{v}_{0} + \vec{v}_{1} = \vec{v}_{1}
 ```
 ```math
-e(\vec{r}, t) = e_{0} + e_{1}(\vec{r}, t)
+e = e_{0} + e_{1}
 ```
 ```math
-p(\vec{r}, t) = p_0 + p_1(\vec{r}, t)
+p = p_0 + p_1
 ```
 ```math
-T(\vec{r}, t) = T_{0} + T_{1}(\vec{r}, t)
+T = T_{0} + T_{1}
 ```
 where the terms with subscript $0$ are constants at their equilibrium values. The linearized
 hydrodynamic equations are 
@@ -122,9 +122,11 @@ hydrodynamic equations are
 \frac{\partial \rho_1}{\partial t} + \rho_{0} \vec{\nabla} \cdot \vec{v} = 0
 ```
 ```math
-\rho_0 \frac{\partial \vec{v}}{\partial t} - \vec{\nabla} p_1 + \eta_{s}\nabla^{2}\vec{v} + \left(\eta_{v} + \frac{1}{3} \eta_{s}\right) \vec{\nabla}(\vec{\nabla} \cdot \vec{v}) = 0
+\rho_0 \frac{\partial \vec{v}}{\partial t} - \vec{\nabla} p_1 + \eta_{s}\nabla^{2}\vec{v} + \left(\eta_{v} + \frac{1}{3} \eta_{s}\right) + \vec{\nabla}(\vec{\nabla} \cdot \vec{v}) = 0
 ```
-
+```math
+\frac{\partial e_1}{\partial t} + \rho_{0} \vec{\nabla} \cdot \vec{v} = 0
+```
 
 
 # Further reading
