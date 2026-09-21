@@ -49,7 +49,7 @@ mass, momentum, or energy in our system.
 ```
 
 Therefore, what remains is to find a form of the mass,
-momentum, and energy flux densities.
+momentum, and energy flux densities and are
 ```math
 \frac{\partial \rho}{\partial t} + \vec{\nabla} \cdot \left[ \rho \vec{v} \right] = 0
 ```
@@ -122,10 +122,10 @@ hydrodynamic equations are
 \frac{\partial \rho_1}{\partial t} + \rho_{0} \vec{\nabla} \cdot \vec{v} = 0
 ```
 ```math
-\rho_0 \frac{\partial \vec{v}}{\partial t} - \vec{\nabla} p_1 + \eta_{s}\nabla^{2}\vec{v} + \left(\eta_{v} + \frac{1}{3} \eta_{s}\right) + \vec{\nabla}(\vec{\nabla} \cdot \vec{v}) = 0
+\rho_0 \frac{\partial \vec{v}}{\partial t}  = - \vec{\nabla} p_1 + \eta_{s}\nabla^{2}\vec{v} + \left(\eta_{v} + \frac{1}{3} \eta_{s}\right) + \vec{\nabla}(\vec{\nabla} \cdot \vec{v})
 ```
 ```math
-\frac{\partial e_1}{\partial t} + \rho_{0} \vec{\nabla} \cdot \vec{v} = 0
+\frac{\partial e_1}{\partial t} + (\rho_{0} + p_0) \vec{\nabla} \cdot \vec{v} = \lambda \nabla^2 T_{1}.
 ```
 
 
