@@ -134,9 +134,9 @@ hydrodynamics equation an approximation for the scattering function can be
 obtained, see material in Further reading for more details.
 ```math
 \begin{gather*}
-S(\vec{q}, \omega) = \frac{1}{\pi} V \rho k_{\mathrm{b}}T \chi_{T} \Bigg\{ (\frac{\gamma - 1}{\gamma} )\frac{D_{T} q^2}{\omega^2 + [D_{T} q^2]^2} 
+S(\vec{q}, \omega) = \frac{1}{\pi} V \rho k_{\mathrm{b}}T \chi_{T} \Bigg\{ \left(\frac{\gamma - 1}{\gamma} \right)\frac{D_{T} q^2}{\omega^2 + (D_{T} q^2)^2}
 \\ 
-+ \frac{1}{\gamma}
++ \frac{1}{\gamma} \left[ \frac{ \Gamma q^2 }{(\omega + c_{\mathrm{s}} q)^2 + (\Gamma q^2)^2}  + \frac{ \Gamma q^2 }{(\omega - c_{\mathrm{s}} q)^2 + (\Gamma q^2)^2} \right]
 \end{gather*}
 ```
 
