@@ -177,7 +177,46 @@ use the `mdanse_inputs/script1_conversion.py` script, the converted
 trajectory will be in `mdanse_outputs/converted_trajectory.mdt`.
 
 ## Calculate the DCSF
+Load the `converted_trajectory.mdt` from tutorial 2 in the GUI and select the 
+DynamicCoherentStructureFactor job from the actions tab and set the q-vector
+generations settings following the screenshot below.
 
+<p align="center">
+    <img width="800" src="pictures/q-vectors-dcsf.png"/>
+</p>
+
+Notice that the q-vector generations settings widget has a yellow highlighting
+this means that the job can be run but there could be some issues in the 
+calculations. You can hover your mouse over the highlighted widget to see the warning message from MDANSE. 
+Let's have a look at the q-vectors in detail by opening the Preview vector distribution.
+
+<p align="center">
+    <img width="800" src="pictures/vector-preview-button.png"/>
+</p>
+
+This will open a new widget containing some statistics for the generated q-vectors.
+
+<p align="center">
+    <img width="400" src="pictures/vector-bar-chart.png"/>
+</p>
+
+Notice that there are no vectors for the smaller q-vectors we were
+trying to generate. This is because the SphericalLatticeQVector generator can
+only select reciprocal lattice vectors from our trajectory. There aren't 
+any reciprocal lattice vectors in the ranges set for the smaller shells.
+
+If you move to the Vector angle statistics tab you can see the generated q-vectors
+in more detail.
+
+<p align="center">
+    <img width="800" src="pictures/vector-shells.png"/>
+</p>
+
+Have a look at the other shells, as shown in the Vector |q| statistics tab 
+the smaller shells have fewer q-vectors. Once you are done run the MDANSE job
+and save the output to `mdanse_outputs/dynamiccoherentstructurefactor.mda`.
+
+## Plotting the Results
 
 # Further reading
 Boon, J. P., Yip, S. (1991). Molecular Hydrodynamics. Dover Publications.
