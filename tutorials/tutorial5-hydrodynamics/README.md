@@ -253,9 +253,9 @@ The scattering function is very noisy because the trajectory was both very
 small and short. However, we can already see that there is something similar to 
 what hydrodynamics suggests. Try having a look at the scattering function for the other shells.
 
-Clearly to see if we get something to hydrodynamics we will need both a larger
-system to be able to obtain results for small $q$ and longer trajectory
-to increase sampling and reduce the noise in our scattering function.
+Clearly to see if we get results similar to what hydrodynamics suggest we will 
+need both a larger system to be able to obtain results for small $q$ and longer 
+trajectory to increase sampling and reduce the noise in our scattering function.
 
 
 # Answers
