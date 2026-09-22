@@ -3,6 +3,11 @@
 This tutorial will show you:
 * how to run an analysis related to the coherent scattering
 
+**Questions** will be asked in different sections
+of this tutorial. The **answers** will be provided
+at the end of the tutorial. We recommend completing 
+**MDANSE Tutorial 2: the van Hove functions** before starting this one.
+
 ## Background
 Tutorials 2 to 4, were built from a microscopic theory of the structure and 
 dynamics of a simple fluid by describing our system from a sum of particles. 
@@ -133,7 +138,7 @@ the density-density fluctuation correlation function. Using the linearlized
 hydrodynamics equation an approximation for the scattering function can be 
 obtained, see material in Further reading for more details.
 ```math
-S(\vec{q}, \omega) = \frac{1}{\pi} V \rho k_{\mathrm{B}}T \chi_{T} \left\{ \left(\frac{\gamma - 1}{\gamma} \right)\frac{D_{T} q^2}{\omega^2 + (D_{T} q^2)^2} + \frac{1}{\gamma} \left[ \frac{ \Gamma q^2 }{(\omega + c_{\mathrm{s}} q)^2 + (\Gamma q^2)^2}  + \frac{ \Gamma q^2 }{(\omega - c_{\mathrm{s}} q)^2 + (\Gamma q^2)^2} \right] \right\}
+S(q, \omega) = \frac{1}{\pi} V \rho k_{\mathrm{B}}T \chi_{T} \left\{ \left(\frac{\gamma - 1}{\gamma} \right)\frac{D_{T} q^2}{\omega^2 + (D_{T} q^2)^2} + \frac{1}{\gamma} \left[ \frac{ \Gamma q^2 }{(\omega + c_{\mathrm{s}} q)^2 + (\Gamma q^2)^2}  + \frac{ \Gamma q^2 }{(\omega - c_{\mathrm{s}} q)^2 + (\Gamma q^2)^2} \right] \right\}
 ```
 Usually there is another term inside the curly braces, but it is usually small
 so we have not written it here. In the equation above, $\chi_{T}$ is 
@@ -141,6 +146,10 @@ the isothermal compressibility, $\gamma = c_{\mathrm{p}} / c_{\mathrm{V}}$
 is the specific heat ratio, $D_{T}$ is the thermal diffusivity, 
 $\Gamma$ is the classical attenuation coefficient of sound, and $c_{\mathrm{s}}$
 is the adiabatic sound speed.
+
+**Question 1**: From the equation for the scattering function above can you 
+see what the spectrum should look like for a given non-zero values of 
+`q`?
 
 ## Scenario of this tutorial
 An approximation for $S(\vec{q}, \omega)$ was derived from the hydrodynamic 
@@ -202,8 +211,9 @@ This will open a new widget containing some statistics for the generated q-vecto
 
 Notice that there are no vectors for the smaller q-vectors we were
 trying to generate. This is because the SphericalLatticeQVector generator can
-only select reciprocal lattice vectors from our trajectory. There aren't 
-any reciprocal lattice vectors in the ranges set for the smaller shells.
+only select reciprocal lattice vectors generated from the unit cell of our 
+trajectory. Basically the simulation cell was too small for the shell 
+we are trying to generate.
 
 If you move to the Vector angle statistics tab you can see the generated q-vectors
 in more detail.
@@ -217,6 +227,45 @@ the smaller shells have fewer q-vectors. Once you are done run the MDANSE job
 and save the output to `mdanse_outputs/dynamiccoherentstructurefactor.mda`.
 
 ## Plotting the Results
+Load up the `dynamiccoherentstructurefactor.mda` into the plot holder
+and plot the `s(q,f)/total` result and select `Heatmap` from the dropdown
+below the plot.
+
+<p align="center">
+    <img width="800" src="pictures/dcsf-heatmap.png"/>
+</p>
+
+Try changing the Minimum and Maximum sliders to changing how the heatmap
+is coloured. First notice that for low $q$ the heatmap is not drawn this
+is because no q-vectors where generated for those shells. Next notice 
+that the results from the heatmap suggests there are more features in the 
+scattering function that one singular peak. 
+
+Let's have a look at the scattering function for specific shells. Select
+the Single plot type and set "Use it?" to `2`, this is the first shell
+which has calculated results. 
+
+<p align="center">
+    <img width="800" src="pictures/dcsf-shell-2.png"/>
+</p>
+
+The scattering function is very noisy because the trajectory was both very
+small and short. However, we can already see that there is something similar to 
+what hydrodynamics suggests. Try having a look at the scattering function for the other shells.
+
+Clearly to see if we get something to hydrodynamics we will need both a larger
+system to be able to obtain results for small $q$ and longer trajectory
+to increase sampling and reduce the noise in our scattering function.
+
+
+# Answers
+
+## Question 1:
+The spectrum will be formed of three Lorentzians, one central peak
+which is the known as the Rayleigh peak which corresponds to the 
+thermal diffusivity mode and two symmetric peaks shifted 
+by $\pm c_s q$ which are known as the Brillouin doublet and correspond 
+to the acoustic modes.
 
 # Further reading
 Boon, J. P., Yip, S. (1991). Molecular Hydrodynamics. Dover Publications.
