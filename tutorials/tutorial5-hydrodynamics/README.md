@@ -49,13 +49,8 @@ and since the volume $V$ was arbitrary
 To obtain the hydrodynamic equations requires the application of the above conservation 
 equation to the properties of mass, momentum, and energy where in all cases
 $\sigma_{a} = 0$ since there will be no sinks or sources of
-mass, momentum, or energy in our system. 
-```math
-\frac{\partial a(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \vec{J}_{a}(\vec{r}, t) = 0.
-```
-
-Therefore, what remains is to find a form of the mass,
-momentum, and energy flux densities. They are
+mass, momentum, or energy in our system. The conservation equations for mass, 
+momentum, and energy are
 ```math
 \frac{\partial \rho}{\partial t} + \vec{\nabla} \cdot \left[ \rho \vec{v} \right] = 0
 ```
@@ -135,7 +130,7 @@ hydrodynamic equations are
 ```
 To obtain a scattering function from the above equation requires the 
 correlations functions between specific fluctuation terms, most notably 
-the density-density fluctuation correlation function. Using the linearlized
+the density fluctuation-density fluctuation correlation function. Using the linearlized
 hydrodynamics equation an approximation for the scattering function can be 
 obtained, see material in Further reading for more details.
 ```math
@@ -149,7 +144,7 @@ $\Gamma$ is the classical attenuation coefficient of sound, and $c_{\mathrm{s}}$
 is the adiabatic sound speed.
 
 **Question 1**: From the equation for the scattering function above can you 
-see what the spectrum should look like for a given non-zero values of 
+see what the spectrum should look like for a given non-zero value of 
 `q`?
 
 ## Scenario of this tutorial
