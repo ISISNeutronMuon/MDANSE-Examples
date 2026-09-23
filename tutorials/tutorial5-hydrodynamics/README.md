@@ -266,6 +266,10 @@ speed of sound for our system we can instead calculate the longitudinal
 part of the current correlation function and calculate the derivative 
 of $\omega_{\mathrm{max}}$ at low $q$.
 
+Load the `converted_trajectory.mdt` from tutorial 2 in the GUI and select the 
+CurrentCorrelationFunction job from the actions tab and set the q-vector
+generations settings following the screenshot below.
+
 **Question 2**: For a single component system like liquid argon the coherent intermediate
 scattering function is
 ```math
@@ -290,10 +294,6 @@ hydrodynamic and the relationship between the current correlation function
 and the dynamic coherent structure factor show that
 the derivative of $\omega_{\mathrm{max}}$ with respect to $q$ at low $q$ 
 from the current correlation function is equal to the speed of sound.
-
-Load the `converted_trajectory.mdt` from tutorial 2 in the GUI and select the 
-CurrentCorrelationFunction job from the actions tab and set the q-vector
-generations settings following the screenshot below.
 
 # Answers
 
