@@ -273,16 +273,16 @@ F(\vec{q}, t) = \sum_{jk} \frac{1}{N} \langle \exp (- i \vec{q} \cdot \vec{r}_{j
 ```
 The longitudinal particle current is 
 ```math
-\vec{j}^{\mathrm{L}}(\vec{q}, t) = \sum_{j} \hat{q} [ \vec{v}_{j}(t) \cdot \hat{q} ] \exp (i \vec{q} \cdot \vec{r}_{j}(t))
+\vec{j}_{\mathrm{L}}(\vec{q}, t) = \sum_{j} \hat{q} [ \vec{v}_{j}(t) \cdot \hat{q} ] \exp (i \vec{q} \cdot \vec{r}_{j}(t))
 ```
 and the longitudinal part of the current correlation function is
 ```math
-\vec{J}^{\mathrm{L}}(\vec{q}, t) = \frac{1}{N} \langle \vec{j}^{\mathrm{L}}(-\vec{q}, 0) \cdot \vec{j}^{\mathrm{L}}(\vec{q}, t) \rangle.
+\vec{J}_{\mathrm{L}}(\vec{q}, t) = \frac{1}{N} \langle \vec{j}_{\mathrm{L}}(-\vec{q}, 0) \cdot \vec{j}_{\mathrm{L}}(\vec{q}, t) \rangle.
 ```
 Show that the dynamic coherent scattering function and the Fourier transform of 
 the current correlation function is related via the equation
 ```math
-\vec{J}^{\mathrm{L}}(\vec{q}, \omega) = \frac{\omega^2}{q^2} S(\vec{q}, \omega).
+\vec{J}_{\mathrm{L}}(\vec{q}, \omega) = \frac{\omega^2}{q^2} S(\vec{q}, \omega).
 ```
 
 
