@@ -288,10 +288,12 @@ the current correlation function is related via the equation
 **Question 3**: Using the expression for $S(q, \omega)$ from the linearized
 hydrodynamic and the relationship between the current correlation function 
 and the dynamic coherent structure factor show that
-the derivative of $\omega_{\mathrm{max}}$ at low $q$ obtained from the 
-current correlation function is equal to the speed of sound.
+the derivative of $\omega_{\mathrm{max}}$ with respect to $q$ at low $q$ 
+from the current correlation function is equal to the speed of sound.
 
-
+Load the `converted_trajectory.mdt` from tutorial 2 in the GUI and select the 
+CurrentCorrelationFunction job from the actions tab and set the q-vector
+generations settings following the screenshot below.
 
 # Answers
 
