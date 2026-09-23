@@ -285,6 +285,12 @@ the current correlation function is related via the equation
 \vec{J}_{\mathrm{L}}(\vec{q}, \omega) = \frac{\omega^2}{q^2} S(\vec{q}, \omega).
 ```
 
+**Question 3**: Using the expression for $S(q, \omega)$ from the linearized
+hydrodynamic and the relationship between the current correlation function 
+and the dynamic coherent structure factor show that
+the derivative of $\omega_{\mathrm{max}}$ at low $q$ obtained from the 
+current correlation function is equal to the speed of sound.
+
 
 
 # Answers
