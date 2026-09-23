@@ -2,6 +2,7 @@
 
 This tutorial will show you:
 * how to run an analysis related to the coherent scattering
+* how to run an analysis related to the current correlation function
 
 **Questions** will be asked in different sections
 of this tutorial. The **answers** will be provided
@@ -253,9 +254,37 @@ The scattering function is very noisy because the trajectory was both very
 small and short. However, we can already see that there is something similar to 
 what hydrodynamics suggests. Try having a look at the scattering function for the other shells.
 
-Clearly to see if we get results similar to what hydrodynamics suggest we will 
-need both a larger system to be able to obtain results for small $q$ and longer 
-trajectory to increase sampling and reduce the noise in our scattering function.
+Clearly we will need both a larger system to be able to obtain results for small $q$ and longer 
+trajectory to increase the resolution and reduce the noise in our scattering function. In ...
+
+## Calculate the CCF
+
+From the DCSF calculations above we can see that for low $q$ our spectrum
+is formed from three peaks. For larger $q$ its is 
+quite difficult to distinguish the between the three peaks. To obtain the 
+speed of sound for our system we can instead calculate the longitudinal 
+part of the current correlation function and calculate the derivative 
+of $\omega_{\mathrm{max}}$ at low $q$.
+
+**Question 2**: For a single component system like liquid argon the coherent intermediate
+scattering function is
+```math
+F(\vec{q}, t) = \sum_{jk} \frac{1}{N} \langle \exp (- i \vec{q} \cdot \vec{r}_{j}(0)) \exp (i \vec{q} \cdot \vec{r}_{k}(t)) \rangle
+```
+The longitudinal particle current is 
+```math
+\vec{j}^{\mathrm{L}}(\vec{q}, t) = \sum_{j} \hat{q} [ \vec{v}_{j}(t) \cdot \hat{q} ] \exp (i \vec{q} \cdot \vec{r}_{j}(t))
+```
+and the longitudinal part of the current correlation function is
+```math
+\vec{J}^{\mathrm{L}}(\vec{q}, t) = \frac{1}{N} \langle \vec{j}^{\mathrm{L}}(-\vec{q}, 0) \cdot \vec{j}^{\mathrm{L}}(\vec{q}, t) \rangle.
+```
+Show that the dynamic coherent scattering function and the Fourier transform of 
+the current correlation function is related via the equation
+```math
+\vec{J}^{\mathrm{L}}(\vec{q}, \omega) = \frac{\omega^2}{q^2} S(\vec{q}, \omega).
+```
+
 
 
 # Answers
