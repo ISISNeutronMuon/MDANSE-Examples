@@ -219,10 +219,10 @@ in more detail.
 
 Have a look at the other shells, as shown in the Vector |q| statistics tab 
 the smaller shells have fewer q-vectors. Once you are done run the MDANSE job
-and save the output to `mdanse_outputs/dynamiccoherentstructurefactor.mda`.
+and save the output to `mdanse_outputs/dcsf_256.mda`.
 
 ## Plotting the Results
-Load up the `dynamiccoherentstructurefactor.mda` into the plot holder
+Load up the `dcsf_256.mda` into the plot holder
 and plot the `s(q,f)/total` result and select `Heatmap` from the dropdown
 below the plot.
 

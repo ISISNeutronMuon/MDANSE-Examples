@@ -25,7 +25,7 @@ parameters = {
     "grouping_level": "atom",  # grouping_level
     "instrument_resolution": ("ideal", {}),  # instrument_resolution
     "output_files": (
-        "../mdanse_outputs/dynamiccoherentstructurefactor.mda",
+        "../mdanse_outputs/dcsf_256.mda",
         ["MDAFormat"],
         "INFO",
     ),  # output_files
