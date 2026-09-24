@@ -263,8 +263,7 @@ Load the `converted_trajectory.mdt` from tutorial 2 in the GUI and select the
 CurrentCorrelationFunction job from the actions tab and set the q-vector
 generations settings following the screenshot below.
 
-**Question 2**: For a single component system like liquid argon the coherent intermediate
-scattering function is
+**Question 2**: The coherent intermediate scattering function is
 ```math
 F(\vec{q}, t) = \frac{1}{N} \sum_{jk} b^{\dagger}_{j}b_{k} \langle \exp (- i \vec{q} \cdot \vec{r}_{j}(0)) \exp (i \vec{q} \cdot \vec{r}_{k}(t)) \rangle
 ```
