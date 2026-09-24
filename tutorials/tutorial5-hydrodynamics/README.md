@@ -5,8 +5,7 @@ This tutorial will show you:
 * how to run an analysis related to the current correlation function
 
 **Questions** will be asked in different sections
-of this tutorial. The **answers** will be provided
-at the end of the tutorial. We recommend completing 
+of this tutorial. The **answers** will be in `ANSWERS.md`. We recommend completing 
 **MDANSE Tutorial 2: the van Hove functions** before starting this one.
 
 ## Background
@@ -247,10 +246,9 @@ which has calculated results.
 
 The scattering function is very noisy because the trajectory was both very
 small and short. However, we can already see that there is something similar to 
-what hydrodynamics suggests. Try having a look at the scattering function for the other shells.
-
+what hydrodynamics suggests. Try having a look at the scattering function for the other shells. 
 Clearly we will need both a larger system to be able to obtain results for small $q$ and longer 
-trajectory to increase the resolution and reduce the noise in our scattering function. In ...
+trajectory to increase the resolution and reduce the noise in our scattering function.
 
 ## Calculate the CCF
 
@@ -289,15 +287,6 @@ hydrodynamic and the relationship between the current correlation function
 and the dynamic coherent structure factor show that
 the derivative of $\omega_{\mathrm{max}}$ with respect to $q$ at low $q$ 
 from the current correlation function is equal to the speed of sound.
-
-# Answers
-
-## Question 1:
-The spectrum will be formed of three Lorentzians, one central peak
-which is the known as the Rayleigh peak which corresponds to the 
-thermal diffusivity mode and two symmetric peaks shifted 
-by $\pm c_s q$ which are known as the Brillouin doublet and correspond 
-to the acoustic modes.
 
 # Further reading
 Boon, J. P., Yip, S. (1991). Molecular Hydrodynamics. Dover Publications.
