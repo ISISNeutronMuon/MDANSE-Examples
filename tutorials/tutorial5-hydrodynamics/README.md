@@ -266,11 +266,11 @@ generations settings following the screenshot below.
 **Question 2**: For a single component system like liquid argon the coherent intermediate
 scattering function is
 ```math
-F(\vec{q}, t) = \sum_{jk} \frac{1}{N} \langle \exp (- i \vec{q} \cdot \vec{r}_{j}(0)) \exp (i \vec{q} \cdot \vec{r}_{k}(t)) \rangle
+F(\vec{q}, t) = \frac{1}{N} \sum_{jk} b^{\dagger}_{j}b_{k} \langle \exp (- i \vec{q} \cdot \vec{r}_{j}(0)) \exp (i \vec{q} \cdot \vec{r}_{k}(t)) \rangle
 ```
-The longitudinal particle current is 
+where $b_{k}$ is the scattering length of atom $k$. The longitudinal particle current is 
 ```math
-\vec{j}_{\mathrm{L}}(\vec{q}, t) = \sum_{j} \hat{q} [ \vec{v}_{j}(t) \cdot \hat{q} ] \exp (i \vec{q} \cdot \vec{r}_{j}(t))
+\vec{j}_{\mathrm{L}}(\vec{q}, t) = \sum_{j} b_{j} \hat{q} [ \vec{v}_{j}(t) \cdot \hat{q} ] \exp (i \vec{q} \cdot \vec{r}_{j}(t))
 ```
 and the longitudinal part of the current correlation function is
 ```math
