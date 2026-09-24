@@ -162,11 +162,13 @@ directory, will produce the outputs of the mdanse runs
 described in this tutorial.
 * script1_conversion.py - produces the MDANSE-format trajectory from the lammps trajectory files in tutorial 2.
 * script2_dcsf.py - calculates the DCSF of the simulated system.
+* script3_ccf.py - calculates the CCF of the simulated system.
 
 ## mdanse_outputs
 All the files created by MDANSE will be written here. We included some 
-precalculated results, created using a longer Argon trajectory.
-* dynamiccoherentstructurefactor_long.mda - the DCSF results using a longer and larger system.
+precalculated results, created using a longer and larger Argon trajectories.
+* dcsf_2048.mda - the DCSF results using a 2048 atom system.
+* ccf_2048.mda - the CCF results using a 2048 atom system.
 
 # The actual tutorial, step by step.
 In the text of the tutorial, we will concentrate on the
