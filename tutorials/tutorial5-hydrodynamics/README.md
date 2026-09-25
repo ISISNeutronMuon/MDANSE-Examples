@@ -2,7 +2,6 @@
 
 This tutorial will show you:
 * how to run an analysis related to the coherent scattering
-* how to run an analysis related to the current correlation function
 
 **Questions** will be asked in different sections
 of this tutorial. The **answers** will be in `ANSWERS.md`. We recommend completing 
@@ -162,13 +161,10 @@ directory, will produce the outputs of the mdanse runs
 described in this tutorial.
 * script1_conversion.py - produces the MDANSE-format trajectory from the lammps trajectory files in tutorial 2.
 * script2_dcsf.py - calculates the DCSF of the simulated system.
-* script3_ccf.py - calculates the CCF of the simulated system.
 
 ## mdanse_outputs
 All the files created by MDANSE will be written here. We included some 
 precalculated results, created using a longer and larger Argon trajectories.
-* dcsf_2048.mda - the DCSF results using a 2048 atom system.
-* ccf_2048.mda - the CCF results using a 2048 atom system.
 
 # The actual tutorial, step by step.
 In the text of the tutorial, we will concentrate on the
@@ -252,42 +248,6 @@ what hydrodynamics suggests. Try having a look at the scattering function for th
 Clearly we will need both a larger system to be able to obtain results for small $q$ and longer 
 trajectory to increase the resolution and reduce the noise in our scattering function.
 
-## Calculate the CCF
-
-From the DCSF calculations above we can see that for low $q$ our spectrum
-is formed from three peaks. For larger $q$ its is 
-quite difficult to distinguish the between the three peaks. To obtain the 
-speed of sound for our system we can instead calculate the longitudinal 
-part of the current correlation function and calculate the derivative 
-of $\omega_{\mathrm{max}}$ at low $q$.
-
-Load the `converted_trajectory.mdt` from tutorial 2 in the GUI and select the 
-CurrentCorrelationFunction job from the actions tab and set the q-vector
-generations settings following the screenshot below.
-
-**Question 2**: The coherent intermediate scattering function is
-```math
-F(\vec{q}, t) = \frac{1}{N} \sum_{jk} b^{\dagger}_{j}b_{k} \langle \exp (- i \vec{q} \cdot \vec{r}_{j}(0)) \exp (i \vec{q} \cdot \vec{r}_{k}(t)) \rangle
-```
-where $b_{k}$ is the scattering length of atom $k$. The longitudinal particle current is 
-```math
-\vec{j}_{\mathrm{L}}(\vec{q}, t) = \sum_{j} b_{j} \hat{q} [ \vec{v}_{j}(t) \cdot \hat{q} ] \exp (i \vec{q} \cdot \vec{r}_{j}(t))
-```
-and the longitudinal part of the current correlation function is
-```math
-\vec{J}_{\mathrm{L}}(\vec{q}, t) = \frac{1}{N} \langle \vec{j}_{\mathrm{L}}(-\vec{q}, 0) \cdot \vec{j}_{\mathrm{L}}(\vec{q}, t) \rangle.
-```
-Show that the dynamic coherent scattering function and the Fourier transform of 
-the current correlation function is related via the equation
-```math
-\vec{J}_{\mathrm{L}}(\vec{q}, \omega) = \frac{\omega^2}{q^2} S(\vec{q}, \omega).
-```
-
-**Question 3**: Using the expression for $S(q, \omega)$ from the linearized
-hydrodynamic and the relationship between the current correlation function 
-and the dynamic coherent structure factor show that
-the derivative of $\omega_{\mathrm{max}}$ with respect to $q$ at low $q$ 
-from the current correlation function is equal to the speed of sound.
 
 # Further reading
 Boon, J. P., Yip, S. (1991). Molecular Hydrodynamics. Dover Publications.
