@@ -266,10 +266,10 @@ $1/nm$.
 
 We can see that there are clearly three peaks, the central rayleigh peak
 and the brillouin doublet. If we look at the spectra and compare it to
-the equation of :math:`s(q, \omega)` from linear hydrodynamics above, we can see
+the equation of $s(q, \omega)$ from linear hydrodynamics above, we can see
 that bulk properties like the sound speed can be obtained. However, note that 
 in the derivation of the equation from linear hydrodynamics the following 
-assumptions :math:`\gamma D_{T} q^2 \ll c_s q` and :math:`\Gamma q^2 \ll c_s q` were made. 
+assumptions $\gamma D_{T} q^2 \ll c_s q$ and $\Gamma q^2 \ll c_s q$ were made. 
 
 **Question 2**: Using the peak positions of the brillouin doublets can you 
 try determining the sound speed? The experimental sound speed of a liquid argon at 
