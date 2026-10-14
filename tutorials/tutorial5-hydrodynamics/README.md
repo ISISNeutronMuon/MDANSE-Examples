@@ -266,7 +266,7 @@ frames). Have a look at the `s(q,f)/total` results run from 0.25 to 3.00
 
 We can see that there are clearly three peaks, the central rayleigh peak
 and the brillouin doublet. If we look at the spectra and compare it to
-the equation of $s(q, \omega)$ from linear hydrodynamics above, we can see
+the equation of $S(q, \omega)$ from linear hydrodynamics above, we can see
 that bulk properties like the sound speed can be obtained. However, note that 
 in the derivation of the equation from linear hydrodynamics the following 
 assumptions $\gamma D_{T} q^2 \ll c_s q$ and $\Gamma q^2 \ll c_s q$ were made. 
