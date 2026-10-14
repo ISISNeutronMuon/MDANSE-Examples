@@ -132,10 +132,10 @@ the density fluctuation-density fluctuation correlation function. Using the line
 hydrodynamics equation an approximation for the scattering function can be 
 obtained, see material in Further reading for more details.
 ```math
-S(q, \omega) = \frac{1}{\pi} V \rho k_{\mathrm{B}}T \chi_{T} \left\{ \left(\frac{\gamma - 1}{\gamma} \right)\frac{D_{T} q^2}{\omega^2 + (D_{T} q^2)^2} + \frac{1}{\gamma} \left[ \frac{ \Gamma q^2 }{(\omega + c_{\mathrm{s}} q)^2 + (\Gamma q^2)^2}  + \frac{ \Gamma q^2 }{(\omega - c_{\mathrm{s}} q)^2 + (\Gamma q^2)^2} \right] \right\}
+S(q, \omega) = \frac{1}{\pi} V \rho k_{\mathrm{B}}T \chi_{T} \left\{ \left(\frac{\gamma - 1}{\gamma} \right)\frac{D_{T} q^2}{\omega^2 + (D_{T} q^2)^2} + \frac{1}{\gamma} \left[ \frac{ \Gamma q^2 }{(\omega + c_{\mathrm{s}} q)^2 + (\Gamma q^2)^2}  + \frac{ \Gamma q^2 }{(\omega - c_{\mathrm{s}} q)^2 + (\Gamma q^2)^2} \right] + \cdots \right\}
 ```
-Usually there is another term inside the curly braces, but it is usually small
-so we have not written it here. In the equation above, $\chi_{T}$ is 
+There is another term inside the curly braces, which is a correction term which we have 
+not written here as it is less important than other terms. In the equation above, $\chi_{T}$ is 
 the isothermal compressibility, $\gamma = c_{\mathrm{p}} / c_{\mathrm{V}}$ 
 is the specific heat ratio, $D_{T}$ is the thermal diffusivity, 
 $\Gamma$ is the classical attenuation coefficient of sound, and $c_{\mathrm{s}}$
@@ -165,6 +165,7 @@ described in this tutorial.
 ## mdanse_outputs
 All the files created by MDANSE will be written here. We included some 
 precalculated results, created using a longer and larger Argon trajectories.
+* dcsf_32_long.mda - the DCSF results using a longer and larger trajectory.
 
 # The actual tutorial, step by step.
 In the text of the tutorial, we will concentrate on the
@@ -239,14 +240,42 @@ the Single plot type and set "Use it?" to `2`, this is the first shell
 which has calculated results. 
 
 <p align="center">
-    <img width="800" src="pictures/dcsf-shell-2.png"/>
+    <img width="800" src="pictures/dcsf-shell.png"/>
 </p>
 
 The scattering function is very noisy because the trajectory was both very
 small and short. However, we can already see that there is something similar to 
-what hydrodynamics suggests. Try having a look at the scattering function for the other shells. 
+what linearized hydrodynamics suggests. Try having a look at the scattering function for the other shells. 
 Clearly we will need both a larger system to be able to obtain results for small $q$ and longer 
 trajectory to increase the resolution and reduce the noise in our scattering function.
+
+
+## Calculating the sound speed of liquid argon
+In `mdanse_ouputs` you can find the DCSF results calculated for a larger
+system (131072 atoms) and a longer (20000 frames with 1001 correlation 
+frames). Have a look at the `s(q,f)/total` results run from 0.25 to 3.00 
+$1/nm$.
+
+<p align="center">
+    <img width="800" src="pictures/dcsf-heatmap-2.png"/>
+</p>
+
+<p align="center">
+    <img width="800" src="pictures/dcsf-shell-2.png"/>
+</p>
+
+We can see that there are clearly three peaks, the central rayleigh peak
+and the brillouin doublet. If we look at the spectra and compare it to
+the equation of :math:`s(q, \omega)` from linear hydrodynamics above, we can see
+that bulk properties like the sound speed can be obtained. However, note that 
+in the derivation of the equation from linear hydrodynamics the following 
+assumptions :math:`\gamma D_{T} q^2 \ll c_s q` and :math:`\Gamma q^2 \ll c_s q` were made. 
+
+**Question 2**: Using the peak positions of the brillouin doublets can you 
+try determining the sound speed? The experimental sound speed of a liquid argon at 
+a temperature of 85 K and a pressure of 592.5 mm Hg was determined
+to be around 850 m/s. The Argon trajectory was generated at the same 
+temperature and pressure. How well does the MD results agree with experiment?
 
 
 # Further reading
