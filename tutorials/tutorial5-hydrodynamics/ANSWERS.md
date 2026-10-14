@@ -19,5 +19,5 @@ since looking at the spectra
 we can see that the following equalities 
 $\gamma D_{T} q^2 \ll c_s q$ and $\Gamma q^2 \ll c_s q$ 
 were not satisfied. To obtain a better agreement with experiment a 
-much larger and longer system would be required and $S(q,w)$ 
+much larger and longer system would be required and $S(q,\omega)$ 
 so a smaller value of $q$ can be used. 
