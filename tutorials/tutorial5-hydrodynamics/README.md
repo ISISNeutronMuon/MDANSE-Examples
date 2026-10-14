@@ -253,7 +253,7 @@ trajectory to increase the resolution and reduce the noise in our scattering fun
 ## Calculating the sound speed of liquid argon
 In `mdanse_ouputs` you can find the DCSF results calculated for a larger
 system (131072 atoms) and a longer (20000 frames with 1001 correlation 
-frames). Have a look at the `s(q,f)/total` results run from 0.25 to 3.00 
+frames). Have a look at the `s(q,f)/total` results run from 1.00 to 3.00 
 1/nm.
 
 <p align="center">
