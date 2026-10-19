@@ -274,7 +274,7 @@ assumptions $\gamma D_{T} q^2 \ll c_s q$ and $\Gamma q^2 \ll c_s q$ were made.
 **Question 2**: Using the peak positions of the brillouin doublets can you 
 try determining the sound speed? The experimental sound speed of a liquid argon at 
 a temperature of 85 K and a pressure of 592.5 mm Hg was determined
-to be around 850 m/s. The Argon trajectory was generated at the same 
+to be around 850 m/s (Fleury and  Boon, 1969). The Argon trajectory was generated at the same 
 temperature and pressure. How well does the MD results agree with experiment?
 
 
@@ -284,3 +284,5 @@ Boon, J. P., Yip, S. (1991). Molecular Hydrodynamics. Dover Publications.
 Berne, B. J., Pecora, R. (2000). Dynamic Light Scattering: With Applications to Chemistry, Biology, and Physics. Dover Publications.
 
 Landau, L. D., Lifshitz, E. M. (1959). Fluid Mechanics. Pergamon Press.
+
+Fleury, P. A., Boon, J. P. (1969). Brillouin Scattering in Simple Liquids: Argon and Neon. Physical Review, 186, 244.
