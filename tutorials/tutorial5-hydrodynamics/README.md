@@ -86,7 +86,8 @@ For a compressible Newtonian fluid the stress tensor is as follows
 ```math
 \overleftrightarrow{\sigma} = - p\overleftrightarrow{I} + \eta_{s} \left[ \vec{\nabla}\otimes \vec{v} +  (\vec{\nabla}\otimes \vec{v})^{\mathrm{T}} - \frac{2}{3} (\vec{\nabla} \cdot \vec{v}) \overleftrightarrow{I}\right] + \eta_{v} (\vec{\nabla} \cdot \vec{v})\overleftrightarrow{I}
 ```
-where $p$ is the pressure density, and $\eta_{s}$ and $\eta_{v}$ are the shear and bulk viscosities, 
+where $p$ is the pressure density, $\eta_{s}$ and $\eta_{v}$ are the shear and bulk viscosities, 
+and $\overleftrightarrow{I}$ is a 3x3 identity matrix,
 see Further reading for more details. The above stress tensor together with the 
 equation for momentum conservation lead to the Navier-Stokes equations
 for a compressible fluid. The flux of the heat energy density $\vec{Q}$
@@ -128,7 +129,7 @@ hydrodynamic equations are
 ```
 To obtain a scattering function from the above equation requires the 
 correlations functions between specific fluctuation terms, most notably 
-the density fluctuation-density fluctuation correlation function. Using the linearlized
+the density fluctuation-density fluctuation correlation function. Using the linearised
 hydrodynamics equation an approximation for the scattering function can be 
 obtained, see material in Further reading for more details.
 ```math
@@ -155,6 +156,15 @@ a microscopic theory of a liquid agrees with hydrodynamics.
 
 This tutorial contains the following files:
 
+## md_inputs
+These are the input files needed to re-run the MD simulation:
+* argon_start_structure.txt - a LAMMPS structure file
+* argon.lmp - a LAMMPS script
+
+## md_outputs
+These are the LAMMPS output files:
+* argon_traj_120fs_85k.txt - a LAMMPS custom format trajectory
+
 ## mdanse_inputs
 These are the scripts that, when run from the mdanse_inputs
 directory, will produce the outputs of the mdanse runs
@@ -174,10 +184,15 @@ be run also without the GUI. The scripts for running all
 the parts of the tutorial are provided in `md_inputs/script*`.
 
 ## Convert and load the trajectory
-This tutorial will use by using the trajectory files from tutorial 2, 
-see **MDANSE Tutorial 2: the van Hove functions** for details. Alternatively 
-use the `mdanse_inputs/script1_conversion.py` script, the converted 
-trajectory will be in `mdanse_outputs/converted_trajectory.mdt`.
+The trajectory in this example has been created using LAMMPS. The LAMMPS 
+script which produced this trajectory is available in `md_inputs/argon.lmp` 
+and you will need to open it to find some information needed to convert the 
+trajectory correctly. To convert this trajectory you can follow the step shown in 
+**MDANSE Tutorial 2: the van Hove functions**, trajectories generated for 
+tutorial 2 and this one are similar but in this one we use a mass of argon 
+following its natural abundances. If you which to skip this step you can use 
+`mdanse_inputs/script1_conversion.py` script, the converted trajectory will be 
+in `mdanse_outputs/converted_trajectory.mdt`.
 
 ## Calculate the DCSF
 Load the `converted_trajectory.mdt` from tutorial 2 in the GUI and select the 
