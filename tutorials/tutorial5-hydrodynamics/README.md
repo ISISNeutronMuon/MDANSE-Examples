@@ -1,27 +1,27 @@
 # MDANSE Tutorial 5: Hydrodynamics
 
 This tutorial will show you:
-* how to run an analysis related to the coherent scattering
+* how to run an analysis related to the coherent scattering.
 
 **Questions** will be asked in different sections
 of this tutorial. The **answers** will be in `ANSWERS.md`. We recommend completing 
 **MDANSE Tutorial 2: the van Hove functions** before starting this one.
 
 ## Background
-Tutorials 2 to 4, were built from a microscopic theory of the structure and 
-dynamics of a simple fluid by describing our system from a sum of particles. 
+Tutorials 2 to 4 were built from a microscopic theory of the structure and 
+dynamics of a simple fluid by describing our system as a sum of particles. 
 However, we can instead begin from macroscopic theory of a continuous fluid and derive, for example, 
 the scattering function from the correlation function of density 
 fluctuations of the fluid. The derivation of a scattering function from the 
 hydrodynamic equations and the derivation of the hydrodynamic equations 
 themselves are quite involved. We will provide some of the essential idea 
-and equations but a more thorough overview can be found elsewhere, see the 
-Further reading section.
+and equations, but a more thorough overview can be found elsewhere (see the 
+Further reading section).
 
-To build up a macroscopic theory of a fluid we first require an equation
+To build up a macroscopic theory of a fluid, we first require an equation
 which describes the conservation of some extensive property such as mass.
-Consider an element of a fluid with a fixed volume $V$ and surface $S$ in the bulk,
-the property (e.g. mass) for this element of fluid is simply
+Consider an element of a fluid with a fixed volume $V$ and surface $S$ in the bulk.
+The property (e.g. mass) for this element of fluid is simply
 ```math
 A(t) = \int_{V} \mathrm{d}^3 r\ a(\vec{r}, t)
 ```
@@ -34,7 +34,7 @@ where the first integral on the right describes the current flow $\vec{J}_a$ of 
 out of the volume $V$ through surface element $\mathrm{d}\vec{s}$, and 
 $\sigma_a$ is a function which describes 
 a change in property $a$ due to some internal sink or source of $a$. From 
-Gauss' theorem we can change the above surface integral to a volume integral
+Gauss' theorem we can change the above surface integral to a volume integral,
 so that
 ```math
 \int_{V} \mathrm{d}^3 r\ \left[ \frac{\partial a(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \vec{J}_{a}(\vec{r}, t) - \sigma_{a}(\vec{r}, t) \right] = 0
@@ -45,7 +45,7 @@ and since the volume $V$ was arbitrary
 ```
 
 To obtain the hydrodynamic equations requires the application of the above conservation 
-equation to the properties of mass, momentum, and energy where in all cases
+equation to the properties of mass, momentum, and energy, where in all cases
 $\sigma_{a} = 0$ since there will be no sinks or sources of
 mass, momentum, or energy in our system. The conservation equations for mass, 
 momentum, and energy are
@@ -72,7 +72,7 @@ and the flux of the momentum density is
  \rho \vec{v} \otimes \vec{v} - \overleftrightarrow{\sigma}
 ```
 where the first and second terms are flux of momentum density due to the 
-fluid velocity and the external forces from the bulk onto our element of fluid respectively. 
+fluid velocity and the external forces from the bulk onto our element of fluid, respectively. 
 Finally, the third equation is the conservation of energy and the flux of the 
 energy density is
 ```math
@@ -80,25 +80,25 @@ energy density is
 ```
 where the first, second, and third terms are the flux of the energy due to the 
 fluid velocity, heat diffusion, and external work done by the bulk
-onto our element of fluid respectively.
+onto our element of fluid, respectively.
 
-For a compressible Newtonian fluid the stress tensor is as follows 
+For a compressible Newtonian fluid, the stress tensor is as follows 
 ```math
 \overleftrightarrow{\sigma} = - p\overleftrightarrow{I} + \eta_{s} \left[ \vec{\nabla}\otimes \vec{v} +  (\vec{\nabla}\otimes \vec{v})^{\mathrm{T}} - \frac{2}{3} (\vec{\nabla} \cdot \vec{v}) \overleftrightarrow{I}\right] + \eta_{v} (\vec{\nabla} \cdot \vec{v})\overleftrightarrow{I}
 ```
 where $p$ is the pressure density, $\eta_{s}$ and $\eta_{v}$ are the shear and bulk viscosities, 
-and $\overleftrightarrow{I}$ is a 3x3 identity matrix,
-see Further reading for more details. The above stress tensor together with the 
+and $\overleftrightarrow{I}$ is a 3x3 identity matrix
+(see Further reading for more details). The above stress tensor together with the 
 equation for momentum conservation lead to the Navier-Stokes equations
 for a compressible fluid. The flux of the heat energy density $\vec{Q}$
 is given by Fourier's law
 ```math
 \vec{Q} = - \lambda \vec{\nabla} T
 ```
-where $\lambda$ is the materials thermal conductivity, and $\vec{\nabla} T$
+where $\lambda$ is the material's thermal conductivity, and $\vec{\nabla} T$
 is the temperature gradient.
 
-The above hydrodynamic equations can be simplified by linearizing 
+The above hydrodynamic equations can be simplified by linearising 
 since the fluctuations in the density, momentum, energy, and temperature 
 are expected to be small. So that we have
 ```math
@@ -116,7 +116,7 @@ p = p_0 + p_1
 ```math
 T = T_{0} + T_{1}
 ```
-where the terms with subscript $0$ are constants at their equilibrium values. The linearized
+where the terms with subscript $0$ are constants at their equilibrium values. The linearised
 hydrodynamic equations are 
 ```math
 \frac{\partial \rho_1}{\partial t} + \rho_{0} \vec{\nabla} \cdot \vec{v} = 0
@@ -128,10 +128,10 @@ hydrodynamic equations are
 \frac{\partial e_1}{\partial t} + (e_{0} + p_0) \vec{\nabla} \cdot \vec{v} = \lambda \nabla^2 T_{1}.
 ```
 To obtain a scattering function from the above equation requires the 
-correlations functions between specific fluctuation terms, most notably 
+correlation functions between specific fluctuation terms, most notably 
 the density fluctuation-density fluctuation correlation function. Using the linearised
-hydrodynamics equation an approximation for the scattering function can be 
-obtained, see material in Further reading for more details.
+hydrodynamics equation, an approximation for the scattering function can be 
+obtained (see material in Further reading for more details).
 ```math
 S(q, \omega) = \frac{1}{\pi} V \rho k_{\mathrm{B}}T \chi_{T} \left\{ \left(\frac{\gamma - 1}{\gamma} \right)\frac{D_{T} q^2}{\omega^2 + (D_{T} q^2)^2} + \frac{1}{\gamma} \left[ \frac{ \Gamma q^2 }{(\omega + c_{\mathrm{s}} q)^2 + (\Gamma q^2)^2}  + \frac{ \Gamma q^2 }{(\omega - c_{\mathrm{s}} q)^2 + (\Gamma q^2)^2} \right] + \cdots \right\}
 ```
@@ -142,7 +142,7 @@ is the specific heat ratio, $D_{T}$ is the thermal diffusivity,
 $\Gamma$ is the classical attenuation coefficient of sound, and $c_{\mathrm{s}}$
 is the adiabatic sound speed.
 
-**Question 1**: From the equation for the scattering function above can you 
+**Question 1**: From the equation for the scattering function above, can you 
 see what the spectrum should look like for a given non-zero value of 
 `q`?
 
@@ -174,7 +174,7 @@ described in this tutorial.
 
 ## mdanse_outputs
 All the files created by MDANSE will be written here. We included some 
-precalculated results, created using a longer and larger Argon trajectories.
+precalculated results, created using a longer and larger Argon trajectory.
 * dcsf_32_long.mda - the DCSF results using a longer and larger trajectory.
 
 # The actual tutorial, step by step.
@@ -187,11 +187,11 @@ the parts of the tutorial are provided in `md_inputs/script*`.
 The trajectory in this example has been created using LAMMPS. The LAMMPS 
 script which produced this trajectory is available in `md_inputs/argon.lmp` 
 and you will need to open it to find some information needed to convert the 
-trajectory correctly. To convert this trajectory you can follow the step shown in 
-**MDANSE Tutorial 2: the van Hove functions**, trajectories generated for 
+trajectory correctly. To convert this trajectory, you can follow the steps shown in 
+**MDANSE Tutorial 2: the van Hove functions**. Trajectories generated for 
 tutorial 2 and this one are similar but in this one we use a mass of argon 
-following its natural abundances. If you which to skip this step you can use 
-`mdanse_inputs/script1_conversion.py` script, the converted trajectory will be 
+corresponding to its natural abundances. If you wish to skip this step you can use 
+`mdanse_inputs/script1_conversion.py` script; the converted trajectory will be 
 in `mdanse_outputs/converted_trajectory.mdt`.
 
 ## Calculate the DCSF
@@ -203,8 +203,8 @@ generations settings following the screenshot below.
     <img width="800" src="pictures/q-vectors-dcsf.png"/>
 </p>
 
-Notice that the q-vector generations settings widget has a yellow highlighting
-this means that the job can be run but there could be some issues in the 
+Notice that the q-vector generation settings widget has a yellow highlighting.
+This means that the job can be run but there could be some issues in the 
 calculations. You can hover your mouse over the highlighted widget to see the warning message from MDANSE. 
 Let's have a look at the q-vectors in detail by opening the Preview vector distribution.
 
@@ -221,7 +221,7 @@ This will open a new widget containing some statistics for the generated q-vecto
 Notice that there are no vectors for the smaller q-vectors we were
 trying to generate. This is because the SphericalLatticeQVector generator can
 only select reciprocal lattice vectors generated from the unit cell of our 
-trajectory. Basically the simulation cell was too small for the shell 
+trajectory. Basically, the simulation cell was too small for the shell 
 we are trying to generate.
 
 If you move to the Vector angle statistics tab you can see the generated q-vectors
@@ -232,7 +232,7 @@ in more detail.
 </p>
 
 Have a look at the other shells, as shown in the Vector |q| statistics tab 
-the smaller shells have fewer q-vectors. Once you are done run the MDANSE job
+the smaller shells have fewer q-vectors. Once you are done, run the MDANSE job
 and save the output to `mdanse_outputs/dcsf_256.mda`.
 
 ## Plotting the Results
@@ -244,14 +244,14 @@ below the plot.
     <img width="800" src="pictures/dcsf-heatmap.png"/>
 </p>
 
-Try changing the Minimum and Maximum sliders to changing how the heatmap
-is coloured. First notice that for low $q$ the heatmap is not drawn this
+Try changing the Minimum and Maximum sliders to change how the heatmap
+is coloured. First notice that for low $q$ the heatmap is not drawn. This
 is because no q-vectors where generated for those shells. Next notice 
 that the results from the heatmap suggests there are more features in the 
 scattering function that one singular peak. 
 
 Let's have a look at the scattering function for specific shells. Select
-the Single plot type and set "Use it?" to `2`, this is the first shell
+the Single plot type and set "Use it?" to `2`; this is the first shell
 which has calculated results. 
 
 <p align="center">
@@ -260,14 +260,13 @@ which has calculated results.
 
 The scattering function is very noisy because the trajectory was both very
 small and short. However, we can already see that there is something similar to 
-what linearized hydrodynamics suggests. Try having a look at the scattering function for the other shells. 
+what linearised hydrodynamics suggests. Try having a look at the scattering function for the other shells. 
 Clearly we will need both a larger system to be able to obtain results for small $q$ and longer 
 trajectory to increase the resolution and reduce the noise in our scattering function.
 
-
 ## Calculating the sound speed of liquid argon
 In `mdanse_ouputs` you can find the DCSF results calculated for a larger
-system (131072 atoms) and a longer (20000 frames with 1001 correlation 
+system (131072 atoms) and a longer simulation (20000 frames with 1001 correlation 
 frames). Have a look at the `s(q,f)/total` results run from 1.00 to 3.00 
 1/nm.
 
@@ -279,15 +278,15 @@ frames). Have a look at the `s(q,f)/total` results run from 1.00 to 3.00
     <img width="800" src="pictures/dcsf-shell-2.png"/>
 </p>
 
-We can see that there are clearly three peaks, the central rayleigh peak
-and the brillouin doublet. If we look at the spectra and compare it to
+We can see that there are clearly three peaks, the central Rayleigh peak
+and the Brillouin doublet. If we look at the spectra and compare them to
 the equation of $S(q, \omega)$ from linear hydrodynamics above, we can see
 that bulk properties like the sound speed can be obtained. However, note that 
 in the derivation of the equation from linear hydrodynamics the following 
 assumptions $\gamma D_{T} q^2 \ll c_s q$ and $\Gamma q^2 \ll c_s q$ were made. 
 
-**Question 2**: Using the peak positions of the brillouin doublets can you 
-try determining the sound speed? The experimental sound speed of a liquid argon at 
+**Question 2**: Using the peak positions of the Brillouin doublets, can you 
+try determining the sound speed? The experimental sound speed of liquid argon at 
 a temperature of 85 K and a pressure of 592.5 mm Hg was determined
 to be around 850 m/s (Fleury and  Boon, 1969). The Argon trajectory was generated at the same 
 temperature and pressure. How well does the MD results agree with experiment?
